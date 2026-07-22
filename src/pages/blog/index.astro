@@ -1,0 +1,128 @@
+---
+import { getCollection } from 'astro:content';
+
+const baiViet = (await getCollection('blog')).sort(
+  (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
+);
+---
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog Lê Chung — Kinh nghiệm thuê xe tải, chở hàng, vận chuyển</title>
+<meta name="description" content="Kinh nghiệm thuê xe tải chở hàng, chọn loại xe, đóng gói, tính cước, tránh phát sinh — viết bằng lời thường cho khách cần vận chuyển. Lê Chung 0839 861 499.">
+<link rel="canonical" href="https://lechung.vn/blog">
+<style is:global>
+  :root{
+    --bg:#f2f5fa; --panel:#ffffff; --card:#ffffff; --line:#dbe3ee;
+    --text:#0a2540; --text-soft:#33475f; --muted:#647388;
+    --brand:#ff6b35; --brand-dark:#e5541f; --brand-tint:#fff1ea;
+    --navy:#0a2540; --navy-2:#15324d;
+    --shadow:0 1px 2px rgba(10,37,64,.06),0 8px 30px rgba(10,37,64,.08);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#061626; --panel:#0c2033; --card:#0f2942; --line:#234260;
+      --text:#eaf1fa; --text-soft:#bcccdd; --muted:#8395aa;
+      --brand:#ff7a45; --brand-dark:#ff9468; --brand-tint:#2a160c;
+      --navy:#04101c; --navy-2:#15324d;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.45);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+  a{color:inherit}
+  .tnum{font-variant-numeric:tabular-nums}
+  .site-head{position:sticky; top:0; z-index:30; background:var(--panel); border-bottom:1px solid var(--line)}
+  .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+  .brand-logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; text-decoration:none; color:inherit}
+  .brand-mark{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:15px; font-weight:800; box-shadow:0 4px 12px rgba(255,107,53,.35)}
+  .nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px; font-weight:700}
+  .nav-links a{text-decoration:none; color:var(--text-soft)}
+  .nav-links a:hover{color:var(--brand-dark)}
+  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 16px; border-radius:10px}
+  .nav-links a.btn:hover{background:var(--brand-dark)}
+  @media(max-width:700px){
+    .nav-links a:not(.btn){display:none}
+    .nav-links a.btn{padding:7px 12px; font-size:12.5px; border-radius:9px}
+    .brand-logo{font-size:16px; gap:8px}
+    .brand-mark{width:29px; height:29px; font-size:13px; border-radius:8px}
+    .site-head .bar{padding:9px 0}
+  }
+  .head-sec{max-width:680px; margin:0 auto; text-align:center; padding:40px 0 8px}
+  .head-sec h1{font-size:clamp(26px,4vw,38px); font-weight:800; letter-spacing:-.015em; margin:0 0 10px; text-wrap:balance}
+  .head-sec p{margin:0; color:var(--muted); font-size:16px}
+  section{padding:30px 0 44px}
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media(max-width:960px){ .blog-grid{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:600px){ .blog-grid{grid-template-columns:1fr} }
+  .bcard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); display:flex; flex-direction:column}
+  .bcard h3{margin:0 0 8px; font-size:16px; font-weight:800; line-height:1.35}
+  .bcard h3 a{text-decoration:none}
+  .bcard h3 a:hover{color:var(--brand-dark)}
+  .bcard p{margin:0 0 14px; color:var(--text-soft); font-size:13.8px; flex:1}
+  .bcard .more{color:var(--brand-dark); font-weight:800; font-size:14px; text-decoration:none}
+  .bcard .more:hover{text-decoration:underline}
+  .cta-box{background:linear-gradient(160deg,var(--navy),var(--navy-2)); color:#fff; border-radius:18px; padding:30px 26px; text-align:center; margin:10px 0 40px}
+  .cta-box h3{margin:0 0 8px; font-size:21px; font-weight:800}
+  .cta-box p{margin:0 0 16px; color:#c7d3e2; font-size:15px}
+  .cta-box a.go{display:inline-block; background:var(--brand); color:#fff; text-decoration:none; font-weight:800; font-size:16.5px; padding:13px 26px; border-radius:11px; box-shadow:0 8px 24px rgba(255,107,53,.35)}
+  .cta-box a.go:hover{background:var(--brand-dark)}
+  .site-foot{border-top:1px solid var(--line); background:var(--panel); padding:22px 0 32px; text-align:center; color:var(--muted); font-size:13px}
+  .site-foot b{color:var(--text-soft)}
+  .site-foot a{color:var(--text-soft)}
+  .empty{text-align:center; color:var(--muted); padding:40px 0}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand-logo" href="/"><img src="/img/logo-lechung.webp" alt="Vận Tải Lê Chung" width="150" height="40" style="height:40px;width:auto"></a>
+      <nav class="nav-links">
+        <a href="/">Trang chủ</a>
+        <a href="/blog">Blog</a>
+        <a class="btn" href="tel:0839861499">📞 0839 861 499</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="head-sec">
+    <h1>Blog Lê Chung</h1>
+    <p>Kinh nghiệm thuê xe tải, chở hàng, vận chuyển — viết bằng lời thường, đọc xong đỡ lo phát sinh.</p>
+  </div>
+
+  <section>
+    {baiViet.length === 0 && <div class="empty">Chưa có bài viết nào.</div>}
+    <div class="blog-grid">
+      {baiViet.map((bai) => (
+        <div class="bcard">
+          <h3><a href={`/blog/${bai.id}`}>{bai.data.title}</a></h3>
+          <p>{bai.data.description}</p>
+          <a class="more" href={`/blog/${bai.id}`}>Đọc tiếp →</a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="cta-box">
+    <h3>Cần thuê xe tải chở hàng ngay?</h3>
+    <p>Gọi Lê Chung — tư vấn loại xe, báo giá nhanh, có xe trong ngày.</p>
+    <a class="go" href="tel:0839861499">📞 Gọi ngay 0839 861 499</a>
+  </div>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <b>LÊ CHUNG</b> · Dịch vụ xe tải chở hàng · Hotline: <span class="tnum">0839 861 499</span><br>
+    © 2026 <b>lechung.vn</b> · <a href="/">Trang chủ</a> · <a href="/blog">Blog</a>
+  </div>
+</footer>
+</body>
+</html>

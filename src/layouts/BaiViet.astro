@@ -1,0 +1,133 @@
+---
+// Layout cho từng bài viết blog Lê Chung — giữ nguyên thương hiệu lechung.vn
+const { frontmatter } = Astro.props;
+const { title, description, ngayDang, thoiGianDoc } = frontmatter;
+---
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title} — Blog Lê Chung</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={`https://lechung.vn/blog/${Astro.url.pathname.split('/').filter(Boolean).pop()}`}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:type" content="article">
+<style is:global>
+  :root{
+    --bg:#f2f5fa; --panel:#ffffff; --card:#ffffff; --line:#dbe3ee;
+    --text:#0a2540; --text-soft:#33475f; --muted:#647388;
+    --brand:#ff6b35; --brand-dark:#e5541f; --brand-tint:#fff1ea;
+    --navy:#0a2540; --navy-2:#15324d;
+    --good:#12833f; --good-tint:#e9f7ee;
+    --shadow:0 1px 2px rgba(10,37,64,.06),0 8px 30px rgba(10,37,64,.08);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#061626; --panel:#0c2033; --card:#0f2942; --line:#234260;
+      --text:#eaf1fa; --text-soft:#bcccdd; --muted:#8395aa;
+      --brand:#ff7a45; --brand-dark:#ff9468; --brand-tint:#2a160c;
+      --navy:#04101c; --navy-2:#15324d; --good:#4cc47e; --good-tint:#123720;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.45);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
+  a{color:inherit}
+  .tnum{font-variant-numeric:tabular-nums}
+  .site-head{position:sticky; top:0; z-index:30; background:var(--panel); border-bottom:1px solid var(--line)}
+  .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+  .brand-logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; text-decoration:none}
+  .brand-mark{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:15px; font-weight:800; box-shadow:0 4px 12px rgba(255,107,53,.35)}
+  .nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px; font-weight:700}
+  .nav-links a{text-decoration:none; color:var(--text-soft)}
+  .nav-links a:hover{color:var(--brand-dark)}
+  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 16px; border-radius:10px}
+  .nav-links a.btn:hover{background:var(--brand-dark)}
+  @media(max-width:700px){
+    .nav-links a:not(.btn){display:none}
+    .nav-links a.btn{padding:7px 12px; font-size:12.5px; border-radius:9px}
+    .brand-logo{font-size:16px; gap:8px}
+    .brand-mark{width:29px; height:29px; font-size:13px; border-radius:8px}
+    .site-head .bar{padding:9px 0}
+  }
+  @media(max-width:600px){
+    .art table{display:block; overflow-x:auto; -webkit-overflow-scrolling:touch}
+    .art p,.art li{overflow-wrap:break-word}
+  }
+  .art{max-width:760px; margin:0 auto; padding:34px 0 10px}
+  .crumb{font-size:14px; font-weight:700}
+  .crumb a{color:var(--brand-dark); text-decoration:none}
+  .crumb a:hover{text-decoration:underline}
+  h1{font-size:clamp(25px,4vw,36px); line-height:1.2; font-weight:800; letter-spacing:-.015em; margin:.5em 0 .3em; text-wrap:balance}
+  .meta{color:var(--muted); font-size:13.5px; margin-bottom:22px}
+  .art h2{font-size:clamp(19px,2.8vw,24px); font-weight:800; margin:1.6em 0 .5em; letter-spacing:-.01em}
+  .art h3{font-size:clamp(17px,2.4vw,20px); font-weight:800; margin:1.3em 0 .4em}
+  .art p{margin:0 0 1em; color:var(--text-soft); font-size:16px}
+  .art strong, .art b{color:var(--text)}
+  .art ul,.art ol{color:var(--text-soft); font-size:16px; padding-left:24px; margin:0 0 1em}
+  .art li{margin-bottom:6px}
+  .art blockquote{background:var(--card); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:10px; padding:16px 18px; margin:0 0 1em; color:var(--text-soft); font-size:15px; box-shadow:var(--shadow)}
+  .art blockquote p{margin:0}
+  .art img{max-width:100%; height:auto; border-radius:12px; margin:1em 0}
+  .art table{border-collapse:collapse; width:100%; margin:0 0 1em; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:14.5px}
+  .art th,.art td{padding:10px 12px; border-bottom:1px solid var(--line); text-align:left; color:var(--text-soft)}
+  .art th{color:var(--text); font-weight:800; font-size:13.5px}
+  .art td.r,.art th.r{text-align:right}
+  .art figure{margin:0 0 1.3em}
+  .art figure img{width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); box-shadow:var(--shadow); margin:0}
+  .art figcaption{color:var(--muted); font-size:13px; text-align:center; margin-top:8px}
+  .art a{color:var(--brand-dark); font-weight:600}
+  .cta-box{background:linear-gradient(160deg,var(--navy),var(--navy-2)); color:#fff; border-radius:18px; padding:28px 26px; text-align:center; margin:34px 0 10px}
+  .cta-box h3{margin:0 0 8px; font-size:21px; font-weight:800; color:#fff}
+  .cta-box p{margin:0 0 16px; color:#c7d3e2; font-size:15px}
+  .cta-box a.go{display:inline-block; background:var(--brand); color:#fff; text-decoration:none; font-weight:800; font-size:16.5px; padding:13px 26px; border-radius:11px; box-shadow:0 8px 24px rgba(255,107,53,.35)}
+  .cta-box a.go:hover{background:var(--brand-dark)}
+  .site-foot{border-top:1px solid var(--line); background:var(--panel); margin-top:34px; padding:22px 0 32px; text-align:center; color:var(--muted); font-size:13px}
+  .site-foot b{color:var(--text-soft)}
+  .site-foot a{color:var(--text-soft)}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand-logo" href="/"><img src="/img/logo-lechung.webp" alt="Vận Tải Lê Chung" width="150" height="40" style="height:40px;width:auto"></a>
+      <nav class="nav-links">
+        <a href="/">Trang chủ</a>
+        <a href="/blog">Blog</a>
+        <a class="btn" href="tel:0839861499">📞 0839 861 499</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<article class="art">
+  <div class="crumb"><a href="/blog">← Blog</a></div>
+  <h1>{title}</h1>
+  <div class="meta">Blog Lê Chung · Kinh nghiệm thuê xe &amp; chở hàng{thoiGianDoc ? ` · Đọc khoảng ${thoiGianDoc} phút` : ''}</div>
+
+  <slot />
+
+  <div class="cta-box">
+    <h3>Cần thuê xe tải chở hàng?</h3>
+    <p>Lê Chung — báo giá nhanh, có xe ngay, tài xế chuyên nghiệp. Gọi là có người tư vấn.</p>
+    <a class="go" href="tel:0839861499">📞 Gọi ngay 0839 861 499</a>
+  </div>
+</article>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <b>LÊ CHUNG</b> · Dịch vụ xe tải chở hàng · Hotline: <span class="tnum">0839 861 499</span><br>
+    © 2026 <b>lechung.vn</b> · <a href="/">Trang chủ</a> · <a href="/blog">Blog</a>
+  </div>
+</footer>
+
+</body>
+</html>
