@@ -1,15 +1,48 @@
 ---
 // Trang chủ Vận tải Lê Chung — dựng lại từ web hiện tại (bỏ FunnelTex).
 // Trang tự chứa (không dùng Layout mặc định), cùng tông màu với blog.
+import { getCollection } from 'astro:content';
+
 const HOTLINE = '0839 861 499';
 const TEL = '0839861499';
 
+// Blog: nạp tất cả bài, mới nhất trước — dùng cho menu "Blog", mục "Xem thêm" và khối kinh nghiệm.
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
+);
+const norm = (s) => (s || '').toLowerCase();
+// Tự nối mỗi mục dịch vụ với bài blog phù hợp nhất (theo từ khoá); không có thì lấy bài mới nhất, không có bài nào thì về trang /blog.
+function matchPost(keywords) {
+  for (const kw of keywords) {
+    const hit = posts.find((p) => norm(p.data.title + ' ' + p.data.description).includes(kw.toLowerCase()));
+    if (hit) return '/blog/' + hit.id;
+  }
+  return posts.length ? '/blog/' + posts[0].id : '/blog';
+}
+// Tìm id bài theo từ khoá (chặt — không có thì trả null); dùng cho menu Khu vực.
+function findId(keywords) {
+  for (const kw of keywords) {
+    const hit = posts.find((p) => norm(p.data.title + ' ' + p.data.description).includes(kw.toLowerCase()));
+    if (hit) return hit.id;
+  }
+  return null;
+}
+// Link cho từng khu vực: ưu tiên bài đúng vùng (theo slug), rồi bài có từ khoá, cuối cùng về mục Khu vực.
+function areaHref(a) {
+  if (posts.find((p) => p.id === a.slug)) return '/blog/' + a.slug;
+  const id = findId(a.kw);
+  return id ? '/blog/' + id : '#khu-vuc';
+}
+const menuPosts = posts.slice(0, 4); // hiện trong menu xổ "Blog"
+const teaserPosts = posts.slice(0, 3); // hiện ở khối "Kinh nghiệm vận chuyển"
+
 const dichVu = [
-  { img: '/img/xe-8-tan.webp', ten: 'Xe Tải Chở Hàng 8 Tấn', bullets: ['Kích thước thùng: 7m và 9.5m', 'Thích hợp hàng công nghiệp vừa', 'Thùng bạt / kín bảo vệ an toàn'] },
-  { img: '/img/xe-10-tan.webp', ten: 'Xe Tải Chở Hàng 10 Tấn', bullets: ['Kích thước thùng: 9.5m - 10m', 'Đáp ứng hàng cồng kềnh dài', 'Đa dạng loại thùng chuyên dụng'] },
-  { img: '/img/xe-15-tan.webp', ten: 'Xe Tải Chở Hàng 15 Tấn', bullets: ['Tải trọng lớn, tiết kiệm chi phí', 'Chuyên chở nguyên chuyến', 'Vận chuyển đường dài an toàn'] },
-  { img: '/img/xe-20-tan.webp', ten: 'Xe Tải 20 Tấn', bullets: ['Siêu trọng tải cho công trình', 'Thùng mui bạt và container', 'Phù hợp hàng hóa khối lượng lớn'] },
-  { img: '/img/xe-cau.webp', ten: 'Xe Cẩu Hàng', bullets: ['Đa dạng tải trọng cẩu nâng', 'Xử lý máy móc, vật liệu nặng', 'Vận hành bởi đội ngũ chứng chỉ'] },
+  { img: '/img/xe-8-tan.webp', ten: 'Xe Tải Chở Hàng 8 Tấn', key: ['8 tấn','tải trọng','loại xe'], bullets: ['Kích thước thùng: 7m và 9.5m', 'Thích hợp hàng công nghiệp vừa', 'Thùng bạt / kín bảo vệ an toàn'] },
+  { img: '/img/xe-10-tan.webp', ten: 'Xe Tải Chở Hàng 10 Tấn', key: ['10 tấn','tải trọng','loại xe'], bullets: ['Kích thước thùng: 9.5m - 10m', 'Đáp ứng hàng cồng kềnh dài', 'Đa dạng loại thùng chuyên dụng'] },
+  { img: '/img/xe-15-tan.webp', ten: 'Xe Tải Chở Hàng 15 Tấn', key: ['15 tấn','nguyên chuyến','đi tỉnh'], bullets: ['Tải trọng lớn, tiết kiệm chi phí', 'Chuyên chở nguyên chuyến', 'Vận chuyển đường dài an toàn'] },
+  { img: '/img/xe-20-tan.webp', ten: 'Xe Tải 20 Tấn', key: ['20 tấn','container','nguyên chuyến'], bullets: ['Siêu trọng tải cho công trình', 'Thùng mui bạt và container', 'Phù hợp hàng hóa khối lượng lớn'] },
+  { img: '/img/xe-cau.webp', ten: 'Xe Cẩu Hàng', key: ['cẩu','bốc xếp','nâng hạ'], bullets: ['Đa dạng tải trọng cẩu nâng', 'Xử lý máy móc, vật liệu nặng', 'Vận hành bởi đội ngũ chứng chỉ'] },
+  { img: '/img/doi-xe.webp', ten: 'Xe Container / Đầu Kéo', key: ['container','đầu kéo','cảng','nguyên chuyến'], bullets: ['Container 20 & 40 feet, sơ mi rơ moóc', 'Hàng nguyên container đi cảng / đi tỉnh', 'Đầu kéo tải trọng lớn, chuyên tuyến Bắc–Nam'] },
 ];
 
 const noiDau = [
@@ -33,6 +66,18 @@ const quyTrinh = [
   { s: '04', t: 'Bàn giao & Thanh toán', d: 'Giao hàng đúng tiến độ, nghiệm thu tình trạng nguyên vẹn và hoàn tất thủ tục chứng từ thanh toán.' },
 ];
 
+// BẢNG GIÁ THAM KHẢO — thuê nguyên chuyến từ TP.HCM đi các tỉnh (triệu đồng/chuyến).
+// Nguồn tham khảo mặt bằng thị trường, đã +1% và làm tròn. ANH XEM & CHỈNH LẠI SỐ trước khi lên web.
+const bangGia = [
+  { vung: 'Nha Trang · Phan Thiết · Quy Nhơn', t8: '13,1', t10: '15,2', t15: '17,2', t20: '18,2', tg: '1–2 ngày' },
+  { vung: 'Đà Nẵng · Huế · Quảng Ngãi', t8: '16,2', t10: '18,2', t15: '20,2', t20: '22,2', tg: '2–3 ngày' },
+  { vung: 'Vinh · Hà Tĩnh · Thanh Hóa', t8: '19,2', t10: '21,2', t15: '22,2', t20: '23,2', tg: '2–3 ngày' },
+  { vung: 'Ninh Bình · Nam Định', t8: '21,2', t10: '24,2', t15: '26,3', t20: '28,3', tg: '3–4 ngày' },
+  { vung: 'Hà Nội · Bắc Ninh · Hưng Yên', t8: '22,2', t10: '26,3', t15: '30,3', t20: '34,3', tg: '3–4 ngày' },
+  { vung: 'Hải Phòng · Quảng Ninh · Bắc Giang', t8: '25,3', t10: '28,3', t15: '31,3', t20: '36,4', tg: '3–4 ngày' },
+  { vung: 'Lạng Sơn · Yên Bái · Tuyên Quang', t8: '28,3', t10: '30,3', t15: '33,3', t20: '38,4', tg: '4–5 ngày' },
+];
+
 const danhGia = [
   { avatar: '/img/khach-1.webp', ten: 'Tôn Thất Hùng', chuc: 'Giám Đốc Sản Xuất, Tập đoàn SMC', noi: 'Kể từ khi giao toàn bộ khâu vận chuyển cho Lê Chung, tỷ lệ chậm trễ của nhà máy chúng tôi đã giảm xuống 0%. Khối lượng xe lớn giúp đáp ứng tức thời trong các đợt xuất hàng mùa cao điểm.' },
   { avatar: '/img/khach-2.webp', ten: 'Lê Bích Ngọc', chuc: 'Trưởng Phòng Kho Vận, VinaFood', noi: 'Tôi hoàn toàn yên tâm về chất lượng xe tải và thái độ của tài xế Lê Chung. Hàng hóa đi các tỉnh luôn được bảo quản an toàn, giấy tờ biên nhận đầy đủ và đối soát cực kỳ nhanh chóng.' },
@@ -46,7 +91,14 @@ const faq = [
   { q: 'Tôi cần cung cấp những thông tin gì để nhận báo giá xe tải?', a: 'Để nhận báo giá nhanh nhất, bạn chỉ cần liên hệ hotline ' + HOTLINE + ' và cung cấp 4 thông tin: Loại hàng hóa, Tổng khối lượng/kích thước, Địa chỉ nhận hàng, và Địa chỉ giao hàng. Chuyên viên sẽ tính lộ trình và gửi báo giá tối ưu ngay lập tức.' },
 ];
 
-const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam Bộ', 'Tây Nguyên', 'Miền Trung', 'Miền Bắc'];
+const khuVuc = [
+  { ten: 'TP. Hồ Chí Minh', slug: 'van-chuyen-hang-hoa-noi-thanh-tphcm', kw: ['nội thành', 'tphcm', 'hồ chí minh', 'sài gòn'] },
+  { ten: 'Miền Đông Nam Bộ', slug: 'van-chuyen-hang-di-mien-dong-nam-bo', kw: ['miền đông', 'đồng nai', 'bình dương', 'vũng tàu'] },
+  { ten: 'Miền Tây Nam Bộ', slug: 'van-chuyen-hang-di-mien-tay', kw: ['miền tây', 'cần thơ', 'long an', 'tiền giang'] },
+  { ten: 'Tây Nguyên', slug: 'van-chuyen-hang-di-tay-nguyen', kw: ['tây nguyên', 'đắk lắk', 'gia lai', 'lâm đồng', 'pleiku'] },
+  { ten: 'Miền Trung', slug: 'van-chuyen-hang-di-mien-trung', kw: ['miền trung', 'đà nẵng', 'huế', 'quy nhơn', 'nha trang'] },
+  { ten: 'Miền Bắc', slug: 'van-chuyen-hang-di-mien-bac', kw: ['miền bắc', 'hà nội', 'hải phòng'] },
+];
 ---
 <!doctype html>
 <html lang="vi">
@@ -89,20 +141,59 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
   .btn-call{display:inline-flex; align-items:center; gap:9px; background:var(--brand); color:#fff; text-decoration:none; font-weight:800; font-size:16px; padding:13px 26px; border-radius:11px; box-shadow:0 8px 22px rgba(255,107,53,.32); border:0; cursor:pointer}
   .btn-call:hover{background:var(--brand-dark)}
 
-  /* HEADER */
-  .site-head{position:sticky; top:0; z-index:40; background:var(--panel); border-bottom:1px solid var(--line)}
+  /* HEADER + MENU XỔ */
+  .site-head{position:sticky; top:0; z-index:60; background:var(--panel); border-bottom:1px solid var(--line)}
   .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
   .brand-logo{display:flex; align-items:center; gap:10px; text-decoration:none}
   .brand-logo img{height:44px; width:auto}
-  .nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px; font-weight:700}
-  .nav-links a{text-decoration:none; color:var(--text-soft)}
-  .nav-links a:hover{color:var(--brand-dark)}
-  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 15px; border-radius:10px; display:inline-flex; gap:6px; align-items:center}
+  .nav-links{display:flex; align-items:center; gap:4px; font-size:14.5px; font-weight:700}
+  .nav-links > a,
+  .nav-top{display:inline-flex; align-items:center; gap:5px; text-decoration:none; color:var(--text-soft); padding:9px 12px; border-radius:9px; white-space:nowrap}
+  .nav-links > a:hover,
+  .nav-top:hover{color:var(--brand-dark); background:var(--brand-tint)}
+  .nav-item{position:relative}
+  .caret{font-size:10px; transition:transform .18s ease; opacity:.8}
+  .nav-item:hover .caret,
+  .nav-item:focus-within .caret{transform:rotate(180deg)}
+  .submenu{
+    position:absolute; top:calc(100% + 6px); left:0; min-width:230px;
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    box-shadow:var(--shadow); padding:8px; display:flex; flex-direction:column; gap:2px;
+    opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .16s ease, transform .16s ease, visibility .16s;
+    z-index:70;
+  }
+  /* di chuột vào -> tự thả ra; rời chuột -> tự đóng */
+  .nav-item:hover .submenu,
+  .nav-item:focus-within .submenu{opacity:1; visibility:visible; transform:translateY(0)}
+  .submenu::before{content:''; position:absolute; top:-8px; left:0; right:0; height:8px} /* cầu nối chống rớt hover */
+  .submenu a{display:block; text-decoration:none; color:var(--text-soft); font-weight:700; font-size:14px; padding:9px 12px; border-radius:8px; line-height:1.35}
+  .submenu a:hover{background:var(--brand-tint); color:var(--brand-dark)}
+  .submenu a.all{color:var(--brand-dark); border-top:1px solid var(--line); margin-top:4px; padding-top:11px; border-radius:0 0 8px 8px}
+  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 15px; border-radius:10px; display:inline-flex; gap:6px; align-items:center; margin-left:6px}
   .nav-links a.btn:hover{background:var(--brand-dark)}
-  @media(max-width:860px){
-    .nav-links a:not(.btn){display:none}
-    .brand-logo img{height:38px}
-    .nav-links a.btn{padding:8px 13px; font-size:13px}
+  .hamb{display:none; background:transparent; border:1px solid var(--line); color:var(--text); width:44px; height:42px; border-radius:10px; font-size:22px; line-height:1; cursor:pointer; align-items:center; justify-content:center}
+  .hamb:hover{background:var(--brand-tint); color:var(--brand-dark)}
+
+  @media(max-width:920px){
+    .hamb{display:inline-flex}
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0; background:var(--panel);
+      border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+      flex-direction:column; align-items:stretch; gap:2px; padding:10px 14px 16px;
+      display:none;
+    }
+    .nav-links.open{display:flex}
+    .nav-links > a,
+    .nav-top{padding:11px 12px; font-size:15.5px}
+    .nav-item{position:static}
+    .nav-item .caret{display:none}
+    .submenu{
+      position:static; opacity:1; visibility:visible; transform:none; box-shadow:none;
+      border:0; border-left:2px solid var(--line); border-radius:0; margin:0 0 4px 12px;
+      padding:0 0 0 8px; min-width:0;
+    }
+    .submenu a.all{border-top:0}
+    .nav-links a.btn{justify-content:center; margin:8px 0 0; padding:12px}
   }
 
   /* HERO */
@@ -112,6 +203,8 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
   .hero h1{font-size:clamp(28px,4.4vw,46px); font-weight:900; line-height:1.1; letter-spacing:-.02em; margin:0 0 16px; text-wrap:balance}
   .hero p.lead{color:#c7d3e2; font-size:16.5px; margin:0 0 24px; max-width:560px}
   .hero-cta{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .hero-cta .ghost{display:inline-flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:800; font-size:15px; padding:12px 22px; border-radius:11px; border:1.5px solid rgba(255,255,255,.35)}
+  .hero-cta .ghost:hover{background:rgba(255,255,255,.1); border-color:#fff}
   .hero-photo{border-radius:18px; box-shadow:0 20px 50px rgba(0,0,0,.4); width:100%; height:100%; object-fit:cover; aspect-ratio:4/3}
   @media(max-width:820px){
     .hero .wrap{grid-template-columns:1fr; gap:26px; padding-top:36px; padding-bottom:38px; text-align:center}
@@ -148,6 +241,8 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
   .adv .ic{flex:0 0 auto; width:44px;height:44px;border-radius:11px;background:var(--navy);color:#fff;display:grid;place-items:center}
   .adv h3{margin:0 0 5px; font-size:16px; font-weight:800}
   .adv p{margin:0; color:var(--text-soft); font-size:14px}
+  .adv-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  @media(max-width:640px){.adv-grid{grid-template-columns:1fr}}
 
   /* services */
   .svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
@@ -160,13 +255,39 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
   .svc ul{margin:0 0 16px; padding:0; list-style:none; flex:1}
   .svc li{position:relative; padding-left:22px; margin-bottom:7px; font-size:14px; color:var(--text-soft)}
   .svc li::before{content:'✓'; position:absolute; left:0; color:var(--brand); font-weight:900}
-  .svc a.more{display:inline-flex; gap:7px; align-items:center; align-self:flex-start; background:var(--brand-tint); color:var(--brand-dark); text-decoration:none; font-weight:800; font-size:14px; padding:9px 15px; border-radius:9px}
+  .svc .foot{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap}
+  .svc a.more{display:inline-flex; gap:7px; align-items:center; background:var(--brand-tint); color:var(--brand-dark); text-decoration:none; font-weight:800; font-size:14px; padding:9px 15px; border-radius:9px}
   .svc a.more:hover{background:var(--brand); color:#fff}
+  .svc a.readmore{color:var(--brand-dark); font-weight:800; font-size:13.5px; text-decoration:none}
+  .svc a.readmore:hover{text-decoration:underline}
+
+  /* BẢNG GIÁ */
+  .price-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); background:var(--card)}
+  table.price{width:100%; border-collapse:collapse; min-width:640px; font-size:14.5px}
+  table.price thead th{background:var(--navy); color:#fff; font-weight:800; padding:14px 16px; text-align:center; font-size:14px}
+  table.price thead th:first-child{text-align:left}
+  table.price tbody td{padding:13px 16px; border-top:1px solid var(--line); text-align:center; color:var(--text-soft)}
+  table.price tbody td:first-child{text-align:left; font-weight:700; color:var(--text)}
+  table.price tbody tr:nth-child(even){background:color-mix(in srgb,var(--brand-tint) 45%, transparent)}
+  table.price .money{font-weight:800; color:var(--brand-dark); font-variant-numeric:tabular-nums}
+  table.price tbody td.tg{color:var(--muted); font-size:13px}
+  .price-note{margin:16px auto 0; max-width:820px; color:var(--muted); font-size:13.5px; text-align:center}
+  .price-note b{color:var(--text-soft)}
+  .price-cta{text-align:center; margin-top:22px}
+  .swipe-hint{display:none}
+  @media(max-width:560px){
+    table.price{min-width:520px; font-size:13px}
+    table.price thead th{padding:12px 10px; font-size:12.5px}
+    table.price tbody td{padding:11px 10px}
+    .swipe-hint{display:block; text-align:center; color:var(--muted); font-size:12.5px; margin:0 0 10px}
+  }
 
   /* area */
   .area{background:var(--navy); color:#fff}
   .area .chips{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:18px}
-  .area .chips span{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); padding:9px 16px; border-radius:999px; font-weight:700; font-size:14.5px}
+  .area .chips span,
+  .area .chips a{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); padding:9px 16px; border-radius:999px; font-weight:700; font-size:14.5px; color:#fff; text-decoration:none; transition:background .15s, border-color .15s}
+  .area .chips a:hover{background:var(--brand); border-color:var(--brand)}
 
   /* process */
   .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; counter-reset:st}
@@ -196,6 +317,21 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
   .rev .who img{width:46px;height:46px;border-radius:50%; object-fit:cover}
   .rev .who b{font-size:14.5px}
   .rev .who small{color:var(--muted); font-size:12.5px}
+
+  /* blog teaser */
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  @media(max-width:900px){.blog-grid{grid-template-columns:1fr}}
+  .bcard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); display:flex; flex-direction:column}
+  .bcard .tag{color:var(--brand); font-weight:800; font-size:12px; letter-spacing:.06em; text-transform:uppercase; margin:0 0 8px}
+  .bcard h3{margin:0 0 8px; font-size:16.5px; font-weight:800; line-height:1.35}
+  .bcard h3 a{text-decoration:none}
+  .bcard h3 a:hover{color:var(--brand-dark)}
+  .bcard p{margin:0 0 14px; color:var(--text-soft); font-size:14px; flex:1}
+  .bcard .more{color:var(--brand-dark); font-weight:800; font-size:14px; text-decoration:none}
+  .bcard .more:hover{text-decoration:underline}
+  .blog-all{text-align:center; margin-top:26px}
+  .blog-all a{display:inline-flex; align-items:center; gap:8px; color:var(--brand-dark); font-weight:800; text-decoration:none; border:1.5px solid var(--brand); padding:11px 22px; border-radius:11px}
+  .blog-all a:hover{background:var(--brand); color:#fff}
 
   /* faq */
   .faq{max-width:820px; margin:0 auto}
@@ -230,13 +366,45 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
   <div class="wrap">
     <div class="bar">
       <a class="brand-logo" href="/"><img src="/img/logo-lechung.webp" alt="Vận Tải Lê Chung" width="150" height="44"></a>
-      <nav class="nav-links">
-        <a href="#dich-vu">Dịch vụ</a>
-        <a href="#khu-vuc">Khu vực</a>
+      <nav class="nav-links" id="mainnav">
+        <a href="/">Trang chủ</a>
+
+        <div class="nav-item">
+          <a href="#dich-vu" class="nav-top">Dịch vụ <span class="caret">▾</span></a>
+          <div class="submenu">
+            {dichVu.map((d) => (<a href="#dich-vu">{d.ten}</a>))}
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#bang-gia" class="nav-top">Bảng giá <span class="caret">▾</span></a>
+          <div class="submenu">
+            <a href="#bang-gia">Giá thuê xe đi tỉnh (nguyên chuyến)</a>
+            <a href="#bang-gia">Xe chở hàng nội thành TP.HCM</a>
+            <a href="#bang-gia">Cách tính cước &amp; lưu ý</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#khu-vuc" class="nav-top">Khu vực <span class="caret">▾</span></a>
+          <div class="submenu">
+            {khuVuc.map((k) => (<a href={areaHref(k)}>{k.ten}</a>))}
+          </div>
+        </div>
+
         <a href="#quy-trinh">Quy trình</a>
-        <a href="/blog">Blog</a>
+
+        <div class="nav-item">
+          <a href="/blog" class="nav-top">Blog <span class="caret">▾</span></a>
+          <div class="submenu">
+            {menuPosts.map((p) => (<a href={`/blog/${p.id}`}>{p.data.title}</a>))}
+            <a href="/blog" class="all">Tất cả bài viết →</a>
+          </div>
+        </div>
+
         <a class="btn" href={`tel:${TEL}`}>📞 {HOTLINE}</a>
       </nav>
+      <button class="hamb" id="hamb" aria-label="Mở menu" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
@@ -250,6 +418,7 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
       <p class="lead">Đội xe hơn 100 chiếc tải trọng từ 8 – 20 tấn và xe cẩu hàng, chuyên chở hàng hóa cho cá nhân và doanh nghiệp sản xuất từ TP.HCM đi 63 tỉnh thành. Vận chuyển nhanh chóng, an toàn, giá tốt – nhận hàng và báo giá ngay trong ngày.</p>
       <div class="hero-cta">
         <a class="btn-call" href={`tel:${TEL}`}>📞 Gọi ngay {HOTLINE}</a>
+        <a class="ghost" href="#bang-gia">Xem bảng giá →</a>
       </div>
     </div>
     <div>
@@ -307,7 +476,7 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
       <h2 class="sec-title">Tại sao chọn Lê Chung?</h2>
       <p style="color:var(--text-soft); margin:0">Hơn 10 năm kinh nghiệm trong ngành vận tải, Lê Chung không chỉ cung cấp xe tải mà mang đến giải pháp logistics toàn diện, tối ưu chi phí và đảm bảo an toàn tuyệt đối cho hàng hóa trên mọi cung đường.</p>
     </div>
-    <div class="grid4" style="grid-template-columns:repeat(2,1fr)">
+    <div class="adv-grid">
       {uuDiem.map((u) => (
         <div class="adv">
           <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
@@ -334,11 +503,59 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
           <div class="body">
             <h3>{d.ten}</h3>
             <ul>{d.bullets.map((b) => (<li>{b}</li>))}</ul>
-            <a class="more" href={`tel:${TEL}`}>Nhận báo giá →</a>
+            <div class="foot">
+              <a class="more" href={`tel:${TEL}`}>Nhận báo giá →</a>
+              <a class="readmore" href={matchPost(d.key)}>Xem thêm ↗</a>
+            </div>
           </div>
         </div>
       ))}
     </div>
+  </div>
+</section>
+
+<!-- BẢNG GIÁ -->
+<section id="bang-gia">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Bảng giá cước tham khảo</p>
+      <h2 class="sec-title">Giá thuê xe tải chở hàng đi tỉnh</h2>
+      <p style="color:var(--text-soft); margin:0">Giá thuê <b>nguyên chuyến</b> từ TP.HCM đi các tỉnh theo loại xe — đơn vị: <b>triệu đồng / chuyến</b>. Đây là mức tham khảo để anh/chị dự trù chi phí.</p>
+    </div>
+    <p class="swipe-hint">← vuốt ngang để xem đủ bảng →</p>
+    <div class="price-wrap">
+      <table class="price">
+        <thead>
+          <tr>
+            <th>Tuyến (TP.HCM đi)</th>
+            <th>Xe 8 tấn</th>
+            <th>Xe 10 tấn</th>
+            <th>Xe 15 tấn</th>
+            <th>Xe 20 tấn</th>
+            <th>Thời gian</th>
+          </tr>
+        </thead>
+        <tbody>
+          {bangGia.map((r) => (
+            <tr>
+              <td>{r.vung}</td>
+              <td class="money">{r.t8}</td>
+              <td class="money">{r.t10}</td>
+              <td class="money">{r.t15}</td>
+              <td class="money">{r.t20}</td>
+              <td class="tg">{r.tg}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="price-note">
+      <b>Lưu ý:</b> Giá trên là mức tham khảo cho chuyến nguyên xe, <b>chưa gồm VAT 8%</b>, phí bốc xếp tận nơi và phí đường cấm (nếu có).
+      Giá thực tế thay đổi theo loại hàng, thời điểm và tuyến cụ thể. <b>Xe cẩu và container 30 tấn</b> báo giá riêng.
+      Vui lòng gọi <a href={`tel:${TEL}`} class="tnum" style="color:var(--brand-dark);font-weight:800;text-decoration:none">{HOTLINE}</a> để nhận báo giá chính xác trong 30 phút.
+      Hàng đi lẻ / nội thành TP.HCM tính theo chuyến hoặc khối lượng — gọi để báo nhanh.
+    </p>
+    <div class="price-cta"><a class="btn-call" href={`tel:${TEL}`}>📞 Nhận báo giá chính xác</a></div>
   </div>
 </section>
 
@@ -348,7 +565,7 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
     <p class="eyebrow" style="color:#ffb59a">Khu vực cung cấp dịch vụ</p>
     <h2 class="sec-title" style="color:#fff">Đâu cần Lê Chung có, đâu khó có Lê Chung</h2>
     <p style="color:#c7d3e2; margin:0">Nhận vận chuyển hàng hóa hai chiều từ TP.HCM đi khắp 63 tỉnh thành trên cả nước.</p>
-    <div class="chips">{khuVuc.map((k) => (<span>{k}</span>))}</div>
+    <div class="chips">{khuVuc.map((k) => (<a href={areaHref(k)}>{k.ten}</a>))}</div>
   </div>
 </section>
 
@@ -411,8 +628,32 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
   </div>
 </section>
 
+<!-- BLOG / KINH NGHIỆM -->
+{teaserPosts.length > 0 && (
+<section id="kinh-nghiem" style="background:var(--panel)">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Kinh nghiệm vận chuyển</p>
+      <h2 class="sec-title">Blog Lê Chung — đọc trước khi thuê xe</h2>
+      <p style="color:var(--text-soft); margin:0">Mẹo chọn xe, đóng gói, tính cước và tránh phát sinh — viết bằng lời thường, dễ hiểu.</p>
+    </div>
+    <div class="blog-grid">
+      {teaserPosts.map((p) => (
+        <div class="bcard">
+          <p class="tag">Bài viết</p>
+          <h3><a href={`/blog/${p.id}`}>{p.data.title}</a></h3>
+          <p>{p.data.description}</p>
+          <a class="more" href={`/blog/${p.id}`}>Đọc tiếp →</a>
+        </div>
+      ))}
+    </div>
+    <div class="blog-all"><a href="/blog">Xem tất cả bài viết →</a></div>
+  </div>
+</section>
+)}
+
 <!-- FAQ -->
-<section style="background:var(--panel)">
+<section style="background:var(--bg)">
   <div class="wrap">
     <div class="center">
       <p class="eyebrow">Giải đáp thắc mắc</p>
@@ -454,6 +695,8 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
         <b class="brand" style="font-size:14px">Liên kết</b>
         <a href="/">Trang chủ</a>
         <a href="#dich-vu">Dịch vụ</a>
+        <a href="#bang-gia">Bảng giá</a>
+        <a href="#khu-vuc">Khu vực</a>
         <a href="#quy-trinh">Quy trình</a>
         <a href="/blog">Blog kinh nghiệm</a>
       </div>
@@ -461,6 +704,27 @@ const khuVuc = ['TP. Hồ Chí Minh', 'Miền Đông Nam Bộ', 'Miền Tây Nam
     <div class="cr">© 2026 CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG. Phục vụ 24/7 toàn quốc.</div>
   </div>
 </footer>
+
+<script>
+  // Menu điện thoại: bấm nút ☰ để mở/đóng
+  (function () {
+    var hamb = document.getElementById('hamb');
+    var nav = document.getElementById('mainnav');
+    if (!hamb || !nav) return;
+    hamb.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Bấm vào một liên kết thật (không phải mục cha có menu con) thì đóng menu
+    nav.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      if (a.classList.contains('nav-top')) return; // mục cha: để mở menu con
+      nav.classList.remove('open');
+      hamb.setAttribute('aria-expanded', 'false');
+    });
+  })();
+</script>
 
 </body>
 </html>

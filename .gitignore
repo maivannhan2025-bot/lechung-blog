@@ -29,3 +29,6 @@ Thumbs.db
 
 # wrangler local
 .wrangler/
+
+# file sao lưu index.astro (giữ ở máy, không đưa lên web)
+*.bak-*
