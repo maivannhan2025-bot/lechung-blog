@@ -9,6 +9,29 @@ media:
   categories: [image]
 
 content:
+  - name: chung
+    label: Cài đặt chung (số điện thoại · Zalo · logo)
+    type: file
+    path: src/data/chung.json
+    format: json
+    fields:
+      - name: hotline
+        label: Số hotline hiển thị (nút gọi, chân trang…)
+        type: string
+        description: 'Số điện thoại dạng đẹp để hiện ra, ví dụ 0839 861 499.'
+      - name: tel
+        label: Số gọi (chỉ chữ số — dùng khi khách bấm nút Gọi)
+        type: string
+        description: 'Chỉ chữ số liền nhau, ví dụ 0839861499.'
+      - name: zalo
+        label: Số Zalo (nút Chat Zalo)
+        type: string
+        description: 'Chỉ chữ số liền nhau, ví dụ 0839861499. Nút Zalo sẽ mở zalo.me/(số này).'
+      - name: logo
+        label: Logo (góc trên bên trái mọi trang)
+        type: image
+        description: 'Bấm tải logo mới lên để thay. Nên dùng ảnh nền trong suốt (PNG/WebP).'
+
   - name: trangchu
     label: Trang chủ (ảnh / video đầu trang)
     type: file

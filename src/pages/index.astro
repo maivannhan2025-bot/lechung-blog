@@ -4,9 +4,10 @@
 import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
 import trangchu from '../data/trangchu.json';
+import chung from '../data/chung.json';
 
-const HOTLINE = '0839 861 499';
-const TEL = '0839861499';
+const HOTLINE = chung.hotline;
+const TEL = chung.tel;
 
 // Khung ảnh/video đầu trang — anh Nhận tự đổi ở /admin (mục "Trang chủ").
 // Có link YouTube => khung chiếu VIDEO; ô link để trống => khung hiện ẢNH.
@@ -99,7 +100,7 @@ const khuVuc = [
 
 // BƯỚC 8 — Quy trình rõ ràng
 const quyTrinh = [
-  { s: '01', t: 'Gọi & khảo sát', d: 'Bạn gọi 0839 861 499, mô tả hàng. Chúng tôi tư vấn loại xe phù hợp nhất.' },
+  { s: '01', t: 'Gọi & khảo sát', d: 'Bạn gọi ' + HOTLINE + ', mô tả hàng. Chúng tôi tư vấn loại xe phù hợp nhất.' },
   { s: '02', t: 'Báo giá & chốt', d: 'Nhận báo giá trọn gói rõ ràng, thống nhất phương án và ký hợp đồng.' },
   { s: '03', t: 'Điều xe & giám sát', d: 'Điều xe đúng hẹn lấy hàng, giám sát hành trình GPS liên tục, an toàn tuyệt đối.' },
   { s: '04', t: 'Giao & xác nhận', d: 'Giao đúng tiến độ, nghiệm thu nguyên vẹn, hoàn tất chứng từ và hóa đơn VAT.' },
@@ -160,11 +161,11 @@ const danhGia = [
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thuê xe tải chở hàng TPHCM đi toàn quốc — Vận Tải Lê Chung 0839 861 499</title>
-<meta name="description" content="Thuê xe tải chở hàng TP.HCM đi toàn quốc — Vận Tải Lê Chung: đội xe hơn 100 chiếc 8-20 tấn, xe cẩu, container. An toàn, đúng hẹn, không phát sinh. Báo giá miễn phí 0839 861 499.">
+<title>Thuê xe tải chở hàng TPHCM đi toàn quốc — Vận Tải Lê Chung {HOTLINE}</title>
+<meta name="description" content={`Thuê xe tải chở hàng TP.HCM đi toàn quốc — Vận Tải Lê Chung: đội xe hơn 100 chiếc 8-20 tấn, xe cẩu, container. An toàn, đúng hẹn, không phát sinh. Báo giá miễn phí ${HOTLINE}.`}>
 <link rel="canonical" href="https://lechung.vn/">
 <meta property="og:title" content="Thuê xe tải chở hàng TPHCM đi toàn quốc — Vận Tải Lê Chung">
-<meta property="og:description" content="Đội xe hơn 100 chiếc 8-20 tấn, xe cẩu, container. An toàn, đúng hẹn, không phát sinh. Hotline 0839 861 499.">
+<meta property="og:description" content={`Đội xe hơn 100 chiếc 8-20 tấn, xe cẩu, container. An toàn, đúng hẹn, không phát sinh. Hotline ${HOTLINE}.`}>
 <meta property="og:type" content="website">
 <style is:global>
   :root{
