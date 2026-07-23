@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import Header from '../../components/Header.astro';
 
 const baiViet = (await getCollection('blog')).sort(
   (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
@@ -36,22 +37,7 @@ const baiViet = (await getCollection('blog')).sort(
   .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
   a{color:inherit}
   .tnum{font-variant-numeric:tabular-nums}
-  .site-head{position:sticky; top:0; z-index:30; background:var(--panel); border-bottom:1px solid var(--line)}
-  .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
-  .brand-logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; text-decoration:none; color:inherit}
-  .brand-mark{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-size:15px; font-weight:800; box-shadow:0 4px 12px rgba(255,107,53,.35)}
-  .nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px; font-weight:700}
-  .nav-links a{text-decoration:none; color:var(--text-soft)}
-  .nav-links a:hover{color:var(--brand-dark)}
-  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 16px; border-radius:10px}
-  .nav-links a.btn:hover{background:var(--brand-dark)}
-  @media(max-width:700px){
-    .nav-links a:not(.btn){display:none}
-    .nav-links a.btn{padding:7px 12px; font-size:12.5px; border-radius:9px}
-    .brand-logo{font-size:16px; gap:8px}
-    .brand-mark{width:29px; height:29px; font-size:13px; border-radius:8px}
-    .site-head .bar{padding:9px 0}
-  }
+  /* Header dùng chung: xem src/components/Header.astro */
   .head-sec{max-width:680px; margin:0 auto; text-align:center; padding:40px 0 8px}
   .head-sec h1{font-size:clamp(26px,4vw,38px); font-weight:800; letter-spacing:-.015em; margin:0 0 10px; text-wrap:balance}
   .head-sec p{margin:0; color:var(--muted); font-size:16px}
@@ -79,18 +65,7 @@ const baiViet = (await getCollection('blog')).sort(
 </head>
 <body>
 
-<header class="site-head">
-  <div class="wrap">
-    <div class="bar">
-      <a class="brand-logo" href="/"><img src="/img/logo-lechung.webp" alt="Vận Tải Lê Chung" width="150" height="40" style="height:40px;width:auto"></a>
-      <nav class="nav-links">
-        <a href="/">Trang chủ</a>
-        <a href="/blog">Blog</a>
-        <a class="btn" href="tel:0839861499">📞 0839 861 499</a>
-      </nav>
-    </div>
-  </div>
-</header>
+<Header />
 
 <div class="wrap">
   <div class="head-sec">

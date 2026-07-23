@@ -1,0 +1,216 @@
+---
+// Menu dùng chung cho các trang Blog (danh sách + bài viết).
+// Trỏ về đúng mục ở trang chủ (/#...) và các bài khu vực. Menu xổ + hamburger giống trang chủ.
+import { getCollection } from 'astro:content';
+
+const HOTLINE = '0839 861 499';
+const TEL = '0839861499';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
+);
+const norm = (s) => (s || '').toLowerCase();
+function findId(keywords) {
+  for (const kw of keywords) {
+    const hit = posts.find((p) => norm(p.data.title + ' ' + p.data.description).includes(kw.toLowerCase()));
+    if (hit) return hit.id;
+  }
+  return null;
+}
+function areaHref(a) {
+  if (posts.find((p) => p.id === a.slug)) return '/blog/' + a.slug;
+  const id = findId(a.kw);
+  return id ? '/blog/' + id : '/#khu-vuc';
+}
+const menuPosts = posts.slice(0, 4);
+
+const dichVuTen = ['Xe Tải Chở Hàng 8 Tấn', 'Xe Tải Chở Hàng 10 Tấn', 'Xe Tải Chở Hàng 15 Tấn', 'Xe Tải 20 Tấn', 'Xe Cẩu Hàng', 'Xe Container / Đầu Kéo'];
+const khuVuc = [
+  { ten: 'TP. Hồ Chí Minh', slug: 'van-chuyen-hang-hoa-noi-thanh-tphcm', kw: ['nội thành', 'tphcm', 'hồ chí minh', 'sài gòn'] },
+  { ten: 'Miền Đông Nam Bộ', slug: 'van-chuyen-hang-di-mien-dong-nam-bo', kw: ['miền đông', 'đồng nai', 'bình dương', 'vũng tàu'] },
+  { ten: 'Miền Tây Nam Bộ', slug: 'van-chuyen-hang-di-mien-tay', kw: ['miền tây', 'cần thơ', 'long an', 'tiền giang'] },
+  { ten: 'Tây Nguyên', slug: 'van-chuyen-hang-di-tay-nguyen', kw: ['tây nguyên', 'đắk lắk', 'gia lai', 'lâm đồng', 'pleiku'] },
+  { ten: 'Miền Trung', slug: 'van-chuyen-hang-di-mien-trung', kw: ['miền trung', 'đà nẵng', 'huế', 'quy nhơn', 'nha trang'] },
+  { ten: 'Miền Bắc', slug: 'van-chuyen-hang-di-mien-bac', kw: ['miền bắc', 'hà nội', 'hải phòng'] },
+];
+---
+<header class="site-head">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand-logo" href="/"><img src="/img/logo-lechung.webp" alt="Vận Tải Lê Chung" width="150" height="44"></a>
+      <nav class="nav-links" id="mainnav">
+        <a href="/">Trang chủ</a>
+
+        <div class="nav-item">
+          <a href="/#dich-vu" class="nav-top">Dịch vụ <span class="caret">▾</span></a>
+          <div class="submenu">
+            {dichVuTen.map((t) => (<a href="/#dich-vu">{t}</a>))}
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="/#bang-gia" class="nav-top">Bảng giá <span class="caret">▾</span></a>
+          <div class="submenu">
+            <a href="/#bang-gia">Giá thuê xe đi tỉnh (nguyên chuyến)</a>
+            <a href="/#bang-gia">Xe chở hàng nội thành TP.HCM</a>
+            <a href="/#bang-gia">Cách tính cước &amp; lưu ý</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="/#khu-vuc" class="nav-top">Khu vực <span class="caret">▾</span></a>
+          <div class="submenu">
+            {khuVuc.map((k) => (<a href={areaHref(k)}>{k.ten}</a>))}
+          </div>
+        </div>
+
+        <a href="/#quy-trinh">Quy trình</a>
+
+        <div class="nav-item">
+          <a href="/blog" class="nav-top">Blog <span class="caret">▾</span></a>
+          <div class="submenu">
+            {menuPosts.map((p) => (<a href={`/blog/${p.id}`}>{p.data.title}</a>))}
+            <a href="/blog" class="all">Tất cả bài viết →</a>
+          </div>
+        </div>
+
+        <a class="btn" href={`tel:${TEL}`}>📞 {HOTLINE}</a>
+      </nav>
+      <button class="hamb" id="hamb" aria-label="Mở menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Nút liên hệ nổi (hiện trên mọi trang) -->
+<div class="fab">
+  <a class="call" href={`tel:${TEL}`} aria-label={`Gọi ngay ${HOTLINE}`}>
+    <span class="lbl">Gọi ngay</span>
+    <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2Z"/></svg></span>
+  </a>
+  <a class="zalo" href="https://zalo.me/0839861499" target="_blank" rel="noopener" aria-label="Chat Zalo">
+    <span class="lbl">Chat Zalo</span>
+    <span class="ic"><span class="zalo-mark">Zalo</span></span>
+  </a>
+</div>
+
+<!-- Popup "khách vừa liên hệ" — nội dung MÔ PHỎNG để tạo niềm tin -->
+<div class="socialpop" id="socialpop" aria-hidden="true">
+  <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20 6 9 17l-5-5"/></svg></div>
+  <div class="txt" id="socialpop-txt"></div>
+</div>
+
+<style>
+  .site-head{position:sticky; top:0; z-index:60; background:var(--panel); border-bottom:1px solid var(--line)}
+  .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
+  .brand-logo{display:flex; align-items:center; gap:10px; text-decoration:none}
+  .brand-logo img{height:44px; width:auto}
+  .nav-links{display:flex; align-items:center; gap:4px; font-size:14.5px; font-weight:700}
+  .nav-links > a,
+  .nav-top{display:inline-flex; align-items:center; gap:5px; text-decoration:none; color:var(--text-soft); padding:9px 12px; border-radius:9px; white-space:nowrap}
+  .nav-links > a:hover,
+  .nav-top:hover{color:var(--brand-dark); background:var(--brand-tint)}
+  .nav-item{position:relative}
+  .caret{font-size:10px; transition:transform .18s ease; opacity:.8}
+  .nav-item:hover .caret,
+  .nav-item:focus-within .caret{transform:rotate(180deg)}
+  .submenu{
+    position:absolute; top:calc(100% + 6px); left:0; min-width:230px;
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    box-shadow:var(--shadow); padding:8px; display:flex; flex-direction:column; gap:2px;
+    opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .16s ease, transform .16s ease, visibility .16s;
+    z-index:70;
+  }
+  .nav-item:hover .submenu,
+  .nav-item:focus-within .submenu{opacity:1; visibility:visible; transform:translateY(0)}
+  .submenu::before{content:''; position:absolute; top:-8px; left:0; right:0; height:8px}
+  .submenu a{display:block; text-decoration:none; color:var(--text-soft); font-weight:700; font-size:14px; padding:9px 12px; border-radius:8px; line-height:1.35}
+  .submenu a:hover{background:var(--brand-tint); color:var(--brand-dark)}
+  .submenu a.all{color:var(--brand-dark); border-top:1px solid var(--line); margin-top:4px; padding-top:11px; border-radius:0 0 8px 8px}
+  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 15px; border-radius:10px; display:inline-flex; gap:6px; align-items:center; margin-left:6px}
+  .nav-links a.btn:hover{background:var(--brand-dark)}
+  .hamb{display:none; background:transparent; border:1px solid var(--line); color:var(--text); width:44px; height:42px; border-radius:10px; font-size:22px; line-height:1; cursor:pointer; align-items:center; justify-content:center}
+  .hamb:hover{background:var(--brand-tint); color:var(--brand-dark)}
+
+  @media(max-width:920px){
+    .hamb{display:inline-flex}
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0; background:var(--panel);
+      border-bottom:1px solid var(--line); box-shadow:var(--shadow);
+      flex-direction:column; align-items:stretch; gap:2px; padding:10px 14px 16px;
+      display:none;
+    }
+    .nav-links.open{display:flex}
+    .nav-links > a,
+    .nav-top{padding:11px 12px; font-size:15.5px}
+    .nav-item{position:static}
+    .nav-item .caret{display:none}
+    .submenu{
+      position:static; opacity:1; visibility:visible; transform:none; box-shadow:none;
+      border:0; border-left:2px solid var(--line); border-radius:0; margin:0 0 4px 12px;
+      padding:0 0 0 8px; min-width:0;
+    }
+    .submenu a.all{border-top:0}
+    .nav-links a.btn{justify-content:center; margin:8px 0 0; padding:12px}
+  }
+
+  /* NÚT LIÊN HỆ NỔI + HIỆU ỨNG NHẤP NHÁY */
+  .fab{position:fixed; right:16px; bottom:18px; z-index:90; display:flex; flex-direction:column; gap:14px; align-items:flex-end}
+  .fab a{display:inline-flex; align-items:center; gap:10px; text-decoration:none}
+  .fab .lbl{background:var(--panel); color:var(--text); font-weight:800; font-size:13px; padding:8px 13px; border-radius:999px; box-shadow:var(--shadow); white-space:nowrap; border:1px solid var(--line)}
+  .fab .ic{position:relative; width:54px; height:54px; border-radius:50%; display:grid; place-items:center; color:#fff; flex:0 0 auto; box-shadow:0 6px 18px rgba(0,0,0,.3); animation:fab-bob 2.4s ease-in-out infinite}
+  .fab .call .ic{background:#16a34a; --ring:22,163,74}
+  .fab .zalo .ic{background:#0068ff; --ring:0,104,255}
+  .fab .zalo-mark{font-weight:900; font-size:14px; letter-spacing:-.02em}
+  .fab .ic::after{content:''; position:absolute; inset:0; border-radius:50%; animation:fab-ring 1.7s ease-out infinite}
+  @keyframes fab-ring{ 0%{box-shadow:0 0 0 0 rgba(var(--ring),.5)} 100%{box-shadow:0 0 0 16px rgba(var(--ring),0)} }
+  @keyframes fab-bob{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+  .fab a:hover .ic{filter:brightness(1.08)}
+  @media(max-width:560px){ .fab{right:12px; bottom:14px; gap:12px} .fab .lbl{display:none} .fab .ic{width:52px; height:52px} }
+  @media(prefers-reduced-motion:reduce){ .fab .ic, .fab .ic::after{animation:none} }
+
+  /* POPUP "KHÁCH VỪA LIÊN HỆ" (mô phỏng) */
+  .socialpop{position:fixed; left:16px; bottom:18px; z-index:88; max-width:300px; background:var(--panel); border:1px solid var(--line); border-radius:14px; box-shadow:0 12px 32px rgba(0,0,0,.2); padding:12px 14px; display:flex; gap:11px; align-items:center; transform:translateY(160%); opacity:0; transition:transform .45s cubic-bezier(.2,.8,.2,1), opacity .45s ease; pointer-events:none}
+  .socialpop.show{transform:translateY(0); opacity:1}
+  .socialpop .av{width:38px; height:38px; border-radius:50%; background:var(--brand-tint); color:var(--brand-dark); display:grid; place-items:center; flex:0 0 auto}
+  .socialpop .txt{font-size:13px; color:var(--text-soft); line-height:1.35}
+  .socialpop .txt b{color:var(--text)}
+  .socialpop .txt .ago{color:var(--muted); font-size:11.5px}
+  @media(max-width:560px){ .socialpop{left:10px; right:76px; max-width:none; bottom:14px} }
+</style>
+
+<script>
+  // Menu điện thoại: bấm ☰ để mở/đóng
+  (function () {
+    var hamb = document.getElementById('hamb');
+    var nav = document.getElementById('mainnav');
+    if (!hamb || !nav) return;
+    hamb.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a) return;
+      if (a.classList.contains('nav-top')) return; // mục cha: để mở menu con
+      nav.classList.remove('open');
+      hamb.setAttribute('aria-expanded', 'false');
+    });
+  })();
+
+  // Popup "khách vừa liên hệ" — nội dung MÔ PHỎNG (không phải dữ liệu thật)
+  (function () {
+    var pop = document.getElementById('socialpop');
+    var txt = document.getElementById('socialpop-txt');
+    if (!pop || !txt) return;
+    var areas = ['Bình Tân', 'Quận 7', 'Bình Chánh', 'Thủ Đức', 'Quận 12', 'Hóc Môn', 'Tân Bình', 'Gò Vấp', 'Nhà Bè', 'Củ Chi'];
+    var acts = ['vừa gọi đặt xe tải', 'vừa liên hệ Zalo báo giá', 'vừa đặt chuyến đi tỉnh', 'vừa hỏi giá thuê xe'];
+    function rnd(a) { return a[Math.floor(Math.random() * a.length)]; }
+    function showOne() {
+      var mins = 2 + Math.floor(Math.random() * 18);
+      txt.innerHTML = '<b>Một khách ở ' + rnd(areas) + '</b> ' + rnd(acts) + '<br><span class="ago">' + mins + ' phút trước</span>';
+      pop.classList.add('show');
+      setTimeout(function () { pop.classList.remove('show'); }, 5000);
+    }
+    setTimeout(function () { showOne(); setInterval(showOne, 13000); }, 4000);
+  })();
+</script>
