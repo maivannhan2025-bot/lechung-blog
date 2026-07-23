@@ -1,0 +1,30 @@
+name: Build & Deploy web Lê Chung
+
+# Mỗi khi có bài mới (kể cả bài viết qua Pages CMS đẩy lên GitHub),
+# máy này tự build lại web Astro rồi đăng lên Cloudflare Pages
+# (project lechung-web, trong tài khoản Cloudflare của Lê Chung).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 7f1f6ca5a97b720a663eb8338957a03a
+          command: pages deploy dist --project-name=lechung-web --branch=main
