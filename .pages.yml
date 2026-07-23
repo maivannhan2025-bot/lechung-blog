@@ -46,6 +46,49 @@ content:
         label: Ảnh khung đầu trang (dùng khi ô link video ở trên ĐỂ TRỐNG)
         type: image
         description: 'Bấm để tải ảnh mới lên. Ảnh này chỉ hiện khi ô "Link video YouTube" ở trên để trống.'
+      - name: heroEyebrow
+        label: "Đầu trang — dòng chữ nhỏ phía trên tiêu đề"
+        type: string
+      - name: heroH1
+        label: "Đầu trang — TIÊU ĐỀ LỚN"
+        type: text
+      - name: heroLead
+        label: "Đầu trang — đoạn mô tả dưới tiêu đề"
+        type: text
+      - name: heroTicks
+        label: "Đầu trang — các gạch đầu dòng (mỗi dòng 1 ý)"
+        type: string
+        list: true
+      - name: heroBtnGia
+        label: "Đầu trang — chữ trên nút phụ (mặc định: Xem bảng giá →)"
+        type: string
+      - name: dichVuTag
+        label: "Mục Dịch vụ — nhãn nhỏ"
+        type: string
+      - name: dichVuTitle
+        label: "Mục Dịch vụ — tiêu đề"
+        type: string
+      - name: dichVuIntro
+        label: "Mục Dịch vụ — câu giới thiệu"
+        type: text
+      - name: dichVu
+        label: "Mục Dịch vụ — danh sách loại xe"
+        type: object
+        list:
+          collapsible:
+            summary: "{ten}"
+        fields:
+          - name: img
+            label: Ảnh loại xe
+            type: image
+            description: 'Bấm để tải ảnh mới thay ảnh loại xe này.'
+          - name: ten
+            label: Tên loại xe
+            type: string
+          - name: bullets
+            label: Các dòng mô tả (mỗi dòng 1 ý)
+            type: string
+            list: true
 
   - name: blog
     label: Bài viết Blog

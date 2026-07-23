@@ -25,6 +25,14 @@ function youtubeEmbed(url){
 }
 const heroVideoUrl = youtubeEmbed(trangchu && trangchu.heroVideo);
 const heroAnh = (trangchu && trangchu.heroAnh) || '/img/doi-xe.webp';
+const heroEyebrow = trangchu.heroEyebrow;
+const heroH1 = trangchu.heroH1;
+const heroLead = trangchu.heroLead;
+const heroTicks = trangchu.heroTicks || [];
+const heroBtnGia = trangchu.heroBtnGia;
+const dichVuTag = trangchu.dichVuTag;
+const dichVuTitle = trangchu.dichVuTitle;
+const dichVuIntro = trangchu.dichVuIntro;
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
@@ -80,14 +88,15 @@ const loiIch = [
 ];
 
 // BƯỚC 6 (tiếp) — Dịch vụ / đội xe
-const dichVu = [
-  { img: '/img/xe-8-tan.webp', ten: 'Xe Tải Chở Hàng 8 Tấn', key: ['8 tấn','tải trọng','loại xe'], bullets: ['Kích thước thùng: 7m và 9.5m', 'Thích hợp hàng công nghiệp vừa', 'Thùng bạt / kín bảo vệ an toàn'] },
-  { img: '/img/xe-10-tan.webp', ten: 'Xe Tải Chở Hàng 10 Tấn', key: ['10 tấn','tải trọng','loại xe'], bullets: ['Kích thước thùng: 9.5m - 10m', 'Đáp ứng hàng cồng kềnh dài', 'Đa dạng loại thùng chuyên dụng'] },
-  { img: '/img/xe-15-tan.webp', ten: 'Xe Tải Chở Hàng 15 Tấn', key: ['15 tấn','nguyên chuyến','đi tỉnh'], bullets: ['Tải trọng lớn, tiết kiệm chi phí', 'Chuyên chở nguyên chuyến', 'Vận chuyển đường dài an toàn'] },
-  { img: '/img/xe-20-tan.webp', ten: 'Xe Tải 20 Tấn', key: ['20 tấn','container','nguyên chuyến'], bullets: ['Siêu trọng tải cho công trình', 'Thùng mui bạt và container', 'Phù hợp hàng hóa khối lượng lớn'] },
-  { img: '/img/xe-cau.webp', ten: 'Xe Cẩu Hàng', key: ['cẩu','bốc xếp','nâng hạ'], bullets: ['Đa dạng tải trọng cẩu nâng', 'Xử lý máy móc, vật liệu nặng', 'Vận hành bởi đội ngũ chứng chỉ'] },
-  { img: '/img/doi-xe.webp', ten: 'Xe Container / Đầu Kéo', key: ['container','đầu kéo','cảng','nguyên chuyến'], bullets: ['Container 20 & 40 feet, sơ mi rơ moóc', 'Hàng nguyên container đi cảng / đi tỉnh', 'Đầu kéo tải trọng lớn, chuyên tuyến Bắc–Nam'] },
+const dichVuKeys = [
+  ['8 tấn','tải trọng','loại xe'],
+  ['10 tấn','tải trọng','loại xe'],
+  ['15 tấn','nguyên chuyến','đi tỉnh'],
+  ['20 tấn','container','nguyên chuyến'],
+  ['cẩu','bốc xếp','nâng hạ'],
+  ['container','đầu kéo','cảng','nguyên chuyến'],
 ];
+const dichVu = (trangchu.dichVu || []).map((d, i) => ({ ...d, key: dichVuKeys[i] || [] }));
 
 const khuVuc = [
   { ten: 'TP. Hồ Chí Minh', slug: 'van-chuyen-hang-hoa-noi-thanh-tphcm', kw: ['nội thành', 'tphcm', 'hồ chí minh', 'sài gòn'] },
@@ -402,17 +411,15 @@ const danhGia = [
 <div class="hero">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Vận Tải Lê Chung · Hơn 100 đầu xe tại TP.HCM</p>
-      <h1>Thuê xe tải chở hàng TPHCM đi toàn quốc — an toàn, đúng hẹn, không phát sinh</h1>
-      <p class="lead">Đội xe hơn 100 chiếc tải trọng 8 – 20 tấn, xe cẩu và container/đầu kéo. Nhận chở nguyên chuyến và ghép hàng từ TP.HCM đi 63 tỉnh thành cho cá nhân và doanh nghiệp.</p>
+      <p class="eyebrow">{heroEyebrow}</p>
+      <h1>{heroH1}</h1>
+      <p class="lead">{heroLead}</p>
       <ul class="ticks">
-        <li>Báo giá trọn gói rõ ràng ngay trong ngày</li>
-        <li>Có hợp đồng và hóa đơn VAT đầy đủ</li>
-        <li>Định vị GPS theo dõi hàng 24/7</li>
+        {heroTicks.map((t) => (<li>{t}</li>))}
       </ul>
       <div class="hero-cta">
         <a class="btn-call" href={`tel:${TEL}`}>📞 Gọi ngay {HOTLINE}</a>
-        <a class="ghost" href="#bang-gia">Xem bảng giá →</a>
+        <a class="ghost" href="#bang-gia">{heroBtnGia}</a>
       </div>
     </div>
     <div>
@@ -520,9 +527,9 @@ const danhGia = [
 <section id="dich-vu">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Đội xe & dịch vụ</span>
-      <h2 class="sec-title">Đủ loại xe cho mọi loại hàng</h2>
-      <p style="color:var(--text-soft); margin:0">Đa dạng tải trọng, đáp ứng mọi nhu cầu vận chuyển nội thành và đi tỉnh.</p>
+      <span class="step-tag">{dichVuTag}</span>
+      <h2 class="sec-title">{dichVuTitle}</h2>
+      <p style="color:var(--text-soft); margin:0">{dichVuIntro}</p>
     </div>
     <div class="svc-grid">
       {dichVu.map((d) => (
