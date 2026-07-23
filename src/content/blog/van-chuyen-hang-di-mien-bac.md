@@ -1,10 +1,12 @@
 ---
 title: "Vận chuyển hàng đi Miền Bắc: gửi xe tải TP.HCM ra Hà Nội, Hải Phòng, Bắc Ninh"
-description: "Gửi hàng TP.HCM ra Hà Nội, Hải Phòng, Bắc Ninh chặng gần 1700km: chọn xe 15-20 tấn hay container, đóng gói đường dài và tránh phát sinh dọc đường."
+description: "Gửi hàng TP.HCM ra Hà Nội, Hải Phòng, Bắc Ninh chặng gần 1700km:
+  chọn xe 15-20 tấn hay container, đóng gói đường dài và tránh phát sinh dọc
+  đường."
 ngayDang: 2026-07-23
 thoiGianDoc: 6
+anhDaiDien: /anh/e3f2102f-cdbf-4a37-bae1-74405c70f13f.png
 ---
-
 Gửi hàng từ TP.HCM ra Miền Bắc là một trong những chặng dài nhất nước: quãng đường khoảng **1700km**, xe chạy **3-4 ngày** mới tới nơi. Đường dài như vậy thì cái lo không chỉ là cước, mà còn là **hàng có nguyên vẹn tới nơi không, đi mất mấy ngày, và giữa đường xe đang ở đâu**. Bài này nói thật về tuyến Bắc - Nam để anh/chị chủ hàng chọn đúng loại xe và đóng gói cho chắc, khỏi phát sinh dọc đường.
 
 ## Tuyến Miền Bắc có gì khác các tuyến gần
@@ -25,12 +27,14 @@ Với chặng xa như đi Miền Bắc, lời khuyên thật lòng là **đi ngu
 - **Đi nguyên chuyến** nghĩa là hàng của mình đi riêng một xe, **không dừng gom hàng dọc đường**, không bốc lên hạ xuống nhiều lần. Đường càng dài, mỗi lần trung chuyển là một lần hàng dễ va đập, thất lạc — nguyên chuyến tránh được hết.
 - Chạy một mạch từ kho TP.HCM ra thẳng điểm nhận ngoài Bắc cũng **rút ngắn thời gian** và dễ theo dõi hơn nhiều so với hàng ghép.
 
+
 | Loại hàng đi Bắc | Loại xe hợp | Vì sao |
-| --- | --- | --- |
+| -------------------------------------------------- | -------------------- | --------------------------------------- |
 | Hàng công ty, hàng kho số lượng lớn | Thùng 15 - 20 tấn | Đủ tải, đi một chuyến gọn |
 | Hàng đóng pallet, hàng xuất nhập ra cảng Hải Phòng | Container / đầu kéo | Kín, chắc, hợp chuẩn kho - cảng |
 | Máy móc, hàng nặng, hàng quá khổ | Xe cẩu / đầu kéo sàn | Có cẩu nâng hạ, chở được hàng cồng kềnh |
 | Linh kiện, hàng điện tử đi Bắc Ninh | Thùng kín 15 tấn | Che mưa bụi suốt chặng dài |
+
 
 Nếu chưa chắc hàng của mình hợp xe nào, chỉ cần tả hàng qua điện thoại, bên em tính giúp — đội xe hơn 100 chiếc nên gần như loại nào cũng có sẵn.
 
