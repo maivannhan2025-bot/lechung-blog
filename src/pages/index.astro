@@ -140,30 +140,13 @@ const truCot = [
 ];
 
 // BƯỚC 13 — Bảng giá tham khảo (đã +1%, anh Nhận đã duyệt)
-const bangGia = [
-  { vung: 'Nha Trang · Phan Thiết · Quy Nhơn', t8: '13,1', t10: '15,2', t15: '17,2', t20: '18,2', tg: '1–2 ngày' },
-  { vung: 'Đà Nẵng · Huế · Quảng Ngãi', t8: '16,2', t10: '18,2', t15: '20,2', t20: '22,2', tg: '2–3 ngày' },
-  { vung: 'Vinh · Hà Tĩnh · Thanh Hóa', t8: '19,2', t10: '21,2', t15: '22,2', t20: '23,2', tg: '2–3 ngày' },
-  { vung: 'Ninh Bình · Nam Định', t8: '21,2', t10: '24,2', t15: '26,3', t20: '28,3', tg: '3–4 ngày' },
-  { vung: 'Hà Nội · Bắc Ninh · Hưng Yên', t8: '22,2', t10: '26,3', t15: '30,3', t20: '34,3', tg: '3–4 ngày' },
-  { vung: 'Hải Phòng · Quảng Ninh · Bắc Giang', t8: '25,3', t10: '28,3', t15: '31,3', t20: '36,4', tg: '3–4 ngày' },
-  { vung: 'Lạng Sơn · Yên Bái · Tuyên Quang', t8: '28,3', t10: '30,3', t15: '33,3', t20: '38,4', tg: '4–5 ngày' },
-];
+const bangGia = trangchu.bangGia || [];
 
 // BƯỚC 14 — Quà tặng / cam kết thêm
-const quaTang = [
-  'Khảo sát & báo giá miễn phí, phản hồi trong 30 phút',
-  'Tư vấn chọn đúng loại xe và cách đóng gói cho từng loại hàng',
-  'Cam kết bồi thường nếu hư hỏng do quá trình vận chuyển',
-  'Ưu đãi cước cho khách đi định kỳ và hợp đồng dài hạn',
-];
+const quaTang = trangchu.quaTang || [];
 
 // BƯỚC 15 — Testimonial (lời khách; anh Nhận thay bằng khách thật khi có)
-const danhGia = [
-  { avatar: '/img/khach-1.webp', ten: 'Tôn Thất Hùng', chuc: 'Giám Đốc Sản Xuất, Tập đoàn SMC', noi: 'Kể từ khi giao toàn bộ khâu vận chuyển cho Lê Chung, tỷ lệ chậm trễ của nhà máy chúng tôi giảm rõ rệt. Khối lượng xe lớn giúp đáp ứng tức thời trong các đợt xuất hàng mùa cao điểm.' },
-  { avatar: '/img/khach-2.webp', ten: 'Lê Bích Ngọc', chuc: 'Trưởng Phòng Kho Vận, VinaFood', noi: 'Tôi yên tâm về chất lượng xe và thái độ tài xế Lê Chung. Hàng đi các tỉnh luôn được bảo quản an toàn, giấy tờ biên nhận đầy đủ và đối soát nhanh chóng.' },
-  { avatar: '/img/khach-3.webp', ten: 'Phạm Văn Khang', chuc: 'Giám Đốc Chuỗi Cung Ứng, MegaTech', noi: 'Điều tôi thích nhất là hiếm khi phải nghe câu "hết xe". Năng lực hơn 100 đầu xe giúp chuỗi cung ứng của chúng tôi vận hành liên tục.' },
-];
+const danhGia = trangchu.danhGia || [];
 ---
 <!doctype html>
 <html lang="vi">

@@ -89,6 +89,54 @@ content:
             label: Các dòng mô tả (mỗi dòng 1 ý)
             type: string
             list: true
+      - name: bangGia
+        label: "Bảng giá — danh sách dòng giá theo tuyến"
+        type: object
+        list:
+          collapsible:
+            summary: "{vung}"
+        fields:
+          - name: vung
+            label: Tuyến / vùng
+            type: string
+          - name: t8
+            label: Giá xe 8 tấn (triệu đồng)
+            type: string
+          - name: t10
+            label: Giá xe 10 tấn (triệu đồng)
+            type: string
+          - name: t15
+            label: Giá xe 15 tấn (triệu đồng)
+            type: string
+          - name: t20
+            label: Giá xe 20 tấn (triệu đồng)
+            type: string
+          - name: tg
+            label: Thời gian vận chuyển
+            type: string
+      - name: quaTang
+        label: "Quà tặng / cam kết thêm (mỗi dòng 1 ý)"
+        type: string
+        list: true
+      - name: danhGia
+        label: "Cảm nhận khách hàng"
+        type: object
+        list:
+          collapsible:
+            summary: "{ten}"
+        fields:
+          - name: avatar
+            label: Ảnh khách
+            type: image
+          - name: ten
+            label: Tên khách
+            type: string
+          - name: chuc
+            label: Chức vụ / công ty
+            type: string
+          - name: noi
+            label: Lời cảm nhận
+            type: text
 
   - name: blog
     label: Bài viết Blog

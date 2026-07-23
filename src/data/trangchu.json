@@ -1,4 +1,68 @@
 {
   "heroVideo": "https://youtu.be/dLhyM0OBsSA?si=4h3TPyUvDXPAkvxD",
-  "heroAnh": "/anh/trangchu-anh.webp"
+  "heroAnh": "/anh/trangchu-anh.webp",
+  "heroEyebrow": "Vận Tải Lê Chung · Hơn 100 đầu xe tại TP.HCM",
+  "heroH1": "Thuê xe tải chở hàng TPHCM đi toàn quốc — an toàn, đúng hẹn, không phát sinh",
+  "heroLead": "Đội xe hơn 100 chiếc tải trọng 8 – 20 tấn, xe cẩu và container/đầu kéo. Nhận chở nguyên chuyến và ghép hàng từ TP.HCM đi 63 tỉnh thành cho cá nhân và doanh nghiệp.",
+  "heroTicks": [
+    "Báo giá trọn gói rõ ràng ngay trong ngày",
+    "Có hợp đồng và hóa đơn VAT đầy đủ",
+    "Định vị GPS theo dõi hàng 24/7"
+  ],
+  "heroBtnGia": "Xem bảng giá →",
+  "dichVuTag": "Đội xe & dịch vụ",
+  "dichVuTitle": "Đủ loại xe cho mọi loại hàng",
+  "dichVuIntro": "Đa dạng tải trọng, đáp ứng mọi nhu cầu vận chuyển nội thành và đi tỉnh.",
+  "dichVu": [
+    {
+      "img": "/anh/xe-8-tan.webp",
+      "ten": "Xe Tải Chở Hàng 8 Tấn",
+      "bullets": ["Kích thước thùng: 7m và 9.5m", "Thích hợp hàng công nghiệp vừa", "Thùng bạt / kín bảo vệ an toàn"]
+    },
+    {
+      "img": "/anh/xe-10-tan.webp",
+      "ten": "Xe Tải Chở Hàng 10 Tấn",
+      "bullets": ["Kích thước thùng: 9.5m - 10m", "Đáp ứng hàng cồng kềnh dài", "Đa dạng loại thùng chuyên dụng"]
+    },
+    {
+      "img": "/anh/xe-15-tan.webp",
+      "ten": "Xe Tải Chở Hàng 15 Tấn",
+      "bullets": ["Tải trọng lớn, tiết kiệm chi phí", "Chuyên chở nguyên chuyến", "Vận chuyển đường dài an toàn"]
+    },
+    {
+      "img": "/anh/xe-20-tan.webp",
+      "ten": "Xe Tải 20 Tấn",
+      "bullets": ["Siêu trọng tải cho công trình", "Thùng mui bạt và container", "Phù hợp hàng hóa khối lượng lớn"]
+    },
+    {
+      "img": "/anh/xe-cau.webp",
+      "ten": "Xe Cẩu Hàng",
+      "bullets": ["Đa dạng tải trọng cẩu nâng", "Xử lý máy móc, vật liệu nặng", "Vận hành bởi đội ngũ chứng chỉ"]
+    },
+    {
+      "img": "/anh/xe-container.webp",
+      "ten": "Xe Container / Đầu Kéo",
+      "bullets": ["Container 20 & 40 feet, sơ mi rơ moóc", "Hàng nguyên container đi cảng / đi tỉnh", "Đầu kéo tải trọng lớn, chuyên tuyến Bắc–Nam"]
+    }
+  ],
+  "bangGia": [
+    { "vung": "Nha Trang · Phan Thiết · Quy Nhơn", "t8": "13,1", "t10": "15,2", "t15": "17,2", "t20": "18,2", "tg": "1–2 ngày" },
+    { "vung": "Đà Nẵng · Huế · Quảng Ngãi", "t8": "16,2", "t10": "18,2", "t15": "20,2", "t20": "22,2", "tg": "2–3 ngày" },
+    { "vung": "Vinh · Hà Tĩnh · Thanh Hóa", "t8": "19,2", "t10": "21,2", "t15": "22,2", "t20": "23,2", "tg": "2–3 ngày" },
+    { "vung": "Ninh Bình · Nam Định", "t8": "21,2", "t10": "24,2", "t15": "26,3", "t20": "28,3", "tg": "3–4 ngày" },
+    { "vung": "Hà Nội · Bắc Ninh · Hưng Yên", "t8": "22,2", "t10": "26,3", "t15": "30,3", "t20": "34,3", "tg": "3–4 ngày" },
+    { "vung": "Hải Phòng · Quảng Ninh · Bắc Giang", "t8": "25,3", "t10": "28,3", "t15": "31,3", "t20": "36,4", "tg": "3–4 ngày" },
+    { "vung": "Lạng Sơn · Yên Bái · Tuyên Quang", "t8": "28,3", "t10": "30,3", "t15": "33,3", "t20": "38,4", "tg": "4–5 ngày" }
+  ],
+  "quaTang": [
+    "Khảo sát & báo giá miễn phí, phản hồi trong 30 phút",
+    "Tư vấn chọn đúng loại xe và cách đóng gói cho từng loại hàng",
+    "Cam kết bồi thường nếu hư hỏng do quá trình vận chuyển",
+    "Ưu đãi cước cho khách đi định kỳ và hợp đồng dài hạn"
+  ],
+  "danhGia": [
+    { "avatar": "/anh/khach-1.webp", "ten": "Tôn Thất Hùng", "chuc": "Giám Đốc Sản Xuất, Tập đoàn SMC", "noi": "Kể từ khi giao toàn bộ khâu vận chuyển cho Lê Chung, tỷ lệ chậm trễ của nhà máy chúng tôi giảm rõ rệt. Khối lượng xe lớn giúp đáp ứng tức thời trong các đợt xuất hàng mùa cao điểm." },
+    { "avatar": "/anh/khach-2.webp", "ten": "Lê Bích Ngọc", "chuc": "Trưởng Phòng Kho Vận, VinaFood", "noi": "Tôi yên tâm về chất lượng xe và thái độ tài xế Lê Chung. Hàng đi các tỉnh luôn được bảo quản an toàn, giấy tờ biên nhận đầy đủ và đối soát nhanh chóng." },
+    { "avatar": "/anh/khach-3.webp", "ten": "Phạm Văn Khang", "chuc": "Giám Đốc Chuỗi Cung Ứng, MegaTech", "noi": "Điều tôi thích nhất là hiếm khi phải nghe câu \"hết xe\". Năng lực hơn 100 đầu xe giúp chuỗi cung ứng của chúng tôi vận hành liên tục." }
+  ]
 }
