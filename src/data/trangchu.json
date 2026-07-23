@@ -151,5 +151,136 @@
       "chuc": "Giám Đốc Chuỗi Cung Ứng, MegaTech",
       "noi": "Điều tôi thích nhất là hiếm khi phải nghe câu \"hết xe\". Năng lực hơn 100 đầu xe giúp chuỗi cung ứng của chúng tôi vận hành liên tục."
     }
-  ]
+  ],
+  "badges": [
+    "Hơn 100 xe tải sẵn sàng",
+    "Có mặt sau 30 phút nội thành",
+    "Hóa đơn VAT đầy đủ",
+    "Phục vụ 24/7"
+  ],
+  "secNoiDau": {
+    "tag": "Bạn có đang gặp?",
+    "title": "Gửi hàng cho xe ngoài — những nỗi lo quen thuộc",
+    "intro": "Đây là những rắc rối mà chủ hàng và doanh nghiệp gặp nhiều nhất khi chọn nhầm đơn vị vận chuyển."
+  },
+  "noiDau": [
+    { "t": "Giao Hàng Chậm Trễ", "d": "Hàng đến nơi trễ hẹn làm đứt gãy sản xuất và mất uy tín với đối tác của bạn." },
+    { "t": "Hàng Hoá Hư Hỏng", "d": "Bốc xếp và vận chuyển cẩu thả dẫn đến móp méo, vỡ nát hàng giá trị cao." },
+    { "t": "Chi Phí Phát Sinh", "d": "Báo giá mập mờ lúc đầu, sau đó cộng thêm hàng loạt khoản phí ẩn không báo trước." },
+    { "t": "Thiếu Xe Mùa Cao Điểm", "d": "Cần gấp mà không tìm được xe đúng tải, nhất là dịp lễ Tết hay đơn hàng đột xuất." }
+  ],
+  "secUyTin": {
+    "tag": "Vì sao tin Lê Chung",
+    "title": "Một đơn vị vận tải có pháp nhân, có trách nhiệm",
+    "intro": "Hơn 10 năm trong nghề, Lê Chung làm vận tải bằng xe của mình và cam kết bằng giấy tờ rõ ràng — không phải nhà xe trôi nổi."
+  },
+  "uyTin": [
+    { "t": "Pháp nhân rõ ràng", "d": "CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — MST 0314664033, địa chỉ và hợp đồng minh bạch, không phải xe trôi nổi." },
+    { "t": "Đội xe sở hữu hơn 100 chiếc", "d": "Xe 8 – 20 tấn, xe cẩu và container/đầu kéo đều là xe của Lê Chung — chủ động điều phối, không phụ thuộc xe thuê ngoài." },
+    { "t": "Hợp đồng + hóa đơn VAT", "d": "Mọi chuyến đều có hợp đồng vận chuyển và hóa đơn GTGT (VAT) hợp lệ, chứng từ giao nhận đầy đủ để đối soát." },
+    { "t": "Định vị GPS 24/7", "d": "Toàn bộ xe gắn GPS, theo dõi hành trình theo thời gian thực — hàng của bạn luôn nằm trong tầm mắt." }
+  ],
+  "secTruocSau": {
+    "tag": "Trước & Sau",
+    "title": "Khác biệt khi có Lê Chung đồng hành",
+    "truocTitle": "Trước — tự lo với xe ngoài",
+    "sauTitle": "Sau — đi cùng Lê Chung"
+  },
+  "truoc": [
+    "Gọi nhiều nơi mới có xe, lại không đúng tải",
+    "Giá báo một đằng, thanh toán một nẻo",
+    "Hàng tới trễ, móp vỡ mà không ai chịu trách nhiệm",
+    "Không hợp đồng, không hóa đơn, khó đối soát"
+  ],
+  "sau": [
+    "Một cuộc gọi là có xe đúng loại hàng",
+    "Báo giá trọn gói, rõ ràng từ đầu",
+    "Hàng đúng hẹn, nguyên vẹn, có người chịu trách nhiệm",
+    "Hợp đồng + hóa đơn VAT minh bạch"
+  ],
+  "secLoiIch": {
+    "tag": "Lợi ích cho bạn",
+    "title": "Không chỉ là chiếc xe — là sự an tâm",
+    "intro": "Mỗi thế mạnh của Lê Chung đều quy về một điều bạn nhận được."
+  },
+  "loiIch": [
+    { "t": "Đội xe đa tải trọng, sở hữu riêng", "d": "Từ xe 8 tấn tới container/đầu kéo đều là xe của Lê Chung — nghĩa là bạn luôn có đúng xe cho loại hàng của mình, không phải chờ, không chia nhỏ hàng, không trả cước thừa." },
+    { "t": "Định vị GPS theo dõi 24/7", "d": "Mọi xe đều gắn GPS — nghĩa là bạn chủ động biết hàng đang ở đâu, tới lúc nào để báo người nhận chuẩn bị, khỏi gọi hỏi tài xế liên tục." },
+    { "t": "Cước minh bạch, ổn định", "d": "Báo giá trọn gói, giữ giá cả mùa cao điểm — nghĩa là bạn dễ tính chi phí, không lo bị hét giá hay cộng phí ẩn giữa chừng." },
+    { "t": "Bốc xếp chuyên nghiệp, có xe nâng", "d": "Đội bốc xếp được đào tạo, có xe nâng chuyên dụng — nghĩa là hàng lên xuống nhanh và an toàn, bạn đỡ tốn công người và giảm rủi ro móp vỡ." }
+  ],
+  "secKhuVuc": {
+    "tag": "Khu vực phục vụ",
+    "title": "Đâu cần Lê Chung có, đâu khó có Lê Chung",
+    "intro": "Nhận vận chuyển hai chiều từ TP.HCM đi khắp 63 tỉnh thành. Bấm vào khu vực để xem kinh nghiệm gửi hàng tuyến đó."
+  },
+  "camXuc": {
+    "big": "Một chuyến hàng tới trễ hay hư hỏng có thể khiến bạn mất một khách hàng đã gây dựng nhiều năm.",
+    "small": "Chọn đơn vị vận tải có trách nhiệm chính là bảo vệ uy tín của bạn."
+  },
+  "secQuyTrinh": {
+    "tag": "Quy trình 4 bước",
+    "title": "Đặt xe nhanh gọn, không rườm rà"
+  },
+  "quyTrinh": [
+    { "s": "01", "t": "Gọi & khảo sát", "d": "Bạn gọi 0839 861 499, mô tả hàng. Chúng tôi tư vấn loại xe phù hợp nhất." },
+    { "s": "02", "t": "Báo giá & chốt", "d": "Nhận báo giá trọn gói rõ ràng, thống nhất phương án và ký hợp đồng." },
+    { "s": "03", "t": "Điều xe & giám sát", "d": "Điều xe đúng hẹn lấy hàng, giám sát hành trình GPS liên tục, an toàn tuyệt đối." },
+    { "s": "04", "t": "Giao & xác nhận", "d": "Giao đúng tiến độ, nghiệm thu nguyên vẹn, hoàn tất chứng từ và hóa đơn VAT." }
+  ],
+  "secGiaTriLon": {
+    "tag": "Giá trị bạn nhận được",
+    "title": "Thuê Lê Chung là mua sự yên tâm"
+  },
+  "giaTriLon": [
+    { "t": "Tiết kiệm thời gian điều phối", "d": "Một cuộc gọi là có xe đúng tải, khỏi mất buổi đi tìm và trả giá với nhiều nhà xe." },
+    { "t": "Tránh rủi ro & chi phí đền bù", "d": "Hàng đi an toàn, có bảo hiểm và cam kết bồi thường — bạn không phải gánh thiệt hại khi có sự cố." },
+    { "t": "Giữ uy tín với khách của bạn", "d": "Giao đúng hẹn giúp bạn giữ lời với đối tác — thứ còn quý hơn cả tiền cước." },
+    { "t": "Rảnh tay lo việc kinh doanh", "d": "Khâu vận chuyển có người lo tới nơi, bạn tập trung vào bán hàng và sản xuất." }
+  ],
+  "secObjections": {
+    "tag": "Còn băn khoăn?",
+    "title": "Chúng tôi trả lời thẳng"
+  },
+  "objections": [
+    { "q": "Tôi sợ báo một giá rồi lúc thanh toán lại phát sinh thêm?", "a": "Lê Chung báo giá trọn gói và ghi rõ đã gồm những gì trước khi xe chạy — không phí ẩn. Có hợp đồng và hóa đơn GTGT (VAT) đầy đủ để bạn đối soát minh bạch." },
+    { "q": "Lỡ hàng hư hỏng hoặc thất lạc thì sao?", "a": "Mọi chuyến đều có thể mua bảo hiểm hàng hóa 100% giá trị theo quy định. Nếu hư hỏng do quá trình vận chuyển, Lê Chung cam kết bồi thường — bạn không chịu thiệt một mình." },
+    { "q": "Tôi cần xe gấp, có kịp không?", "a": "Đội hơn 100 xe luôn có xe trực. Nội thành TP.HCM thường có mặt sau khoảng 30 phút; đi tỉnh chỉ cần đặt trước 1–2 ngày để giữ đúng chuyến bạn cần." },
+    { "q": "Thời gian giao hàng liên tỉnh mất bao lâu?", "a": "Tùy tuyến: đi miền Trung khoảng 1–2 ngày, miền Bắc khoảng 3–4 ngày. Chúng tôi cam kết đúng tiến độ đã thỏa thuận và cho bạn theo dõi hành trình qua GPS." },
+    { "q": "Tôi cần chuẩn bị thông tin gì để nhận báo giá?", "a": "Chỉ cần cho biết: loại hàng, khối lượng/kích thước, điểm lấy và điểm giao. Gọi 0839 861 499, chuyên viên tính lộ trình và báo giá tối ưu ngay." }
+  ],
+  "secTruCot": {
+    "tag": "Lý do chọn chúng tôi",
+    "title": "Lê Chung theo đuổi cách làm vận tải tử tế",
+    "intro": "Không hoa mỹ. Chỉ ba điều, làm cho bằng được trên mọi chuyến hàng."
+  },
+  "truCot": [
+    { "t": "Đúng giờ", "d": "Giữ đúng lịch đã hẹn, vì trễ một chuyến là ảnh hưởng cả việc của bạn." },
+    { "t": "Đúng giá", "d": "Báo sao thu vậy, trọn gói, không hét giá, không phí ẩn." },
+    { "t": "Có trách nhiệm", "d": "Theo hàng tới cùng, có sự cố là có người đứng ra xử lý và bồi thường." }
+  ],
+  "gioiHan": {
+    "title": "Đặt xe đi tỉnh trước 1–2 ngày để giữ đúng chuyến",
+    "body": "Lịch xe đi tỉnh chạy theo khung ngày cố định và thường kín chỗ vào cao điểm, cuối tuần và dịp lễ Tết. Đặt sớm để chắc chắn có xe đúng ngày bạn cần. Khách đi định kỳ hoặc ký hợp đồng dài hạn được ưu tiên xe và mức cước tốt hơn."
+  },
+  "secBangGia": {
+    "tag": "Bảng giá cước tham khảo",
+    "title": "Giá thuê xe tải chở hàng đi tỉnh"
+  },
+  "secQuaTang": {
+    "tag": "Khi chọn Lê Chung, bạn được thêm",
+    "title": "Quà tặng đi kèm mọi chuyến hàng"
+  },
+  "secDanhGia": {
+    "tag": "Khách hàng nói gì",
+    "title": "Đối tác tin tưởng"
+  },
+  "secBlog": {
+    "tag": "Kinh nghiệm vận chuyển",
+    "title": "Đọc trước khi thuê xe cho chắc"
+  },
+  "ctaCuoi": {
+    "title": "Sẵn sàng cho chuyến hàng an toàn, đúng hẹn?",
+    "body": "Gọi Lê Chung để nhận khảo sát và báo giá miễn phí trong 30 phút. Đội xe hơn 100 chiếc luôn sẵn sàng."
+  }
 }

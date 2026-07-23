@@ -137,6 +137,293 @@ content:
           - name: noi
             label: Lời cảm nhận
             type: text
+      - name: badges
+        label: "Dải cam dưới đầu trang (mỗi ô 1 dòng)"
+        type: string
+        list: true
+      - name: secNoiDau
+        label: "Nỗi lo — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: intro
+            label: Câu giới thiệu
+            type: text
+      - name: noiDau
+        label: "Nỗi lo — danh sách thẻ"
+        type: object
+        list:
+          collapsible:
+            summary: "{t}"
+        fields:
+          - name: t
+            label: Tiêu đề thẻ
+            type: string
+          - name: d
+            label: Mô tả
+            type: text
+      - name: secUyTin
+        label: "Uy tín — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: intro
+            label: Câu giới thiệu
+            type: text
+      - name: uyTin
+        label: "Uy tín — danh sách thẻ"
+        type: object
+        list:
+          collapsible:
+            summary: "{t}"
+        fields:
+          - name: t
+            label: Tiêu đề thẻ
+            type: string
+          - name: d
+            label: Mô tả
+            type: text
+      - name: secTruocSau
+        label: "Trước / Sau — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: truocTitle
+            label: Tiêu đề cột TRƯỚC
+            type: string
+          - name: sauTitle
+            label: Tiêu đề cột SAU
+            type: string
+      - name: truoc
+        label: "Trước — các dòng (mỗi dòng 1 ý)"
+        type: string
+        list: true
+      - name: sau
+        label: "Sau — các dòng (mỗi dòng 1 ý)"
+        type: string
+        list: true
+      - name: secLoiIch
+        label: "Lợi ích — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: intro
+            label: Câu giới thiệu
+            type: text
+      - name: loiIch
+        label: "Lợi ích — danh sách thẻ"
+        type: object
+        list:
+          collapsible:
+            summary: "{t}"
+        fields:
+          - name: t
+            label: Tiêu đề thẻ
+            type: string
+          - name: d
+            label: Mô tả
+            type: text
+      - name: secKhuVuc
+        label: "Khu vực — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: intro
+            label: Câu giới thiệu
+            type: text
+      - name: camXuc
+        label: "Câu chạm cảm xúc"
+        type: object
+        fields:
+          - name: big
+            label: Câu lớn
+            type: text
+          - name: small
+            label: Câu nhỏ bên dưới
+            type: text
+      - name: secQuyTrinh
+        label: "Quy trình — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+      - name: quyTrinh
+        label: "Quy trình — các bước"
+        type: object
+        list:
+          collapsible:
+            summary: "{t}"
+        fields:
+          - name: s
+            label: Số thứ tự (01, 02…)
+            type: string
+          - name: t
+            label: Tên bước
+            type: string
+          - name: d
+            label: Mô tả bước
+            type: text
+      - name: secGiaTriLon
+        label: "Giá trị lớn — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+      - name: giaTriLon
+        label: "Giá trị lớn — danh sách thẻ"
+        type: object
+        list:
+          collapsible:
+            summary: "{t}"
+        fields:
+          - name: t
+            label: Tiêu đề thẻ
+            type: string
+          - name: d
+            label: Mô tả
+            type: text
+      - name: secObjections
+        label: "Hỏi – Đáp — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+      - name: objections
+        label: "Hỏi – Đáp — danh sách câu hỏi"
+        type: object
+        list:
+          collapsible:
+            summary: "{q}"
+        fields:
+          - name: q
+            label: Câu hỏi
+            type: string
+          - name: a
+            label: Câu trả lời
+            type: text
+      - name: secTruCot
+        label: "Lý do mua — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: intro
+            label: Câu giới thiệu
+            type: text
+      - name: truCot
+        label: "Lý do mua — 3 trụ cột"
+        type: object
+        list:
+          collapsible:
+            summary: "{t}"
+        fields:
+          - name: t
+            label: Tên trụ cột
+            type: string
+          - name: d
+            label: Mô tả
+            type: text
+      - name: gioiHan
+        label: "Nhắc đặt sớm (giới hạn)"
+        type: object
+        fields:
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: body
+            label: Nội dung
+            type: text
+      - name: secBangGia
+        label: "Bảng giá — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+      - name: secQuaTang
+        label: "Quà tặng — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+      - name: secDanhGia
+        label: "Cảm nhận khách — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+      - name: secBlog
+        label: "Blog kinh nghiệm — tiêu đề mục"
+        type: object
+        fields:
+          - name: tag
+            label: Nhãn nhỏ
+            type: string
+          - name: title
+            label: Tiêu đề
+            type: string
+      - name: ctaCuoi
+        label: "Kêu gọi cuối trang (CTA)"
+        type: object
+        fields:
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: body
+            label: Nội dung
+            type: text
 
   - name: blog
     label: Bài viết Blog

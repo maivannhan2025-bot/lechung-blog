@@ -59,33 +59,12 @@ function areaHref(a) {
 }
 const teaserPosts = posts.slice(0, 3);
 
-// BƯỚC 3 — Nỗi đau
-const noiDau = [
-  { t: 'Giao Hàng Chậm Trễ', d: 'Hàng đến nơi trễ hẹn làm đứt gãy sản xuất và mất uy tín với đối tác của bạn.' },
-  { t: 'Hàng Hoá Hư Hỏng', d: 'Bốc xếp và vận chuyển cẩu thả dẫn đến móp méo, vỡ nát hàng giá trị cao.' },
-  { t: 'Chi Phí Phát Sinh', d: 'Báo giá mập mờ lúc đầu, sau đó cộng thêm hàng loạt khoản phí ẩn không báo trước.' },
-  { t: 'Thiếu Xe Mùa Cao Điểm', d: 'Cần gấp mà không tìm được xe đúng tải, nhất là dịp lễ Tết hay đơn hàng đột xuất.' },
-];
-
-// BƯỚC 4 — Uy tín người bán
-const uyTin = [
-  { t: 'Pháp nhân rõ ràng', d: 'CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — MST 0314664033, địa chỉ và hợp đồng minh bạch, không phải xe trôi nổi.' },
-  { t: 'Đội xe sở hữu hơn 100 chiếc', d: 'Xe 8 – 20 tấn, xe cẩu và container/đầu kéo đều là xe của Lê Chung — chủ động điều phối, không phụ thuộc xe thuê ngoài.' },
-  { t: 'Hợp đồng + hóa đơn VAT', d: 'Mọi chuyến đều có hợp đồng vận chuyển và hóa đơn GTGT (VAT) hợp lệ, chứng từ giao nhận đầy đủ để đối soát.' },
-  { t: 'Định vị GPS 24/7', d: 'Toàn bộ xe gắn GPS, theo dõi hành trình theo thời gian thực — hàng của bạn luôn nằm trong tầm mắt.' },
-];
-
-// BƯỚC 5 — Before / After
-const truoc = ['Gọi nhiều nơi mới có xe, lại không đúng tải', 'Giá báo một đằng, thanh toán một nẻo', 'Hàng tới trễ, móp vỡ mà không ai chịu trách nhiệm', 'Không hợp đồng, không hóa đơn, khó đối soát'];
-const sau = ['Một cuộc gọi là có xe đúng loại hàng', 'Báo giá trọn gói, rõ ràng từ đầu', 'Hàng đúng hẹn, nguyên vẹn, có người chịu trách nhiệm', 'Hợp đồng + hóa đơn VAT minh bạch'];
-
-// BƯỚC 6 — Lợi ích (tính năng → nghĩa là bạn được)
-const loiIch = [
-  { t: 'Đội xe đa tải trọng, sở hữu riêng', d: 'Từ xe 8 tấn tới container/đầu kéo đều là xe của Lê Chung — nghĩa là bạn luôn có đúng xe cho loại hàng của mình, không phải chờ, không chia nhỏ hàng, không trả cước thừa.' },
-  { t: 'Định vị GPS theo dõi 24/7', d: 'Mọi xe đều gắn GPS — nghĩa là bạn chủ động biết hàng đang ở đâu, tới lúc nào để báo người nhận chuẩn bị, khỏi gọi hỏi tài xế liên tục.' },
-  { t: 'Cước minh bạch, ổn định', d: 'Báo giá trọn gói, giữ giá cả mùa cao điểm — nghĩa là bạn dễ tính chi phí, không lo bị hét giá hay cộng phí ẩn giữa chừng.' },
-  { t: 'Bốc xếp chuyên nghiệp, có xe nâng', d: 'Đội bốc xếp được đào tạo, có xe nâng chuyên dụng — nghĩa là hàng lên xuống nhanh và an toàn, bạn đỡ tốn công người và giảm rủi ro móp vỡ.' },
-];
+// Dữ liệu các mục — đọc từ trangchu.json (sửa qua /admin)
+const noiDau = trangchu.noiDau || [];
+const uyTin = trangchu.uyTin || [];
+const truoc = trangchu.truoc || [];
+const sau = trangchu.sau || [];
+const loiIch = trangchu.loiIch || [];
 
 // BƯỚC 6 (tiếp) — Dịch vụ / đội xe
 const dichVuKeys = [
@@ -107,37 +86,10 @@ const khuVuc = [
   { ten: 'Miền Bắc', slug: 'van-chuyen-hang-di-mien-bac', kw: ['miền bắc', 'hà nội', 'hải phòng'] },
 ];
 
-// BƯỚC 8 — Quy trình rõ ràng
-const quyTrinh = [
-  { s: '01', t: 'Gọi & khảo sát', d: 'Bạn gọi ' + HOTLINE + ', mô tả hàng. Chúng tôi tư vấn loại xe phù hợp nhất.' },
-  { s: '02', t: 'Báo giá & chốt', d: 'Nhận báo giá trọn gói rõ ràng, thống nhất phương án và ký hợp đồng.' },
-  { s: '03', t: 'Điều xe & giám sát', d: 'Điều xe đúng hẹn lấy hàng, giám sát hành trình GPS liên tục, an toàn tuyệt đối.' },
-  { s: '04', t: 'Giao & xác nhận', d: 'Giao đúng tiến độ, nghiệm thu nguyên vẹn, hoàn tất chứng từ và hóa đơn VAT.' },
-];
-
-// BƯỚC 9 — Giá trị lớn (lợi ích của lợi ích)
-const giaTriLon = [
-  { t: 'Tiết kiệm thời gian điều phối', d: 'Một cuộc gọi là có xe đúng tải, khỏi mất buổi đi tìm và trả giá với nhiều nhà xe.' },
-  { t: 'Tránh rủi ro & chi phí đền bù', d: 'Hàng đi an toàn, có bảo hiểm và cam kết bồi thường — bạn không phải gánh thiệt hại khi có sự cố.' },
-  { t: 'Giữ uy tín với khách của bạn', d: 'Giao đúng hẹn giúp bạn giữ lời với đối tác — thứ còn quý hơn cả tiền cước.' },
-  { t: 'Rảnh tay lo việc kinh doanh', d: 'Khâu vận chuyển có người lo tới nơi, bạn tập trung vào bán hàng và sản xuất.' },
-];
-
-// BƯỚC 10 — Xử lý từ chối
-const objections = [
-  { q: 'Tôi sợ báo một giá rồi lúc thanh toán lại phát sinh thêm?', a: 'Lê Chung báo giá trọn gói và ghi rõ đã gồm những gì trước khi xe chạy — không phí ẩn. Có hợp đồng và hóa đơn GTGT (VAT) đầy đủ để bạn đối soát minh bạch.' },
-  { q: 'Lỡ hàng hư hỏng hoặc thất lạc thì sao?', a: 'Mọi chuyến đều có thể mua bảo hiểm hàng hóa 100% giá trị theo quy định. Nếu hư hỏng do quá trình vận chuyển, Lê Chung cam kết bồi thường — bạn không chịu thiệt một mình.' },
-  { q: 'Tôi cần xe gấp, có kịp không?', a: 'Đội hơn 100 xe luôn có xe trực. Nội thành TP.HCM thường có mặt sau khoảng 30 phút; đi tỉnh chỉ cần đặt trước 1–2 ngày để giữ đúng chuyến bạn cần.' },
-  { q: 'Thời gian giao hàng liên tỉnh mất bao lâu?', a: 'Tùy tuyến: đi miền Trung khoảng 1–2 ngày, miền Bắc khoảng 3–4 ngày. Chúng tôi cam kết đúng tiến độ đã thỏa thuận và cho bạn theo dõi hành trình qua GPS.' },
-  { q: 'Tôi cần chuẩn bị thông tin gì để nhận báo giá?', a: 'Chỉ cần cho biết: loại hàng, khối lượng/kích thước, điểm lấy và điểm giao. Gọi ' + HOTLINE + ', chuyên viên tính lộ trình và báo giá tối ưu ngay.' },
-];
-
-// BƯỚC 11 — Lý do mua (sứ mệnh)
-const truCot = [
-  { t: 'Đúng giờ', d: 'Giữ đúng lịch đã hẹn, vì trễ một chuyến là ảnh hưởng cả việc của bạn.' },
-  { t: 'Đúng giá', d: 'Báo sao thu vậy, trọn gói, không hét giá, không phí ẩn.' },
-  { t: 'Có trách nhiệm', d: 'Theo hàng tới cùng, có sự cố là có người đứng ra xử lý và bồi thường.' },
-];
+const quyTrinh = trangchu.quyTrinh || [];
+const giaTriLon = trangchu.giaTriLon || [];
+const objections = trangchu.objections || [];
+const truCot = trangchu.truCot || [];
 
 // BƯỚC 13 — Bảng giá tham khảo (đã +1%, anh Nhận đã duyệt)
 const bangGia = trangchu.bangGia || [];
@@ -147,6 +99,25 @@ const quaTang = trangchu.quaTang || [];
 
 // BƯỚC 15 — Testimonial (lời khách; anh Nhận thay bằng khách thật khi có)
 const danhGia = trangchu.danhGia || [];
+
+// Nhãn + tiêu đề các mục (sửa qua /admin)
+const badges = trangchu.badges || [];
+const secNoiDau = trangchu.secNoiDau || {};
+const secUyTin = trangchu.secUyTin || {};
+const secTruocSau = trangchu.secTruocSau || {};
+const secLoiIch = trangchu.secLoiIch || {};
+const secKhuVuc = trangchu.secKhuVuc || {};
+const camXuc = trangchu.camXuc || {};
+const secQuyTrinh = trangchu.secQuyTrinh || {};
+const secGiaTriLon = trangchu.secGiaTriLon || {};
+const secObjections = trangchu.secObjections || {};
+const secTruCot = trangchu.secTruCot || {};
+const gioiHan = trangchu.gioiHan || {};
+const secBangGia = trangchu.secBangGia || {};
+const secQuaTang = trangchu.secQuaTang || {};
+const secDanhGia = trangchu.secDanhGia || {};
+const secBlog = trangchu.secBlog || {};
+const ctaCuoi = trangchu.ctaCuoi || {};
 ---
 <!doctype html>
 <html lang="vi">
@@ -420,10 +391,7 @@ const danhGia = trangchu.danhGia || [];
 <!-- Dải cam bằng chứng nhanh -->
 <div class="badges">
   <div class="wrap">
-    <span>Hơn 100 xe tải sẵn sàng</span>
-    <span>Có mặt sau 30 phút nội thành</span>
-    <span>Hóa đơn VAT đầy đủ</span>
-    <span>Phục vụ 24/7</span>
+    {badges.map((b) => (<span>{b}</span>))}
   </div>
 </div>
 
@@ -431,9 +399,9 @@ const danhGia = trangchu.danhGia || [];
 <section>
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Bạn có đang gặp?</span>
-      <h2 class="sec-title">Gửi hàng cho xe ngoài — những nỗi lo quen thuộc</h2>
-      <p style="color:var(--text-soft); margin:0">Đây là những rắc rối mà chủ hàng và doanh nghiệp gặp nhiều nhất khi chọn nhầm đơn vị vận chuyển.</p>
+      <span class="step-tag">{secNoiDau.tag}</span>
+      <h2 class="sec-title">{secNoiDau.title}</h2>
+      <p style="color:var(--text-soft); margin:0">{secNoiDau.intro}</p>
     </div>
     <div class="grid4">
       {noiDau.map((n) => (
@@ -451,9 +419,9 @@ const danhGia = trangchu.danhGia || [];
 <section style="background:var(--panel)">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Vì sao tin Lê Chung</span>
-      <h2 class="sec-title">Một đơn vị vận tải có pháp nhân, có trách nhiệm</h2>
-      <p style="color:var(--text-soft); margin:0">Hơn 10 năm trong nghề, Lê Chung làm vận tải bằng xe của mình và cam kết bằng giấy tờ rõ ràng — không phải nhà xe trôi nổi.</p>
+      <span class="step-tag">{secUyTin.tag}</span>
+      <h2 class="sec-title">{secUyTin.title}</h2>
+      <p style="color:var(--text-soft); margin:0">{secUyTin.intro}</p>
     </div>
     <div class="adv-grid">
       {uyTin.map((u) => (
@@ -470,16 +438,16 @@ const danhGia = trangchu.danhGia || [];
 <section>
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Trước & Sau</span>
-      <h2 class="sec-title">Khác biệt khi có Lê Chung đồng hành</h2>
+      <span class="step-tag">{secTruocSau.tag}</span>
+      <h2 class="sec-title">{secTruocSau.title}</h2>
     </div>
     <div class="ba">
       <div class="col before">
-        <h3>Trước — tự lo với xe ngoài</h3>
+        <h3>{secTruocSau.truocTitle}</h3>
         <ul>{truoc.map((t) => (<li>{t}</li>))}</ul>
       </div>
       <div class="col after">
-        <h3>Sau — đi cùng Lê Chung</h3>
+        <h3>{secTruocSau.sauTitle}</h3>
         <ul>{sau.map((t) => (<li>{t}</li>))}</ul>
       </div>
     </div>
@@ -490,9 +458,9 @@ const danhGia = trangchu.danhGia || [];
 <section style="background:var(--panel)">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Lợi ích cho bạn</span>
-      <h2 class="sec-title">Không chỉ là chiếc xe — là sự an tâm</h2>
-      <p style="color:var(--text-soft); margin:0">Mỗi thế mạnh của Lê Chung đều quy về một điều bạn nhận được.</p>
+      <span class="step-tag">{secLoiIch.tag}</span>
+      <h2 class="sec-title">{secLoiIch.title}</h2>
+      <p style="color:var(--text-soft); margin:0">{secLoiIch.intro}</p>
     </div>
     <div class="adv-grid">
       {loiIch.map((u) => (
@@ -535,9 +503,9 @@ const danhGia = trangchu.danhGia || [];
 <!-- Khu vực phục vụ -->
 <section id="khu-vuc" class="area">
   <div class="wrap center" style="color:#fff; margin-bottom:0">
-    <span class="step-tag" style="background:rgba(255,255,255,.12); color:#ffd9c9">Khu vực phục vụ</span>
-    <h2 class="sec-title" style="color:#fff">Đâu cần Lê Chung có, đâu khó có Lê Chung</h2>
-    <p style="color:#c7d3e2; margin:0">Nhận vận chuyển hai chiều từ TP.HCM đi khắp 63 tỉnh thành. Bấm vào khu vực để xem kinh nghiệm gửi hàng tuyến đó.</p>
+    <span class="step-tag" style="background:rgba(255,255,255,.12); color:#ffd9c9">{secKhuVuc.tag}</span>
+    <h2 class="sec-title" style="color:#fff">{secKhuVuc.title}</h2>
+    <p style="color:#c7d3e2; margin:0">{secKhuVuc.intro}</p>
     <div class="chips">{khuVuc.map((k) => (<a href={areaHref(k)}>{k.ten}</a>))}</div>
   </div>
 </section>
@@ -546,8 +514,8 @@ const danhGia = trangchu.danhGia || [];
 <section style="background:var(--panel)">
   <div class="wrap">
     <div class="emotion">
-      <p>Một chuyến hàng tới trễ hay hư hỏng có thể khiến bạn mất một khách hàng đã gây dựng nhiều năm.</p>
-      <div class="small">Chọn đơn vị vận tải có trách nhiệm chính là bảo vệ uy tín của bạn.</div>
+      <p>{camXuc.big}</p>
+      <div class="small">{camXuc.small}</div>
     </div>
   </div>
 </section>
@@ -556,8 +524,8 @@ const danhGia = trangchu.danhGia || [];
 <section id="quy-trinh">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Quy trình 4 bước</span>
-      <h2 class="sec-title">Đặt xe nhanh gọn, không rườm rà</h2>
+      <span class="step-tag">{secQuyTrinh.tag}</span>
+      <h2 class="sec-title">{secQuyTrinh.title}</h2>
     </div>
     <div class="steps">
       {quyTrinh.map((q) => (
@@ -575,8 +543,8 @@ const danhGia = trangchu.danhGia || [];
 <section style="background:var(--panel)">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Giá trị bạn nhận được</span>
-      <h2 class="sec-title">Thuê Lê Chung là mua sự yên tâm</h2>
+      <span class="step-tag">{secGiaTriLon.tag}</span>
+      <h2 class="sec-title">{secGiaTriLon.title}</h2>
     </div>
     <div class="grid4">
       {giaTriLon.map((g) => (
@@ -594,8 +562,8 @@ const danhGia = trangchu.danhGia || [];
 <section>
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Còn băn khoăn?</span>
-      <h2 class="sec-title">Chúng tôi trả lời thẳng</h2>
+      <span class="step-tag">{secObjections.tag}</span>
+      <h2 class="sec-title">{secObjections.title}</h2>
     </div>
     <div class="faq">
       {objections.map((f) => (
@@ -612,9 +580,9 @@ const danhGia = trangchu.danhGia || [];
 <section style="background:var(--panel)">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Lý do chọn chúng tôi</span>
-      <h2 class="sec-title">Lê Chung theo đuổi cách làm vận tải tử tế</h2>
-      <p style="color:var(--text-soft); margin:0">Không hoa mỹ. Chỉ ba điều, làm cho bằng được trên mọi chuyến hàng.</p>
+      <span class="step-tag">{secTruCot.tag}</span>
+      <h2 class="sec-title">{secTruCot.title}</h2>
+      <p style="color:var(--text-soft); margin:0">{secTruCot.intro}</p>
     </div>
     <div class="pillars">
       {truCot.map((p) => (
@@ -633,8 +601,8 @@ const danhGia = trangchu.danhGia || [];
     <div class="scarcity">
       <div class="ic">!</div>
       <div>
-        <h3>Đặt xe đi tỉnh trước 1–2 ngày để giữ đúng chuyến</h3>
-        <p>Lịch xe đi tỉnh chạy theo khung ngày cố định và thường kín chỗ vào cao điểm, cuối tuần và dịp lễ Tết. Đặt sớm để chắc chắn có xe đúng ngày bạn cần. Khách đi định kỳ hoặc ký hợp đồng dài hạn được ưu tiên xe và mức cước tốt hơn.</p>
+        <h3>{gioiHan.title}</h3>
+        <p>{gioiHan.body}</p>
       </div>
     </div>
   </div>
@@ -644,8 +612,8 @@ const danhGia = trangchu.danhGia || [];
 <section id="bang-gia" style="background:var(--panel)">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Bảng giá cước tham khảo</span>
-      <h2 class="sec-title">Giá thuê xe tải chở hàng đi tỉnh</h2>
+      <span class="step-tag">{secBangGia.tag}</span>
+      <h2 class="sec-title">{secBangGia.title}</h2>
     </div>
     <p class="value-line">Cước một chuyến xe luôn <b>rẻ hơn nhiều</b> so với cái giá của một lô hàng tới trễ hay hư hỏng. Dưới đây là mức tham khảo để bạn dự trù chi phí — thuê <b>nguyên chuyến</b> từ TP.HCM đi các tỉnh, đơn vị: <b>triệu đồng / chuyến</b>.</p>
     <p class="swipe-hint">← vuốt ngang để xem đủ bảng →</p>
@@ -688,8 +656,8 @@ const danhGia = trangchu.danhGia || [];
 <section>
   <div class="wrap">
     <div class="bonus">
-      <span class="step-tag" style="background:rgba(255,255,255,.12); color:#ffd9c9">Khi chọn Lê Chung, bạn được thêm</span>
-      <h2 class="sec-title">Quà tặng đi kèm mọi chuyến hàng</h2>
+      <span class="step-tag" style="background:rgba(255,255,255,.12); color:#ffd9c9">{secQuaTang.tag}</span>
+      <h2 class="sec-title">{secQuaTang.title}</h2>
       <ul>{quaTang.map((q) => (<li>{q}</li>))}</ul>
     </div>
   </div>
@@ -699,8 +667,8 @@ const danhGia = trangchu.danhGia || [];
 <section style="background:var(--panel)">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Khách hàng nói gì</span>
-      <h2 class="sec-title">Đối tác tin tưởng</h2>
+      <span class="step-tag">{secDanhGia.tag}</span>
+      <h2 class="sec-title">{secDanhGia.title}</h2>
     </div>
     <div class="rev-grid">
       {danhGia.map((r) => (
@@ -722,8 +690,8 @@ const danhGia = trangchu.danhGia || [];
 <section id="kinh-nghiem">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Kinh nghiệm vận chuyển</span>
-      <h2 class="sec-title">Đọc trước khi thuê xe cho chắc</h2>
+      <span class="step-tag">{secBlog.tag}</span>
+      <h2 class="sec-title">{secBlog.title}</h2>
     </div>
     <div class="blog-grid">
       {teaserPosts.map((p) => (
@@ -744,8 +712,8 @@ const danhGia = trangchu.danhGia || [];
 <section style="background:var(--panel)">
   <div class="wrap">
     <div class="final">
-      <h2>Sẵn sàng cho chuyến hàng an toàn, đúng hẹn?</h2>
-      <p>Gọi Lê Chung để nhận khảo sát và báo giá miễn phí trong 30 phút. Đội xe hơn 100 chiếc luôn sẵn sàng.</p>
+      <h2>{ctaCuoi.title}</h2>
+      <p>{ctaCuoi.body}</p>
       <a class="btn-call" href={`tel:${TEL}`}>📞 Gọi ngay {HOTLINE}</a>
     </div>
   </div>
