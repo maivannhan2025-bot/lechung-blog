@@ -1,0 +1,47 @@
+---
+// Trang 404 — Cloudflare Pages sẽ phục vụ trang này KÈM mã HTTP 404
+// cho mọi URL không tồn tại (sửa lỗi "soft-404": trước đây trả trang chủ + mã 200).
+const HOTLINE = '0839 861 499';
+const TEL = '0839861499';
+---
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Không tìm thấy trang — Vận Tải Lê Chung</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{ --bg:#f2f5fa; --line:#dbe3ee; --text:#0a2540; --muted:#647388; --brand:#ff6b35; --brand-dark:#e5541f; }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#061626; --line:#234260; --text:#eaf1fa; --muted:#8395aa; --brand:#ff7a45; --brand-dark:#ff9468; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--text);
+    font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;line-height:1.6;padding:24px}
+  .box{max-width:520px;text-align:center}
+  .code{font-size:84px;font-weight:800;color:var(--brand);line-height:1;margin:0}
+  h1{font-size:24px;margin:10px 0 8px}
+  p{color:var(--muted);margin:0 0 24px}
+  .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:12px}
+  a.home{background:var(--brand);color:#fff}
+  a.home:hover{background:var(--brand-dark)}
+  a.alt{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .tel{margin-top:22px;font-size:14px;color:var(--muted)}
+  .tel a{color:var(--brand);font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+  <div class="box">
+    <p class="code">404</p>
+    <h1>Không tìm thấy trang</h1>
+    <p>Trang bạn tìm không tồn tại hoặc đã được chuyển đi. Mời bạn quay về trang chủ hoặc xem các bài viết.</p>
+    <div class="row">
+      <a class="btn home" href="/">← Về trang chủ</a>
+      <a class="btn alt" href="/blog/">Xem bài viết</a>
+    </div>
+    <p class="tel">Cần thuê xe? Gọi ngay <a href={`tel:${TEL}`}>{HOTLINE}</a></p>
+  </div>
+</body>
+</html>
