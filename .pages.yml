@@ -1,5 +1,6 @@
-# Cấu hình Pages CMS cho blog chuxetai — https://pagescms.org
-# Người viết đăng nhập bằng email (không cần GitHub) qua app.pagescms.org
+# Cấu hình Pages CMS cho blog Lê Chung — https://pagescms.org
+# Chủ web đăng nhập bằng GitHub (weblechungvn-oss) qua app.pagescms.org.
+# Có thể mời thêm người viết bằng email (người được mời viết bài không cần tài khoản GitHub).
 
 # Ảnh: upload vào public/anh, trong bài ghi đường dẫn /anh/...
 media:
