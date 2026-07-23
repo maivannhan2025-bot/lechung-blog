@@ -3,9 +3,27 @@
 // Thương hiệu Lê Chung (KHÔNG bịa số liệu/lời khách). Menu dùng chung + bảng giá + blog.
 import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
+import trangchu from '../data/trangchu.json';
 
 const HOTLINE = '0839 861 499';
 const TEL = '0839861499';
+
+// Khung ảnh/video đầu trang — anh Nhận tự đổi ở /admin (mục "Trang chủ").
+// Có link YouTube => khung chiếu VIDEO; ô link để trống => khung hiện ẢNH.
+function youtubeEmbed(url){
+  if(!url) return '';
+  const u = String(url).trim();
+  let m;
+  const id =
+    (m = u.match(/[?&]v=([A-Za-z0-9_-]{11})/)) ? m[1] :
+    (m = u.match(/youtu\.be\/([A-Za-z0-9_-]{11})/)) ? m[1] :
+    (m = u.match(/\/embed\/([A-Za-z0-9_-]{11})/)) ? m[1] :
+    (m = u.match(/\/shorts\/([A-Za-z0-9_-]{11})/)) ? m[1] :
+    (m = u.match(/^([A-Za-z0-9_-]{11})$/)) ? m[1] : '';
+  return id ? 'https://www.youtube-nocookie.com/embed/' + id : '';
+}
+const heroVideoUrl = youtubeEmbed(trangchu && trangchu.heroVideo);
+const heroAnh = (trangchu && trangchu.heroAnh) || '/img/doi-xe.webp';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
@@ -192,6 +210,8 @@ const danhGia = [
   .hero-cta .ghost{display:inline-flex; align-items:center; gap:8px; color:#fff; text-decoration:none; font-weight:800; font-size:15px; padding:12px 22px; border-radius:11px; border:1.5px solid rgba(255,255,255,.35)}
   .hero-cta .ghost:hover{background:rgba(255,255,255,.1); border-color:#fff}
   .hero-photo{border-radius:18px; box-shadow:0 20px 50px rgba(0,0,0,.4); width:100%; height:100%; object-fit:cover; aspect-ratio:4/3}
+  .hero-video{position:relative; width:100%; aspect-ratio:16/9; border-radius:18px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.4); background:#000}
+  .hero-video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
   @media(max-width:820px){
     .hero .wrap{grid-template-columns:1fr; gap:26px; padding-top:36px; padding-bottom:38px; text-align:center}
     .hero .eyebrow{margin-left:auto;margin-right:auto}
@@ -395,7 +415,13 @@ const danhGia = [
       </div>
     </div>
     <div>
-      <img class="hero-photo" src="/img/doi-xe.webp" alt="Đội hình xe tải chuyên nghiệp của Vận tải Lê Chung" width="640" height="480">
+      {heroVideoUrl ? (
+        <div class="hero-video">
+          <iframe src={heroVideoUrl} title="Video giới thiệu Vận tải Lê Chung" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      ) : (
+        <img class="hero-photo" src={heroAnh} alt="Đội hình xe tải chuyên nghiệp của Vận tải Lê Chung" width="640" height="480" />
+      )}
     </div>
   </div>
 </div>

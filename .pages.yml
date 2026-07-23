@@ -9,6 +9,21 @@ media:
   categories: [image]
 
 content:
+  - name: trangchu
+    label: Trang chủ (ảnh / video đầu trang)
+    type: file
+    path: src/data/trangchu.json
+    format: json
+    fields:
+      - name: heroVideo
+        label: Link video YouTube (khung đầu trang sẽ CHIẾU VIDEO)
+        type: string
+        description: 'Dán link YouTube vào đây (ví dụ https://www.youtube.com/watch?v=abc123 hoặc https://youtu.be/abc123) để khung lớn đầu trang chiếu video. ĐỂ TRỐNG nếu muốn dùng ẢNH thay vì video.'
+      - name: heroAnh
+        label: Ảnh khung đầu trang (dùng khi ô link video ở trên ĐỂ TRỐNG)
+        type: image
+        description: 'Bấm để tải ảnh mới lên. Ảnh này chỉ hiện khi ô "Link video YouTube" ở trên để trống.'
+
   - name: blog
     label: Bài viết Blog
     type: collection
