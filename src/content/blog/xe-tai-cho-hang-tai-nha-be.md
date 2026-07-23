@@ -66,3 +66,10 @@ Giá tuỳ loại xe, quãng đường và khâu bốc xếp. Anh/chị gọi **
 Đội xe hơn 100 chiếc nên bên em thường điều được xe nhanh, nội thành có mặt sau khoảng 30 phút. Anh/chị gọi sớm chừng nào bên em càng dễ xếp xe đúng giờ chừng đó.
 
 Chở hàng ở Nhà Bè, quan trọng nhất là chọn đúng cỡ xe cho hàng nặng, hàng cảng và canh đúng giờ để không lỡ lịch. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng, điểm lấy - trả và giờ cảng, bên em tư vấn loại xe phù hợp và báo giá rõ ràng cho chuyến của mình. Trụ sở bên em ở 77 Đường số 2A, Phường Bình Tân, TP.HCM, anh/chị cần là bên em điều xe qua Nhà Bè ngay.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Quận 7](/blog/xe-tai-cho-hang-tai-quan-7)
+- [Xe tải chở hàng tại TP. Thủ Đức](/blog/xe-tai-cho-hang-tai-thu-duc)
+- [Vận chuyển hàng đi miền Tây](/blog/van-chuyen-hang-di-mien-tay)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)

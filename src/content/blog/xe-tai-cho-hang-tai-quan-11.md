@@ -70,3 +70,10 @@ Có. Anh/chị báo trước là cần xuất hoá đơn, bên em làm đầy đ
 Anh/chị gọi thẳng hotline 0839 861 499 (gọi hoặc Zalo), tả hàng và điểm giao, bên em báo giá miễn phí và rõ ràng cho chuyến của mình.
 
 Chở hàng ở Quận 11, quan trọng nhất là chọn đúng cỡ xe và canh đúng giờ để luồn qua hẻm, qua chợ cho gọn. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng, tả đường vào và điểm giao, bên em tư vấn loại xe phù hợp với địa bàn và báo giá rõ ràng trước khi đi.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Quận 6](/blog/xe-tai-cho-hang-tai-quan-6)
+- [Xe tải chở hàng tại Quận 10](/blog/xe-tai-cho-hang-tai-quan-10)
+- [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)

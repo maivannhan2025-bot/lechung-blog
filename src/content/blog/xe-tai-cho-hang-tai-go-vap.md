@@ -67,3 +67,10 @@ Tùy món hàng, quãng đường, cỡ xe và có cần bốc xếp không, nê
 ## Gọi Lê Chung cho chuyến của mình
 
 Chở hàng ở Gò Vấp, quan trọng nhất là chọn đúng cỡ xe cho vừa hẻm, vừa đường và canh giờ cho khỏi kẹt. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả món hàng, địa chỉ lấy và địa chỉ giao, bên em tư vấn loại xe hợp và báo giá rõ ràng cho đúng chuyến của mình. Công ty ở 77 Đường số 2A, Phường Bình Tân, TP.HCM, nhận chở hàng cho cả khu Gò Vấp và các quận lân cận.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Bình Thạnh](/blog/xe-tai-cho-hang-tai-binh-thanh)
+- [Xe tải chở hàng tại Quận 12](/blog/xe-tai-cho-hang-tai-quan-12)
+- [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)

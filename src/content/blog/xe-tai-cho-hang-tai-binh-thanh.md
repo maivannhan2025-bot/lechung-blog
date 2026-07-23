@@ -65,3 +65,10 @@ Không sao, bên em quen đường Bình Thạnh nên biết canh giờ và ch�
 Có, Lê Chung xuất hoá đơn VAT đầy đủ. Anh/chị gửi thông tin công ty trước, chạy xong bên em xuất đúng theo chuyến để anh/chị đưa vào sổ sách.
 
 Chở hàng ở Bình Thạnh, quan trọng nhất là chọn đúng cỡ xe và canh đúng giờ cho mấy toà chung cư với đường đông. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng, tả điểm lấy và điểm giao, bên em tư vấn loại xe phù hợp và báo giá rõ ràng miễn phí cho chuyến của mình.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Phú Nhuận](/blog/xe-tai-cho-hang-tai-phu-nhuan)
+- [Xe tải chở hàng tại TP. Thủ Đức](/blog/xe-tai-cho-hang-tai-thu-duc)
+- [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)

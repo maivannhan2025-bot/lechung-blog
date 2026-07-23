@@ -64,3 +64,10 @@ Bên em có xe nhỏ để vào tận nơi, hoặc tăng bo bằng xe nhỏ rồ
 Anh/chị gọi 0839 861 499 (gọi hoặc Zalo), tả hàng và hai đầu địa chỉ, bên em báo giá miễn phí rõ ràng cho chuyến của mình.
 
 Chở hàng ở Phú Nhuận, quan trọng nhất là chọn đúng cỡ xe và canh đúng giờ, đúng lối đi cho mấy con đường một chiều. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng và điểm giao, bên em tư vấn loại xe phù hợp và báo giá rõ ràng cho chuyến của mình. Nội thành bên em có mặt sau khoảng 30 phút, anh/chị cần gấp cũng kịp.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Bình Thạnh](/blog/xe-tai-cho-hang-tai-binh-thanh)
+- [Xe tải chở hàng tại Tân Bình](/blog/xe-tai-cho-hang-tai-tan-binh)
+- [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)

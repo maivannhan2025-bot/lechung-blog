@@ -74,3 +74,10 @@ Anh/chị gọi 0839 861 499 để nhận báo giá miễn phí. Tả hàng, đi
 ## Kết
 
 Chở hàng ở Quận 6, quan trọng nhất là chọn đúng cỡ xe cho vừa hẻm, vừa khối hàng sỉ, và canh được giờ để không kẹt giữa Chợ Lớn. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng và điểm giao, bên em tư vấn loại xe phù hợp và báo giá rõ ràng cho chuyến của mình. Trụ sở bên em ở 77 Đường số 2A, Phường Bình Tân, TP.HCM, nhận chạy Quận 6 và các quận quanh Chợ Lớn, nội thành có mặt sau khoảng 30 phút.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Quận 5](/blog/xe-tai-cho-hang-tai-quan-5)
+- [Xe tải chở hàng tại Quận 11](/blog/xe-tai-cho-hang-tai-quan-11)
+- [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)

@@ -69,3 +69,10 @@ Có. Bên em chạy đi miền Tây, miền Trung, Tây Nguyên và ra Bắc. An
 Đội xe hơn 100 chiếc nên thường bên em điều được xe nhanh, nội thành có mặt sau khoảng 30 phút. Anh/chị gọi sớm chừng nào chắc chừng đó.
 
 Chở hàng ở TP. Thủ Đức, quan trọng nhất là chọn đúng cỡ xe cho từng khu và canh trước giờ giấc, thủ tục cảng, khu công nghiệp. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng, điểm lấy và điểm giao, bên em tư vấn loại xe phù hợp và báo giá rõ ràng miễn phí cho chuyến của mình.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Nhà Bè](/blog/xe-tai-cho-hang-tai-nha-be)
+- [Xe tải chở hàng tại Bình Thạnh](/blog/xe-tai-cho-hang-tai-binh-thanh)
+- [Vận chuyển hàng đi miền Đông Nam Bộ](/blog/van-chuyen-hang-di-mien-dong-nam-bo)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)

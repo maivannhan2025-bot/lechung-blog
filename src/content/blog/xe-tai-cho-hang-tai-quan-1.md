@@ -71,3 +71,10 @@ Xe tải nhỏ nhiều loại được phép chạy trong khung giờ mà xe l�
 Với các điểm trong nội thành, xe thường có mặt sau khoảng 30 phút tuỳ tình hình đường. Gọi sớm thì bên em giữ xe và canh giờ cho chắc.
 
 Chở hàng ở Quận 1, quan trọng nhất là chọn đúng cỡ xe cho hợp đường hẹp và canh đúng giờ cấm tải. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng và điểm giao, bên em tư vấn loại xe phù hợp và báo giá rõ ràng cho chuyến của mình.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Quận 4](/blog/xe-tai-cho-hang-tai-quan-4)
+- [Xe tải chở hàng tại Quận 5](/blog/xe-tai-cho-hang-tai-quan-5)
+- [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)

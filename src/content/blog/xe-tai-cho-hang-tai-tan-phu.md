@@ -62,3 +62,10 @@ Bên em bố trí xe nhỏ được phép chạy trong giờ cấm, hoặc dời
 Cái này tuỳ cỡ xe, quãng đường, loại hàng và có cần bốc xếp không. Anh/chị gọi 0839 861 499, tả hàng và điểm giao, bên em báo giá miễn phí rõ ràng ngay, đồng ý mới chạy.
 
 Chở hàng ở Tân Phú, quan trọng nhất là chọn đúng cỡ xe và canh đúng giờ đường, khu dân cư và chung cư. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng cùng điểm lấy và điểm giao, bên em tư vấn loại xe phù hợp và báo giá rõ ràng cho chuyến của mình, xe có mặt nhanh để hàng đi đúng hẹn.
+
+## Bài liên quan
+
+- [Xe tải chở hàng tại Tân Bình](/blog/xe-tai-cho-hang-tai-tan-binh)
+- [Xe tải chở hàng tại Bình Tân](/blog/xe-tai-cho-hang-tai-binh-tan)
+- [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
+- [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
