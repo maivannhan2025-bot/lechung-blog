@@ -3,7 +3,8 @@ import { getCollection, render } from 'astro:content';
 import BaiViet from '../../layouts/BaiViet.astro';
 
 export async function getStaticPaths() {
-  const baiViet = await getCollection('blog');
+  const now = Date.now();
+  const baiViet = (await getCollection('blog')).filter((bai) => bai.data.ngayDang.valueOf() <= now);
   return baiViet.map((bai) => ({
     params: { slug: bai.id },
     props: { bai },

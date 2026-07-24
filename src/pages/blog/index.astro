@@ -2,9 +2,10 @@
 import { getCollection } from 'astro:content';
 import Header from '../../components/Header.astro';
 
-const baiViet = (await getCollection('blog')).sort(
-  (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
-);
+const now = Date.now();
+const baiViet = (await getCollection('blog'))
+  .filter((b) => b.data.ngayDang.valueOf() <= now)
+  .sort((a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf());
 ---
 <!doctype html>
 <html lang="vi">

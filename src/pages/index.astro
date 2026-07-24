@@ -34,9 +34,9 @@ const dichVuTag = trangchu.dichVuTag;
 const dichVuTitle = trangchu.dichVuTitle;
 const dichVuIntro = trangchu.dichVuIntro;
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
-);
+const posts = (await getCollection('blog'))
+  .filter((p) => p.data.ngayDang.valueOf() <= Date.now())
+  .sort((a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf());
 const norm = (s) => (s || '').toLowerCase();
 function matchPost(keywords) {
   for (const kw of keywords) {

@@ -9,9 +9,9 @@ const TEL = chung.tel;
 const ZALO = chung.zalo;
 const LOGO = chung.logo;
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf()
-);
+const posts = (await getCollection('blog'))
+  .filter((p) => p.data.ngayDang.valueOf() <= Date.now())
+  .sort((a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf());
 const norm = (s) => (s || '').toLowerCase();
 function findId(keywords) {
   for (const kw of keywords) {

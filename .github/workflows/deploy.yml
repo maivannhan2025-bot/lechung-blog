@@ -7,6 +7,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch: {}
+  # Tự dựng lại mỗi ngày lúc 08:00 giờ VN (01:00 UTC) để các bài đã tới ngày đăng tự hiện ra
+  schedule:
+    - cron: '0 1 * * *'
 
 jobs:
   deploy:
