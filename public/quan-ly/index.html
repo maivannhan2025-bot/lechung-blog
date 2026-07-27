@@ -116,6 +116,19 @@
   .spin { display:inline-block; width:16px;height:16px;border:3px solid #fff;border-top-color:transparent;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-3px; }
   @keyframes sp { to{transform:rotate(360deg);} }
   .center-msg { text-align:center; color:var(--muted); padding:40px; }
+
+  /* Xem truoc bai viet */
+  .pv-body { font-size:16.5px; line-height:1.8; color:#26263a; }
+  .pv-body h2 { font-size:22px; font-weight:800; margin:24px 0 10px; color:var(--ink); }
+  .pv-body h3 { font-size:18px; font-weight:800; margin:20px 0 8px; color:var(--ink); }
+  .pv-body p { margin:0 0 14px; }
+  .pv-body ul, .pv-body ol { margin:0 0 14px; padding-left:22px; }
+  .pv-body li { margin-bottom:6px; }
+  .pv-body a { color:var(--blue); font-weight:700; text-decoration:underline; }
+  .pv-body img { max-width:100%; border-radius:10px; margin:8px 0 16px; }
+  .pv-body table { border-collapse:collapse; width:100%; margin:0 0 14px; }
+  .pv-body td, .pv-body th { border:1px solid var(--line); padding:8px 10px; text-align:left; }
+  .pv-body blockquote { border-left:3px solid var(--blue); margin:0 0 14px; padding:4px 0 4px 16px; color:var(--muted); }
 </style>
 </head>
 <body>
@@ -346,12 +359,11 @@ async function renderBlogList() {
     }));
     document.getElementById('bl').innerHTML = items.map(it => {
       const img = it.fm.anhDaiDien ? CFG.site + it.fm.anhDaiDien : '';
-      const slug = it.name.replace(/\.md$/, '');
       return `<div class="list-item">
         ${img ? `<img src="${esc(img)}" onerror="this.style.visibility='hidden'">` : `<img src="" style="visibility:hidden">`}
         <div><div class="t">${esc(it.fm.title || it.name)}</div><div class="d">${esc(it.fm.ngayDang||'')} — ${esc((it.fm.description||'').slice(0,70))}</div></div>
         <div class="go" style="display:flex;gap:8px;flex-shrink:0">
-          <a class="btn ghost" href="${CFG.site}/blog/${esc(slug)}" target="_blank" rel="noopener">👁️ Xem bài</a>
+          <button class="btn ghost" onclick="previewFromList('${encodeURIComponent(it.name)}')">👁️ Xem trước</button>
           <button class="btn ghost" onclick="route('blogEdit','${encodeURIComponent(it.name)}')">Sửa →</button>
         </div>
       </div>`;
@@ -445,11 +457,16 @@ async function renderBlogEdit(nameEnc) {
           }); }
         });
         ed.ui.registry.addButton('xembai', {
-          text:'👁 Xem bài viết', tooltip:'Mở bài đã đăng trên web (bản đã lưu gần nhất)',
+          text:'👁 Xem bài viết', tooltip:'Xem trước bài (bản đang soạn — chưa đăng cũng xem được)',
           onAction:()=>{
-            const slug = (fileName||'').replace(/\.md$/,'');
-            if (!slug) { toast('Hãy bấm "💾 Lưu & đăng" trước, rồi mới xem được trên web.'); return; }
-            window.open(CFG.site + '/blog/' + slug, '_blank');
+            const g=id=>document.getElementById(id);
+            previewPost({
+              title: g('f_title') ? g('f_title').value : '',
+              date: g('f_date') ? g('f_date').value : '',
+              readTime: g('f_read') ? g('f_read').value : '',
+              img: (g('f_img') && g('f_img').value) ? CFG.site + g('f_img').value : '',
+              html: getContent()
+            });
           }
         });
       }
@@ -535,6 +552,42 @@ function askAlt(suggest, cb){
   ov.querySelector('#axskip').onclick=()=>done('');
   inp.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); done(inp.value.trim()); } });
   ov.addEventListener('click',e=>{ if(e.target===ov) done(inp.value.trim()); });
+}
+
+/* ---------- XEM TRƯỚC bài viết (preview — chưa đăng cũng xem được) ---------- */
+function previewPost(p){
+  const ov=document.createElement('div'); ov.style='position:fixed;inset:0;background:rgba(20,20,43,.6);z-index:240;display:grid;place-items:start center;padding:24px;overflow:auto';
+  ov.innerHTML=`<div style="background:#fff;border-radius:16px;max-width:760px;width:100%;margin:auto;box-shadow:0 30px 70px rgba(0,0,0,.35)">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;border-radius:16px 16px 0 0;z-index:1;flex-wrap:wrap">
+      <b style="font-size:16px;color:var(--blue)">👁 Xem trước bài viết</b>
+      <span class="sub" style="margin:0;font-size:12.5px">(bản đang soạn — chưa đăng cũng xem được)</span>
+      <button class="btn ghost" id="pvClose" style="margin-left:auto">Đóng</button>
+    </div>
+    <div style="padding:24px 28px">
+      ${p.img?`<img src="${esc(p.img)}" style="width:100%;border-radius:12px;margin-bottom:16px" onerror="this.style.display=\x27none\x27">`:''}
+      <h1 style="font-size:28px;font-weight:900;line-height:1.2;margin:0 0 8px;color:var(--ink)">${esc(p.title||'(chưa có tiêu đề)')}</h1>
+      <div style="color:var(--muted);font-size:13.5px;margin-bottom:18px">${esc(p.date||'')}${p.readTime?' · '+esc(String(p.readTime))+' phút đọc':''}</div>
+      <div class="pv-body">${p.html||'<p style="color:#8a90a0">(chưa có nội dung)</p>'}</div>
+    </div>
+  </div>`;
+  document.body.appendChild(ov);
+  const close=()=>{ ov.remove(); document.removeEventListener('keydown',onKey); };
+  function onKey(e){ if(e.key==='Escape') close(); }
+  ov.querySelector('#pvClose').onclick=close;
+  ov.onclick=e=>{ if(e.target===ov) close(); };
+  document.addEventListener('keydown',onKey);
+}
+async function previewFromList(nameEnc){
+  const name=decodeURIComponent(nameEnc);
+  toast('<span class="spin"></span> Đang mở xem trước…',4000);
+  try {
+    const c = await (await gh('src/content/blog/' + name + '?ref=' + CFG.branch)).json();
+    const p = parseMd(b64dec(c.content));
+    const body = p.body || '';
+    const looksHtml = /<(p|h[1-6]|ul|ol|li|strong|em|b|i|a|img|br|div|table|blockquote)\b/i.test(body);
+    const html = body ? (looksHtml ? body : mdToHtml(body)) : '';
+    previewPost({ title:p.fm.title, date:p.fm.ngayDang, readTime:p.fm.thoiGianDoc, img:(p.fm.anhDaiDien?CFG.site+p.fm.anhDaiDien:''), html });
+  } catch(e){ toast('❌ '+esc(e.message)); }
 }
 
 /* ---------- BẢNG CHỌN ICON (Font Awesome) ---------- */
