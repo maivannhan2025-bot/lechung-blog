@@ -37,6 +37,8 @@ const khuVuc = [
   { ten: 'Miền Bắc', slug: 'van-chuyen-hang-di-mien-bac', kw: ['miền bắc', 'hà nội', 'hải phòng'] },
 ];
 ---
+<!-- Bật hiệu ứng cuộn-hiện. Class này do JS thêm; nếu tắt JS thì KHÔNG có class -> nội dung hiện đầy đủ (an toàn). -->
+<script is:inline>document.documentElement.classList.add('reveal-on');</script>
 <header class="site-head">
   <div class="wrap">
     <div class="bar">
@@ -181,6 +183,83 @@ const khuVuc = [
   @media(max-width:560px){ .socialpop{left:10px; right:76px; max-width:none; bottom:14px} }
 </style>
 
+<style is:global>
+  /* ===== HIỆU ỨNG CUỘN-HIỆN (đổ 2 bên vào) + RÊ CHUỘT ẢNH NỔI RA =====
+     Trạng thái ẩn CHỈ áp dụng khi <html class="reveal-on"> (do JS thêm).
+     Tắt JS  ->  không có class  ->  nội dung HIỆN ĐẦY ĐỦ (không bao giờ mất chữ). */
+  html.reveal-on{ overflow-x:clip; }
+
+  html.reveal-on :is(
+    .center,.head-sec,.pain,.adv,.svc,.step,.pillar,.scarcity,
+    .price-wrap,.value-line,.bonus,.emotion,.rev,.bcard,.final,
+    .ba .col,.art h2,.art h3,.art figure,.art blockquote,.cta-box
+  ){
+    opacity:0;
+    transform:translateY(34px);
+    transition:opacity .7s ease, transform .8s cubic-bezier(.16,.72,.28,1);
+    will-change:opacity, transform;
+  }
+
+  /* ĐỔ TỪ 2 BÊN: trong lưới, thẻ lẻ vào từ trái, thẻ chẵn vào từ phải */
+  html.reveal-on .grid4 > .pain:nth-child(odd),
+  html.reveal-on .adv-grid > .adv:nth-child(odd),
+  html.reveal-on .svc-grid > .svc:nth-child(odd),
+  html.reveal-on .pillars > .pillar:nth-child(odd),
+  html.reveal-on .rev-grid > .rev:nth-child(odd),
+  html.reveal-on .blog-grid > .bcard:nth-child(odd){ transform:translateX(-54px); }
+  html.reveal-on .grid4 > .pain:nth-child(even),
+  html.reveal-on .adv-grid > .adv:nth-child(even),
+  html.reveal-on .svc-grid > .svc:nth-child(even),
+  html.reveal-on .pillars > .pillar:nth-child(even),
+  html.reveal-on .rev-grid > .rev:nth-child(even),
+  html.reveal-on .blog-grid > .bcard:nth-child(even){ transform:translateX(54px); }
+  /* Cặp "Trước / Sau": cột trái vào từ trái, cột phải vào từ phải */
+  html.reveal-on .ba .col.before{ transform:translateX(-54px); }
+  html.reveal-on .ba .col.after{ transform:translateX(54px); }
+
+  /* Khi lọt vào tầm nhìn -> trượt về đúng chỗ, hiện rõ */
+  html.reveal-on .is-in{ opacity:1 !important; transform:none !important; }
+
+  /* Điện thoại: đổ nhẹ hơn để không tràn ngang */
+  @media(max-width:600px){
+    html.reveal-on .grid4 > *:nth-child(odd),
+    html.reveal-on .adv-grid > *:nth-child(odd),
+    html.reveal-on .svc-grid > *:nth-child(odd),
+    html.reveal-on .pillars > *:nth-child(odd),
+    html.reveal-on .rev-grid > *:nth-child(odd),
+    html.reveal-on .blog-grid > *:nth-child(odd),
+    html.reveal-on .ba .col.before{ transform:translateX(-28px); }
+    html.reveal-on .grid4 > *:nth-child(even),
+    html.reveal-on .adv-grid > *:nth-child(even),
+    html.reveal-on .svc-grid > *:nth-child(even),
+    html.reveal-on .pillars > *:nth-child(even),
+    html.reveal-on .rev-grid > *:nth-child(even),
+    html.reveal-on .blog-grid > *:nth-child(even),
+    html.reveal-on .ba .col.after{ transform:translateX(28px); }
+  }
+
+  /* ===== RÊ CHUỘT VÀO ẢNH -> ẢNH NỔI/PHÓNG RA (chỉ trên máy có chuột) ===== */
+  @media(hover:hover){
+    .svc{ transition:transform .3s ease, box-shadow .3s ease; }
+    .svc img{ transition:transform .55s cubic-bezier(.2,.7,.2,1); }
+    .svc:hover{ box-shadow:0 20px 46px rgba(10,37,64,.20); }
+    .svc:hover img{ transform:scale(1.08); }
+
+    .hero-photo{ transition:transform .55s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease; }
+    .hero-photo:hover{ transform:scale(1.045) translateY(-6px); box-shadow:0 30px 64px rgba(0,0,0,.5); }
+
+    .bcard{ transition:box-shadow .3s ease; }
+    .bcard:hover{ box-shadow:0 20px 46px rgba(10,37,64,.18); }
+
+    .art img{ transition:transform .45s ease, box-shadow .35s ease; }
+    .art img:hover{ transform:scale(1.03); box-shadow:0 18px 44px rgba(10,37,64,.24); }
+
+    .rev .who img{ transition:transform .35s ease; }
+    .rev:hover .who img{ transform:scale(1.08); }
+  }
+  /* Anh Nhận chọn: LUÔN chạy hiệu ứng cho mọi người (không tắt theo cài đặt giảm-chuyển-động của máy). */
+</style>
+
 <script>
   // Menu điện thoại: bấm ☰ để mở/đóng
   (function () {
@@ -215,5 +294,31 @@ const khuVuc = [
       setTimeout(function () { pop.classList.remove('show'); }, 5000);
     }
     setTimeout(function () { showOne(); setInterval(showOne, 13000); }, 4000);
+  })();
+</script>
+
+<script is:inline>
+  // Cuộn tới đâu, nội dung đổ vào tới đó. Một lần cho mỗi phần.
+  (function () {
+    function start() {
+      var sel = '.center,.head-sec,.pain,.adv,.svc,.step,.pillar,.scarcity,'
+        + '.price-wrap,.value-line,.bonus,.emotion,.rev,.bcard,.final,'
+        + '.ba .col,.art h2,.art h3,.art figure,.art blockquote,.cta-box';
+      var els = document.querySelectorAll(sel);
+      // Không hỗ trợ theo dõi cuộn -> bỏ trạng thái ẩn, hiện hết cho chắc.
+      if (!('IntersectionObserver' in window) || !els.length) {
+        document.documentElement.classList.remove('reveal-on');
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
+    } else { start(); }
   })();
 </script>
