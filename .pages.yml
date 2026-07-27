@@ -31,6 +31,10 @@ content:
         label: Logo (góc trên bên trái mọi trang)
         type: image
         description: 'Bấm tải logo mới lên để thay. Nên dùng ảnh nền trong suốt (PNG/WebP).'
+      - name: fbPixel
+        label: Mã Facebook Pixel (chạy quảng cáo — không bắt buộc)
+        type: string
+        description: 'Dán DÃY SỐ ID Pixel lấy từ Trình quản lý sự kiện Facebook (ví dụ 1234567890123456). Để TRỐNG nếu chưa dùng. Có mã này thì web tự gắn theo dõi khách để chạy quảng cáo Facebook.'
 
   - name: trangchu
     label: Trang chủ (ảnh / video đầu trang)
