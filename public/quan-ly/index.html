@@ -387,7 +387,8 @@ async function renderBlogEdit(nameEnc) {
   app.innerHTML = topBar('blog') + `<div class="wrap">
     <div class="toolbar">
       <button class="btn ghost" onclick="route('blogList')">← Danh sách</button>
-      <button class="btn" id="save">💾 Lưu &amp; đăng</button>
+      <button class="btn" id="publish" style="background:var(--good)">✅ Đăng ngay</button>
+      <button class="btn ghost" id="schedule">📅 Lên lịch</button>
       ${isNew ? '' : '<button class="btn danger" id="del">🗑️ Xoá bài</button>'}
     </div>
     <h2 class="page">${isNew ? 'Viết bài mới' : 'Sửa bài'}</h2>
@@ -396,7 +397,7 @@ async function renderBlogEdit(nameEnc) {
         <div class="field"><label>Tiêu đề bài <span class="hint">(nên có từ khoá)</span></label><input id="f_title" value="${esc(fm.title)}"></div>
         <div class="field"><label>Mô tả ngắn (hiện trên Google) <span class="hint">120–160 ký tự</span></label><textarea id="f_desc" rows="2">${esc(fm.description)}</textarea></div>
         <div class="field" style="display:flex;gap:14px;flex-wrap:wrap">
-          <div style="flex:1;min-width:150px"><label>Ngày đăng</label><input id="f_date" type="date" value="${esc(fm.ngayDang)}"></div>
+          <div style="flex:1;min-width:150px"><label>Ngày đăng <span class="hint">(ngày bài hiện trên web — bấm "Lên lịch" là dùng ngày này)</span></label><input id="f_date" type="date" value="${esc(fm.ngayDang)}"></div>
           <div style="width:150px"><label>Phút đọc</label><input id="f_read" type="number" value="${esc(fm.thoiGianDoc)}"></div>
         </div>
         <div class="field"><label>Ảnh đại diện</label>
@@ -477,27 +478,35 @@ async function renderBlogEdit(nameEnc) {
     openGallery((path)=>{ $('f_img').value=path; const im=$('thumb'); im.src=CFG.site+path; im.style.visibility='visible'; });
   });
 
-  $('save').addEventListener('click', async () => {
+  async function saveBlog(mode){
     const title=$('f_title').value.trim();
     if(!title){ toast('⚠️ Chưa có tiêu đề'); return; }
     if(!$('f_desc').value.trim()){ toast('⚠️ Chưa có mô tả ngắn'); return; }
-    const nfm={ title, description:$('f_desc').value.trim(), ngayDang:$('f_date').value||new Date().toISOString().slice(0,10), thoiGianDoc:$('f_read').value.trim(), anhDaiDien:$('f_img').value.trim() };
+    const today=new Date().toISOString().slice(0,10);
+    // Đăng ngay = ngày HÔM NAY (hiện liền). Lên lịch = dùng ngày trong ô (chọn tương lai để hẹn).
+    let ngay;
+    if(mode==='publish'){ ngay=today; }               // Đăng ngay = hôm nay
+    else { ngay=$('f_date').value||today; }            // Lên lịch = dùng ô "Ngày đăng"
+    const nfm={ title, description:$('f_desc').value.trim(), ngayDang:ngay, thoiGianDoc:$('f_read').value.trim(), anhDaiDien:$('f_img').value.trim() };
     const md=buildMd(nfm, getContent());
     let path;
     if(isNew){ fileName = slugify(title)+'.md'; path='src/content/blog/'+fileName; }
     else path='src/content/blog/'+fileName;
-    $('save').innerHTML='<span class="spin"></span> Đang lưu…'; $('save').disabled=true;
+    const pubBtn=$('publish'), schBtn=$('schedule'), busy=(mode==='publish'?pubBtn:schBtn), old=busy.innerHTML;
+    busy.innerHTML='<span class="spin"></span> Đang lưu…'; pubBtn.disabled=true; schBtn.disabled=true;
     try {
-      // nếu bài mới, kiểm tra trùng tên -> lấy sha nếu có
       if(isNew){ try{ const ex=await (await gh(path+'?ref='+CFG.branch)).json(); if(ex&&ex.sha) sha=ex.sha; }catch(_){} }
       const body2={ message:(isNew?'Viết bài: ':'Sửa bài: ')+title, content:b64enc(md), branch:CFG.branch };
       if(sha) body2.sha=sha;
       const r=await gh(path,{ method:'PUT', body:JSON.stringify(body2) });
       const j=await r.json();
       if(!r.ok) throw new Error(j.message||'Lỗi lưu');
-      toast('✅ Đã lưu! Web sẽ cập nhật sau ~1 phút.'); setTimeout(()=>route('blogList'),1200);
-    } catch(e){ toast('❌ '+esc(e.message)); $('save').innerHTML='💾 Lưu &amp; đăng'; $('save').disabled=false; }
-  });
+      toast(mode==='schedule' && ngay>today ? ('✅ Đã lên lịch đăng vào '+ngay+'! Bài tự hiện đúng ngày đó.') : '✅ Đã đăng! Web cập nhật sau ~1 phút.');
+      setTimeout(()=>route('blogList'),1300);
+    } catch(e){ toast('❌ '+esc(e.message)); busy.innerHTML=old; pubBtn.disabled=false; schBtn.disabled=false; }
+  }
+  $('publish').addEventListener('click',()=>saveBlog('publish'));
+  $('schedule').addEventListener('click',()=>saveBlog('schedule'));
 
   if($('del')) $('del').addEventListener('click', async ()=>{
     if(!confirm('Xoá bài này? Không lấy lại được.')) return;
