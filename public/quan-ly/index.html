@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex, nofollow" />
-<title>Trang quản lý — Vận Tải Danh Long</title>
+<title>Trang quản lý</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.3/tinymce.min.js" referrerpolicy="origin"></script>
@@ -128,10 +128,12 @@
    (mọi phần khác của file GIỮ NGUYÊN — đây là bộ khung dùng chung)
    ================================================================== */
 const CFG = {
-  repo:    'weblechungvn-oss/lechung-blog',           // LÊ CHUNG — kho GitHub
-  branch:  'main',                                    // nhánh chính
-  auth:    'https://sveltia-auth.vantaidanhlong.workers.dev', // dùng chung cầu đăng nhập (đã kiểm: cho phép lechung.vn)
-  site:    'https://lechung.vn',                      // tên miền web thật
+  repo:    'weblechungvn-oss/lechung-blog',                      // kho GitHub của web đó.  VD: vantaidanhlong-cyber/vantaidanhlong-web
+  branch:  'main',                                    // nhánh chính (thường 'main')
+  auth:    'https://sveltia-auth.vantaidanhlong.workers.dev',    // cầu đăng nhập GitHub (Cloudflare Worker) của web đó
+  site:    'https://lechung.vn',                    // tên miền web thật (xem ảnh + mở "Sửa trang chủ")
+  brand:   'VẬN TẢI LÊ CHUNG',                             // tên hiện ở đầu trang quản lý + màn đăng nhập. VD: VẬN TẢI DANH LONG
+  brandMark: 'LC',                                    // 2 chữ tắt trong ô tròn màn đăng nhập. VD: DL
   blogDir: 'src/content/blog',                        // thư mục bài blog (.md) — giữ nguyên nếu dùng khung Astro chuẩn
   imgDir:  'public/anh',                              // thư mục ảnh — giữ nguyên nếu dùng khung Astro chuẩn
 };
@@ -290,7 +292,7 @@ function route(name, arg) {
 }
 function topBar(active) {
   return `<div class="top">
-    <div class="brand">VẬN TẢI DANH LONG<small>TRANG QUẢN LÝ</small></div>
+    <div class="brand">${CFG.brand}<small>TRANG QUẢN LÝ</small></div>
     <nav>
       <button onclick="route('home')" class="${active==='home'?'active':''}">🏠 Trang chính</button>
       <button onclick="route('blogList')" class="${active==='blog'?'active':''}">✍️ Bài viết</button>
@@ -305,8 +307,8 @@ function topBar(active) {
 
 function renderLogin() {
   app.innerHTML = `<div class="login"><div class="card">
-    <div class="mark">DL</div>
-    <h1>Trang quản lý web Danh Long</h1>
+    <div class="mark">${CFG.brandMark}</div>
+    <h1>Trang quản lý ${CFG.brand}</h1>
     <p>Đăng nhập để sửa nội dung, viết bài, tải ảnh. Web tự cập nhật sau ~1 phút.</p>
     <button class="btn-github" onclick="login()">🔑 Đăng nhập bằng GitHub</button>
   </div></div>`;
@@ -887,6 +889,7 @@ async function delMedia(name, sha){
 }
 
 /* ---------- khởi động ---------- */
+try { document.title = 'Trang quản lý — ' + CFG.brand; } catch(_) {}
 route(TOKEN ? 'home' : 'login');
 </script>
 </body>
