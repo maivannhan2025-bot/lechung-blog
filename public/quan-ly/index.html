@@ -346,10 +346,14 @@ async function renderBlogList() {
     }));
     document.getElementById('bl').innerHTML = items.map(it => {
       const img = it.fm.anhDaiDien ? CFG.site + it.fm.anhDaiDien : '';
+      const slug = it.name.replace(/\.md$/, '');
       return `<div class="list-item">
         ${img ? `<img src="${esc(img)}" onerror="this.style.visibility='hidden'">` : `<img src="" style="visibility:hidden">`}
         <div><div class="t">${esc(it.fm.title || it.name)}</div><div class="d">${esc(it.fm.ngayDang||'')} — ${esc((it.fm.description||'').slice(0,70))}</div></div>
-        <button class="btn ghost go" onclick="route('blogEdit','${encodeURIComponent(it.name)}')">Sửa →</button>
+        <div class="go" style="display:flex;gap:8px;flex-shrink:0">
+          <a class="btn ghost" href="${CFG.site}/blog/${esc(slug)}" target="_blank" rel="noopener">👁️ Xem bài</a>
+          <button class="btn ghost" onclick="route('blogEdit','${encodeURIComponent(it.name)}')">Sửa →</button>
+        </div>
       </div>`;
     }).join('');
   } catch (e) { document.getElementById('bl').innerHTML = '<div class="center-msg">Lỗi tải: ' + esc(e.message) + '</div>'; }
@@ -425,7 +429,7 @@ async function renderBlogEdit(nameEnc) {
       selector:'#content', height:520, menubar:false, branding:false, promotion:false, statusbar:false,
       language:'vi',
       plugins:'lists link autoresize',
-      toolbar:'undo redo | blocks | bold italic underline | forecolor | bullist numlist | alignleft aligncenter alignright | chenanh link | removeformat',
+      toolbar:'undo redo | blocks | bold italic underline | forecolor | bullist numlist | alignleft aligncenter alignright | chenanh link | removeformat | xembai',
       toolbar_mode:'wrap',
       block_formats:'Đoạn văn=p; Tiêu đề lớn=h2; Tiêu đề nhỏ=h3',
       content_style:"body{font-family:Nunito,Arial,sans-serif;font-size:16px;line-height:1.75;color:#26263a} h2{font-size:22px;font-weight:800} h3{font-size:18px;font-weight:800} img{max-width:100%;height:auto;border-radius:10px}",
@@ -439,6 +443,14 @@ async function renderBlogEdit(nameEnc) {
             const suggested=((tEl?tEl.value.trim():'') || path.split('/').pop().replace(/\.[^.]+$/,'').replace(/[-_]+/g,' ')).slice(0,100);
             askAlt(suggested,(alt)=>{ ed.insertContent('<img src="'+CFG.site+path+'" alt="'+String(alt||'').replace(/"/g,'”')+'" />'); });
           }); }
+        });
+        ed.ui.registry.addButton('xembai', {
+          text:'👁 Xem bài viết', tooltip:'Mở bài đã đăng trên web (bản đã lưu gần nhất)',
+          onAction:()=>{
+            const slug = (fileName||'').replace(/\.md$/,'');
+            if (!slug) { toast('Hãy bấm "💾 Lưu & đăng" trước, rồi mới xem được trên web.'); return; }
+            window.open(CFG.site + '/blog/' + slug, '_blank');
+          }
         });
       }
     });
