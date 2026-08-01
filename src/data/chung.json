@@ -6,11 +6,9 @@
   "fbPixel": "",
   "apiKeys": [],
   "fbPixelId": "",
-  "gaId": "<!-- Google tag (gtag.js) --> <script async src=",
+  "gaId": "<!-- Google tag (gtag.js) --> <script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2BPKL6R5EX\"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());    gtag('config', 'G-2BPKL6R5EX'); </script>",
   "aiWebhook": "",
   "contactFormTitle": "",
   "contactFormDelay": "",
-  "contactForm": "",
-  "gscVerify": "<meta name=\"google-site-verification\" content=\"HCZEHNq14c8rPpWDIYdFJI5ajsOFQNhYC5NaNcpRPN0\" />",
-  "bingVerify": ""
+  "contactForm": ""
 }
