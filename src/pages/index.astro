@@ -9,23 +9,38 @@ import chung from '../data/chung.json';
 const HOTLINE = chung.hotline;
 const TEL = chung.tel;
 
-// ==== SEO: xác minh Google/Bing (dán qua /quan-ly > Cài đặt) + Schema doanh nghiệp ====
-// Chấp nhận dán cả thẻ <meta ... content="..."> lẫn dãy mã trần.
-const _seo = chung as { gscVerify?: string; bingVerify?: string; companyFull?: string };
-const _gscRaw = _seo.gscVerify || '';
+// ==== Cấu hình lấy từ /quan-ly (Cài đặt + Liên hệ) — để MỌI ô đều dùng thật ====
+const _c = chung as { gscVerify?: string; bingVerify?: string; companyFull?: string; mst?: string; address?: string; zalo?: string; messenger?: string; fbPixel?: string; fbPixelId?: string; gaId?: string; contactForm?: string; contactFormTitle?: string; contactFormDelay?: string | number };
+// SEO: xác minh Google/Bing (nhận cả thẻ <meta ... content="..."> lẫn dãy mã trần)
+const _gscRaw = _c.gscVerify || '';
 const gscVerify = (_gscRaw.match(/content=["']([^"']+)["']/i)?.[1] || _gscRaw.replace(/<[^>]*>/g, '')).trim();
-const _bingRaw = _seo.bingVerify || '';
+const _bingRaw = _c.bingVerify || '';
 const bingVerify = (_bingRaw.match(/content=["']([^"']+)["']/i)?.[1] || _bingRaw.replace(/<[^>]*>/g, '')).trim();
+// Liên hệ mở rộng (footer + Schema đọc từ đây; sửa ở /quan-ly > Liên hệ)
+const COMPANY_FULL = _c.companyFull || 'CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG';
+const MST = _c.mst || '0314664033';
+const ADDRESS = _c.address || '77 Đường số 2A, Phường Bình Tân, TP. Hồ Chí Minh';
+const ZALO = (_c.zalo || TEL).replace(/\s/g, '');
+const MESSENGER = (_c.messenger || '').trim();
+// Quảng cáo / đo lường / form (sửa ở /quan-ly > Cài đặt)
+const FB_PIXEL = (_c.fbPixelId || _c.fbPixel || '').trim();
+const GA_ID = ((_c.gaId || '').match(/\b(G-[A-Z0-9]+|UA-[0-9-]+|GTM-[A-Z0-9]+)\b/i)?.[0] || '').trim();
+const CONTACT_FORM = _c.contactForm || '';
+const CONTACT_FORM_TITLE = _c.contactFormTitle || 'Nhận tư vấn & báo giá';
+const CONTACT_FORM_DELAY = Number(_c.contactFormDelay) || 6;
+// Schema doanh nghiệp
 const _logoAbs = 'https://lechung.vn' + (chung.logo || '/favicon.svg');
 const bizSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: _seo.companyFull || 'VẬN TẢI LÊ CHUNG',
+  name: COMPANY_FULL,
   url: 'https://lechung.vn/',
   telephone: (TEL || '').replace(/^0/, '+84'),
   image: _logoAbs,
   logo: _logoAbs,
+  address: { '@type': 'PostalAddress', streetAddress: ADDRESS, addressLocality: 'TP. Hồ Chí Minh', addressCountry: 'VN' },
   areaServed: 'TP. Hồ Chí Minh và các tỉnh thành',
+  ...(MST ? { vatID: MST } : {}),
 };
 
 // Khung ảnh/video đầu trang — anh Nhận tự đổi ở /admin (mục "Trang chủ").
@@ -152,6 +167,12 @@ const ctaCuoi = trangchu.ctaCuoi || {};
 {gscVerify && <meta name="google-site-verification" content={gscVerify} />}
 {bingVerify && <meta name="msvalidate.01" content={bingVerify} />}
 <script type="application/ld+json" is:inline set:html={JSON.stringify(bizSchema)} />
+{/* Facebook Pixel (chỉ chạy khi có mã ở /quan-ly > Cài đặt) */}
+{FB_PIXEL && (<script is:inline set:html={`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${FB_PIXEL}');fbq('track','PageView');`} />)}
+{FB_PIXEL && (<noscript set:html={`<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${FB_PIXEL}&ev=PageView&noscript=1"/>`} />)}
+{/* Google Analytics 4 (chỉ chạy khi có mã G-XXXX hợp lệ) */}
+{GA_ID && <script is:inline src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />}
+{GA_ID && (<script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`} />)}
 <style is:global>
   :root{
     --bg:#ffffff; --panel:#f7f9fc; --card:#ffffff; --line:#e6ebf3;
@@ -738,10 +759,10 @@ const ctaCuoi = trangchu.ctaCuoi || {};
   <div class="wrap">
     <div class="cols">
       <div style="max-width:360px">
-        <b class="brand">CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG</b>
-        Địa chỉ: 77 Đường số 2A, Phường Bình Tân, TP. Hồ Chí Minh<br>
+        <b class="brand">{COMPANY_FULL}</b>
+        Địa chỉ: {ADDRESS}<br>
         Hotline: <a href={`tel:${TEL}`} class="tnum">{HOTLINE}</a><br>
-        Mã số thuế: <span class="tnum">0314664033</span>
+        Mã số thuế: <span class="tnum">{MST}</span>
       </div>
       <div class="navcol">
         <b class="brand" style="font-size:14px">Liên kết</b>
@@ -753,10 +774,31 @@ const ctaCuoi = trangchu.ctaCuoi || {};
         <a href="/blog">Blog kinh nghiệm</a>
       </div>
     </div>
-    <div class="cr">© 2026 CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG. Vận tải tử tế — đúng giờ, đúng giá, có trách nhiệm.</div>
+    <div class="cr">© 2026 {COMPANY_FULL}. Vận tải tử tế — đúng giờ, đúng giá, có trách nhiệm.</div>
   </div>
 </footer>
 
+{/* Form liên hệ tự nổi (chỉ hiện khi có mã nhúng ở /quan-ly > Cài đặt) */}
+{CONTACT_FORM && (
+  <Fragment>
+    <div id="cf-pop" data-delay={CONTACT_FORM_DELAY} aria-hidden="true" style="position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px">
+      <div data-cf-bg style="position:absolute;inset:0;background:rgba(10,37,64,.6)"></div>
+      <div role="dialog" aria-modal="true" style="position:relative;background:#fff;border-radius:18px;max-width:460px;width:100%;max-height:88vh;overflow:auto;padding:26px 22px 22px;box-shadow:0 30px 70px rgba(0,0,0,.35)">
+        <button data-cf-x aria-label="Đóng" style="position:absolute;top:10px;right:12px;width:34px;height:34px;border:0;border-radius:50%;background:#eef2fb;color:#111;font-size:22px;line-height:1;cursor:pointer">&times;</button>
+        <h3 style="font-size:20px;font-weight:800;color:#0a2540;margin:0 0 12px;padding-right:30px">{CONTACT_FORM_TITLE}</h3>
+        <div set:html={CONTACT_FORM} />
+      </div>
+    </div>
+    <script is:inline set:html={`(function(){var p=document.getElementById('cf-pop');if(!p)return;var delay=(parseInt(p.getAttribute('data-delay'),10)||6)*1000;function runScripts(){p.querySelectorAll('script').forEach(function(s){var n=document.createElement('script');for(var i=0;i<s.attributes.length;i++){n.setAttribute(s.attributes[i].name,s.attributes[i].value);}if(!s.src)n.textContent=s.textContent;document.body.appendChild(n);s.remove();});}function open(){if(sessionStorage.getItem('cf_pop_seen'))return;p.style.display='flex';p.setAttribute('aria-hidden','false');sessionStorage.setItem('cf_pop_seen','1');try{runScripts();}catch(e){}}function close(){p.style.display='none';p.setAttribute('aria-hidden','true');}setTimeout(open,delay);var x=p.querySelector('[data-cf-x]'),bg=p.querySelector('[data-cf-bg]');if(x)x.addEventListener('click',close);if(bg)bg.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();`} />
+  </Fragment>
+)}
+
+{/* Nút liên hệ nổi (Zalo/Messenger/Gọi) — dùng số/link ở /quan-ly > Liên hệ */}
+<div style="position:fixed;right:14px;bottom:16px;z-index:900;display:flex;flex-direction:column;gap:10px">
+  {MESSENGER && (<a href={MESSENGER} target="_blank" rel="noopener" aria-label="Nhắn Messenger" style="width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#0a7cff;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.22)">✉</a>)}
+  {ZALO && (<a href={`https://zalo.me/${ZALO}`} target="_blank" rel="noopener" aria-label="Chat Zalo" style="width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#0068ff;color:#fff;font-weight:800;font-size:14px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.22)">Zalo</a>)}
+  <a href={`tel:${TEL}`} aria-label="Gọi ngay" style="width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#ff6b35;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.22)">☎</a>
+</div>
 
 </body>
 </html>
