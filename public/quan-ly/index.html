@@ -709,6 +709,8 @@ async function renderSettings() {
   catch(e){ app.innerHTML=topBar('set')+`<div class="wrap"><div class="center-msg">Lỗi: ${esc(e.message)}</div></div>`; return; }
   data.apiKeys = Array.isArray(data.apiKeys) ? data.apiKeys : [];
   const F=[
+    ['gscVerify','Mã xác minh Google Search Console (SEO)','Giúp <b>Google nhận web của anh</b> để đưa lên kết quả tìm. Vào Google Search Console → chọn cách "Thẻ HTML" → nó cho 1 dòng; dán <b>nguyên dòng đó</b> vào đây (dán cả thẻ &lt;meta ...&gt; hay chỉ dãy mã đều được). Để trống nếu chưa có.','input'],
+    ['bingVerify','Mã xác minh Bing Webmaster (SEO)','Giống Search Console nhưng của <b>Bing (Microsoft)</b> — trợ lý AI như Copilot cũng lấy dữ liệu từ đây. Vào Bing Webmaster Tools lấy mã, dán vào đây (cả thẻ &lt;meta ...&gt; hay dãy mã đều được). Để trống nếu chưa có.','input'],
     ['fbPixelId','Mã Facebook Pixel','Dán dãy số Pixel ID để chạy quảng cáo Facebook; để trống nếu chưa chạy.','input'],
     ['gaId','Mã Google Analytics (đo lượt xem)','VD: G-XXXXXXX; để trống nếu chưa dùng.','input'],
     ['aiWebhook','Địa chỉ API / Webhook cho AI viết bài & chỉnh web','Dán link webhook (n8n, Zapier…) để hệ thống/AI tự đăng bài. Để trống nếu chưa dùng.','input'],
@@ -718,9 +720,13 @@ async function renderSettings() {
   ];
   app.innerHTML = topBar('set') + `<div class="wrap">
     <div class="toolbar"><button class="btn" id="saveSet">💾 Lưu</button></div>
-    <h2 class="page">Cài đặt</h2><p class="sub">Quảng cáo, đo lường, Form liên hệ &amp; khoá API. Sửa xong bấm Lưu — web tự cập nhật sau ~1 phút.</p>
+    <h2 class="page">Cài đặt</h2><p class="sub">SEO Google, quảng cáo, đo lường, Form liên hệ &amp; khoá API. Sửa xong bấm Lưu — web tự cập nhật sau ~1 phút.</p>
     <div class="form">
       ${F.map(([k,l,h,ty])=>`<div class="field"><label>${l}</label>${h?`<div class="hint" style="margin-bottom:6px">${h}</div>`:''}${ty==='textarea'?`<textarea id="s_${k}" rows="4" style="font-family:ui-monospace,monospace;font-size:13px">${esc(data[k]||'')}</textarea>`:`<input id="s_${k}" value="${esc(data[k]||'')}">`}</div>`).join('')}
+      <div class="field" style="border-top:1px dashed var(--line);padding-top:16px">
+        <label>🔎 Dữ liệu doanh nghiệp cho Google (Schema) — tự chạy</label>
+        <div class="hint">Web <b>tự khai báo</b> tên công ty, số điện thoại, địa chỉ (lấy ở mục <b>📞 Liên hệ</b>) cho Google — giúp web hiện đẹp hơn trên kết quả tìm (kèm SĐT, khu vực chạy). Anh <b>không phải nhập gì</b> ở đây; muốn đổi thì sửa ở mục Liên hệ.</div>
+      </div>
       <div class="field" style="border-top:1px dashed var(--line);padding-top:16px">
         <label>🔑 Khoá API (cho AI / đối tác kết nối vào web)</label>
         <div class="hint" style="margin-bottom:10px">Tạo khoá để AI hoặc phần mềm khác kết nối. <b>Khoá chỉ hiện đầy đủ 1 lần</b> lúc tạo — hãy sao chép &amp; cất kỹ. Sau đó chỉ thấy dạng ẩn; muốn khoá khác thì Thu hồi rồi Tạo mới.</div>
