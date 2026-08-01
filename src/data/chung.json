@@ -3,5 +3,12 @@
   "tel": "0839861499",
   "zalo": "0839861499",
   "logo": "/anh/logo-lechung.webp",
-  "fbPixel": ""
+  "fbPixel": "",
+  "apiKeys": [],
+  "fbPixelId": "",
+  "gaId": "<!-- Google tag (gtag.js) --> <script async src=\"https://www.googletagmanager.com/gtag/js?id=G-2BPKL6R5EX\"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());    gtag('config', 'G-2BPKL6R5EX'); </script>",
+  "aiWebhook": "",
+  "contactFormTitle": "",
+  "contactFormDelay": "",
+  "contactForm": ""
 }
