@@ -9,6 +9,25 @@ import chung from '../data/chung.json';
 const HOTLINE = chung.hotline;
 const TEL = chung.tel;
 
+// ==== SEO: xác minh Google/Bing (dán qua /quan-ly > Cài đặt) + Schema doanh nghiệp ====
+// Chấp nhận dán cả thẻ <meta ... content="..."> lẫn dãy mã trần.
+const _seo = chung as { gscVerify?: string; bingVerify?: string; companyFull?: string };
+const _gscRaw = _seo.gscVerify || '';
+const gscVerify = (_gscRaw.match(/content=["']([^"']+)["']/i)?.[1] || _gscRaw.replace(/<[^>]*>/g, '')).trim();
+const _bingRaw = _seo.bingVerify || '';
+const bingVerify = (_bingRaw.match(/content=["']([^"']+)["']/i)?.[1] || _bingRaw.replace(/<[^>]*>/g, '')).trim();
+const _logoAbs = 'https://lechung.vn' + (chung.logo || '/favicon.svg');
+const bizSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: _seo.companyFull || 'VẬN TẢI LÊ CHUNG',
+  url: 'https://lechung.vn/',
+  telephone: (TEL || '').replace(/^0/, '+84'),
+  image: _logoAbs,
+  logo: _logoAbs,
+  areaServed: 'TP. Hồ Chí Minh và các tỉnh thành',
+};
+
 // Khung ảnh/video đầu trang — anh Nhận tự đổi ở /admin (mục "Trang chủ").
 // Có link YouTube => khung chiếu VIDEO; ô link để trống => khung hiện ẢNH.
 function youtubeEmbed(url){
@@ -130,6 +149,9 @@ const ctaCuoi = trangchu.ctaCuoi || {};
 <meta property="og:title" content="Thuê xe tải chở hàng TPHCM đi toàn quốc — Vận Tải Lê Chung">
 <meta property="og:description" content={`Đội xe hơn 100 chiếc 8-20 tấn, xe cẩu, container. An toàn, đúng hẹn, không phát sinh. Hotline ${HOTLINE}.`}>
 <meta property="og:type" content="website">
+{gscVerify && <meta name="google-site-verification" content={gscVerify} />}
+{bingVerify && <meta name="msvalidate.01" content={bingVerify} />}
+<script type="application/ld+json" is:inline set:html={JSON.stringify(bizSchema)} />
 <style is:global>
   :root{
     --bg:#ffffff; --panel:#f7f9fc; --card:#ffffff; --line:#e6ebf3;
