@@ -1,10 +1,42 @@
 ---
 // Layout cho từng bài viết blog Lê Chung — giữ nguyên thương hiệu lechung.vn
 import Header from '../components/Header.astro';
+import chung from '../data/chung.json';
 const { frontmatter } = Astro.props;
 const { title, description, ngayDang, thoiGianDoc, anhDaiDien } = frontmatter;
 // Ảnh đại diện đầu bài: ưu tiên ảnh anh Nhận đặt (anhDaiDien ở /admin), chưa có thì dùng ảnh đội xe.
 const ANH_DAI_DIEN = anhDaiDien || '/img/doi-xe.webp';
+
+// ==== SEO: đường dẫn + ảnh chia sẻ + Schema (Bài viết + Breadcrumb) cho Google, Zalo, Facebook ====
+// (chỉ cộng thêm — không đổi giao diện bài viết)
+const siteUrl = Astro.site ?? new URL('https://lechung.vn/');
+const slug = Astro.url.pathname.split('/').filter(Boolean).pop() || '';
+const postUrl = siteUrl.href.replace(/\/$/, '') + '/blog/' + slug + '/';
+const anhChiaSe = new URL(ANH_DAI_DIEN, siteUrl).href;           // ảnh khi gửi link (phải là đường dẫn đầy đủ)
+const logoUrl = new URL(chung.logo || '/favicon.svg', siteUrl).href;
+const ngayISO = ngayDang ? new Date(ngayDang).toISOString() : undefined;
+const congTy = (chung as { companyFull?: string }).companyFull || 'CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: anhChiaSe,
+  ...(ngayISO ? { datePublished: ngayISO, dateModified: ngayISO } : {}),
+  author: { '@type': 'Organization', name: congTy },
+  publisher: { '@type': 'Organization', name: congTy, logo: { '@type': 'ImageObject', url: logoUrl } },
+  mainEntityOfPage: postUrl,
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Trang chủ', item: siteUrl.href },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: siteUrl.href.replace(/\/$/, '') + '/blog/' },
+    { '@type': 'ListItem', position: 3, name: title, item: postUrl },
+  ],
+};
 ---
 <!doctype html>
 <html lang="vi">
@@ -13,10 +45,18 @@ const ANH_DAI_DIEN = anhDaiDien || '/img/doi-xe.webp';
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} — Blog Lê Chung</title>
 <meta name="description" content={description}>
-<link rel="canonical" href={`https://lechung.vn/blog/${Astro.url.pathname.split('/').filter(Boolean).pop()}`}>
+<link rel="canonical" href={postUrl}>
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:type" content="article">
+<meta property="og:url" content={postUrl}>
+<meta property="og:image" content={anhChiaSe}>
+<meta property="og:site_name" content="Vận Tải Lê Chung">
+{ngayISO && <meta property="article:published_time" content={ngayISO} />}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={anhChiaSe}>
 <style is:global>
   :root{
     --bg:#ffffff; --panel:#f7f9fc; --card:#ffffff; --line:#e6ebf3;
@@ -100,6 +140,10 @@ const ANH_DAI_DIEN = anhDaiDien || '/img/doi-xe.webp';
     © 2026 <b>lechung.vn</b> · <a href="/">Trang chủ</a> · <a href="/blog">Blog</a>
   </div>
 </footer>
+
+<!-- Dữ liệu cho Google: Bài viết (Article) + Đường dẫn (Breadcrumb) — giúp hiển thị đẹp trên kết quả tìm kiếm -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
 
 </body>
 </html>

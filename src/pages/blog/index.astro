@@ -11,15 +11,31 @@ const baiViet = (await getCollection('blog'))
 // bài chưa đặt thì xoay vòng ảnh xe marketing cho đỡ trùng nhau.
 const ANH_MAC_DINH = ['/anh/xe-8-tan.webp', '/anh/xe-10-tan.webp', '/anh/xe-15-tan.webp', '/anh/xe-cau.webp', '/anh/xe-container.webp', '/anh/xe-20-tan.webp', '/img/doi-xe.webp'];
 const anhBai = (bai, i) => bai.data.anhDaiDien || ANH_MAC_DINH[i % ANH_MAC_DINH.length];
+
+// SEO: tiêu đề + mô tả + ảnh chia sẻ (đường dẫn đầy đủ) cho trang danh sách blog
+const BLOG_TITLE = 'Blog Lê Chung — Kinh nghiệm thuê xe tải, chở hàng, vận chuyển';
+const BLOG_DESC = 'Kinh nghiệm thuê xe tải chở hàng, chọn loại xe, đóng gói, tính cước, tránh phát sinh — viết bằng lời thường cho khách cần vận chuyển. Lê Chung 0839 861 499.';
+const BLOG_URL = 'https://lechung.vn/blog/';
+const ANH_CHIA_SE = new URL('/img/doi-xe.webp', Astro.site ?? 'https://lechung.vn').href;
 ---
 <!doctype html>
 <html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog Lê Chung — Kinh nghiệm thuê xe tải, chở hàng, vận chuyển</title>
-<meta name="description" content="Kinh nghiệm thuê xe tải chở hàng, chọn loại xe, đóng gói, tính cước, tránh phát sinh — viết bằng lời thường cho khách cần vận chuyển. Lê Chung 0839 861 499.">
-<link rel="canonical" href="https://lechung.vn/blog">
+<title>{BLOG_TITLE}</title>
+<meta name="description" content={BLOG_DESC}>
+<link rel="canonical" href={BLOG_URL}>
+<meta property="og:title" content={BLOG_TITLE}>
+<meta property="og:description" content={BLOG_DESC}>
+<meta property="og:type" content="website">
+<meta property="og:url" content={BLOG_URL}>
+<meta property="og:image" content={ANH_CHIA_SE}>
+<meta property="og:site_name" content="Vận Tải Lê Chung">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={BLOG_TITLE}>
+<meta name="twitter:description" content={BLOG_DESC}>
+<meta name="twitter:image" content={ANH_CHIA_SE}>
 <style is:global>
   :root{
     --bg:#ffffff; --panel:#f7f9fc; --card:#ffffff; --line:#e6ebf3;
