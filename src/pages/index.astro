@@ -59,6 +59,8 @@ function youtubeEmbed(url){
 }
 const heroVideoUrl = youtubeEmbed(trangchu && trangchu.heroVideo);
 const heroAnh = (trangchu && trangchu.heroAnh) || '/img/doi-xe.webp';
+// Ảnh xem trước khi chia sẻ link trang chủ (Facebook/Zalo) — đường dẫn đầy đủ, mặc định ảnh đầu trang
+const ogImage = /^https?:\/\//.test(heroAnh) ? heroAnh : ('https://lechung.vn' + heroAnh);
 const heroEyebrow = trangchu.heroEyebrow;
 const heroH1 = trangchu.heroH1;
 const heroLead = trangchu.heroLead;
@@ -164,6 +166,13 @@ const ctaCuoi = trangchu.ctaCuoi || {};
 <meta property="og:title" content="Thuê xe tải chở hàng TPHCM đi toàn quốc — Vận Tải Lê Chung">
 <meta property="og:description" content={`Đội xe hơn 100 chiếc 8-20 tấn, xe cẩu, container. An toàn, đúng hẹn, không phát sinh. Hotline ${HOTLINE}.`}>
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://lechung.vn/">
+<meta property="og:image" content={ogImage}>
+<meta property="og:site_name" content="Vận Tải Lê Chung">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thuê xe tải chở hàng TPHCM đi toàn quốc — Vận Tải Lê Chung">
+<meta name="twitter:description" content={`Đội xe hơn 100 chiếc 8-20 tấn, xe cẩu, container. An toàn, đúng hẹn, không phát sinh. Hotline ${HOTLINE}.`}>
+<meta name="twitter:image" content={ogImage}>
 {gscVerify && <meta name="google-site-verification" content={gscVerify} />}
 {bingVerify && <meta name="msvalidate.01" content={bingVerify} />}
 <script type="application/ld+json" is:inline set:html={JSON.stringify(bizSchema)} />
