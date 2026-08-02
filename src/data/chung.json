@@ -8,15 +8,7 @@
   "address": "77 Đường số 2A, Phường Bình Tân, TP. Hồ Chí Minh",
   "messenger": "",
   "fbPixel": "",
-  "apiKeys": [
-    {
-      "name": "Đăng Bài",
-      "created": "2026-08-02",
-      "prefix": "dl_e011ba0",
-      "last4": "5c63",
-      "hash": "8ef917f24b38f5eda7728b2b733484b2536a7e7cebbe1bf6f736433067fab6b0"
-    }
-  ],
+  "apiKeys": [],
   "fbPixelId": "",
   "gaId": "",
   "aiWebhook": "",
