@@ -76,6 +76,9 @@ const posts = (await getCollection('blog'))
   .filter((p) => p.data.ngayDang.valueOf() <= Date.now())
   .sort((a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf());
 const teaserPosts = posts.slice(0, 6);
+// Ảnh đại diện bài blog: ưu tiên ảnh anh Nhận đặt riêng (anhDaiDien), chưa có thì xoay vòng ảnh xe (giống trang /blog)
+const ANH_MAC_DINH_BAI = ['/anh/xe-8-tan.webp', '/anh/xe-10-tan.webp', '/anh/xe-15-tan.webp', '/anh/xe-cau.webp', '/anh/xe-container.webp', '/anh/xe-20-tan.webp', '/img/doi-xe.webp'];
+const anhBai = (bai, i) => bai.data.anhDaiDien || ANH_MAC_DINH_BAI[i % ANH_MAC_DINH_BAI.length];
 const norm = (s) => (s || '').toLowerCase();
 function matchPost(keywords) {
   for (const kw of keywords) {
@@ -313,8 +316,10 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
   @media(max-width:900px){ .blog-grid{grid-template-columns:repeat(2,1fr)} }
   @media(max-width:600px){ .blog-grid{grid-template-columns:1fr} }
-  .bcard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .3s ease, box-shadow .3s ease}
+  .bcard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .3s ease, box-shadow .3s ease}
   .bcard:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+  .bcard-img{width:100%; aspect-ratio:16/10; object-fit:cover}
+  .bcard-body{padding:20px 22px 22px; display:flex; flex-direction:column; flex:1}
   .bcard h3{margin:0 0 8px; font-size:16px; font-weight:800; color:var(--ink); line-height:1.35}
   .bcard p{margin:0 0 14px; color:var(--text-soft); font-size:13.5px; flex:1}
   .bcard .more{color:var(--brand-dark); font-weight:800; font-size:13.5px}
@@ -606,11 +611,14 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
       <div class="tl-line" set:html={ICON_TRUCK_LINE} />
     </div>
     <div class="blog-grid">
-      {teaserPosts.map((p) => (
+      {teaserPosts.map((p, i) => (
         <a class="bcard" href={`/blog/${p.id}`}>
-          <h3>{p.data.title}</h3>
-          <p>{p.data.description}</p>
-          <span class="more">Đọc tiếp →</span>
+          <img class="bcard-img" src={anhBai(p, i)} alt={p.data.title} loading="lazy" />
+          <div class="bcard-body">
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            <span class="more">Đọc tiếp →</span>
+          </div>
         </a>
       ))}
     </div>
