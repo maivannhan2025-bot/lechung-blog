@@ -854,7 +854,7 @@ function renderVisualEdit() {
       const heroBox = () => { const W = Math.min(1200, doc.documentElement.clientWidth || 1200); return Math.round(W) + '×' + Math.round(W * 9 / 16); };
       const measure = (el) => {
         const path = el.getAttribute('data-edit-img') || '';
-        if (path.indexOf('slides.') >= 0) return heroBox() + ' px'; // banner dau trang = o 16:9 tren web that
+        if (/slides\./i.test(path)) return heroBox() + ' px'; // banner dau trang (hero slideshow, moi ten field: slides/heroSlides...) = o 16:9 tren web that
         const r = el.getBoundingClientRect();
         return r.width ? (Math.round(r.width) + '×' + Math.round(r.height) + ' px') : '';
       };
