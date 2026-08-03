@@ -55,7 +55,9 @@ const khuVuc = [
     <div class="bar">
       <a class="brand-logo" href="/"><img src={LOGO} alt="Vận Tải Lê Chung" width="150" height="44"></a>
       <nav class="nav-links" id="mainnav">
+        <button class="nav-close" id="navClose" aria-label="Đóng menu">✕</button>
         <a href="/">Trang chủ</a>
+        <a href="/#gioi-thieu">Giới thiệu</a>
 
         <div class="nav-item">
           <a href="/#dich-vu" class="nav-top">Dịch vụ <span class="caret">▾</span></a>
@@ -63,6 +65,9 @@ const khuVuc = [
             {dichVuTen.map((t) => (<a href="/#dich-vu">{t}</a>))}
           </div>
         </div>
+
+        <a href="/#doi-xe">Đội xe</a>
+        <a href="/#quy-trinh">Quy trình</a>
 
         <div class="nav-item">
           <a href="/#bang-gia" class="nav-top">Bảng giá <span class="caret">▾</span></a>
@@ -80,8 +85,6 @@ const khuVuc = [
           </div>
         </div>
 
-        <a href="/#quy-trinh">Quy trình</a>
-
         <div class="nav-item">
           <a href="/blog" class="nav-top">Blog <span class="caret">▾</span></a>
           <div class="submenu">
@@ -92,6 +95,7 @@ const khuVuc = [
 
         <a class="btn" href={`tel:${TEL}`}>📞 {HOTLINE}</a>
       </nav>
+      <div class="nav-overlay" id="navOverlay"></div>
       <button class="hamb" id="hamb" aria-label="Mở menu" aria-expanded="false">☰</button>
     </div>
   </div>
@@ -114,6 +118,10 @@ const khuVuc = [
     </a>
   )}
 </div>
+
+<button id="backtop" class="backtop" aria-label="Về đầu trang">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="m18 15-6-6-6 6"/></svg>
+</button>
 
 <!-- Popup "khách vừa liên hệ" — nội dung MÔ PHỎNG để tạo niềm tin -->
 <div class="socialpop" id="socialpop" aria-hidden="true">
@@ -154,15 +162,30 @@ const khuVuc = [
   .hamb{display:none; background:transparent; border:1px solid var(--line); color:var(--text); width:44px; height:42px; border-radius:10px; font-size:22px; line-height:1; cursor:pointer; align-items:center; justify-content:center}
   .hamb:hover{background:var(--brand-tint); color:var(--brand-dark)}
 
+  /* Ngăn kéo menu di động (kiểu Danh Long): trượt từ bên phải + nền che mờ phía sau */
+  .nav-close{display:none}
+  .nav-overlay{display:none}
   @media(max-width:920px){
     .hamb{display:inline-flex}
-    .nav-links{
-      position:absolute; top:100%; left:0; right:0; background:var(--panel);
-      border-bottom:1px solid var(--line); box-shadow:var(--shadow);
-      flex-direction:column; align-items:stretch; gap:2px; padding:10px 14px 16px;
-      display:none;
+    .nav-overlay{
+      display:block; position:fixed; inset:0; z-index:95; background:rgba(7,13,20,.55);
+      opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s;
     }
-    .nav-links.open{display:flex}
+    .nav-overlay.open{opacity:1; visibility:visible}
+    .nav-links{
+      position:fixed; top:0; right:0; bottom:0; width:min(320px,84vw); z-index:96;
+      background:var(--panel); box-shadow:-14px 0 40px rgba(7,13,20,.28);
+      flex-direction:column; align-items:stretch; gap:2px; padding:64px 16px 24px;
+      transform:translateX(100%); transition:transform .3s cubic-bezier(.2,.8,.2,1);
+      overflow-y:auto; display:flex;
+    }
+    .nav-links.open{transform:translateX(0)}
+    .nav-close{
+      display:flex; position:absolute; top:14px; right:14px; width:38px; height:38px;
+      border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--text);
+      align-items:center; justify-content:center; font-size:18px; cursor:pointer;
+    }
+    .nav-close:hover{background:var(--brand-tint); color:var(--brand-dark)}
     .nav-links > a,
     .nav-top{padding:11px 12px; font-size:15.5px}
     .nav-item{position:static}
@@ -191,6 +214,17 @@ const khuVuc = [
   .fab a:hover .ic{filter:brightness(1.08)}
   @media(max-width:560px){ .fab{right:12px; bottom:14px; gap:12px} .fab .lbl{display:none} .fab .ic{width:52px; height:52px} }
   @media(prefers-reduced-motion:reduce){ .fab .ic, .fab .ic::after{animation:none} }
+
+  /* Nút về đầu trang — hiện khi cuộn xuống */
+  .backtop{
+    position:fixed; left:16px; bottom:18px; z-index:90; width:44px; height:44px; border-radius:50%;
+    background:var(--text); color:#fff; border:0; display:grid; place-items:center; cursor:pointer;
+    box-shadow:var(--shadow); opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s;
+  }
+  .backtop.show{opacity:1; visibility:visible; transform:none}
+  .backtop:hover{background:var(--brand-dark)}
+  @media(max-width:560px){ .backtop{left:12px; bottom:14px; width:40px; height:40px} }
 
   /* POPUP "KHÁCH VỪA LIÊN HỆ" (mô phỏng) */
   .socialpop{position:fixed; left:16px; bottom:18px; z-index:88; max-width:300px; background:var(--panel); border:1px solid var(--line); border-radius:14px; box-shadow:0 12px 32px rgba(0,0,0,.2); padding:12px 14px; display:flex; gap:11px; align-items:center; transform:translateY(160%); opacity:0; transition:transform .45s cubic-bezier(.2,.8,.2,1), opacity .45s ease; pointer-events:none}
@@ -280,30 +314,39 @@ const khuVuc = [
 </style>
 
 <script>
-  // Cuộn xuống một chút -> header nổi bóng nhẹ cho có chiều sâu
+  // Cuộn xuống một chút -> header nổi bóng nhẹ cho có chiều sâu; cuộn sâu hơn -> hiện nút về đầu trang
   (function () {
     var head = document.querySelector('.site-head');
-    if (!head) return;
-    function onScroll() { head.classList.toggle('scrolled', window.scrollY > 8); }
+    var backtop = document.getElementById('backtop');
+    function onScroll() {
+      if (head) head.classList.toggle('scrolled', window.scrollY > 8);
+      if (backtop) backtop.classList.toggle('show', window.scrollY > 500);
+    }
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    if (backtop) backtop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   })();
 
-  // Menu điện thoại: bấm ☰ để mở/đóng
+  // Menu điện thoại: bấm ☰ để mở ngăn kéo, bấm ✕/nền mờ/link để đóng
   (function () {
     var hamb = document.getElementById('hamb');
     var nav = document.getElementById('mainnav');
+    var overlay = document.getElementById('navOverlay');
+    var closeBtn = document.getElementById('navClose');
     if (!hamb || !nav) return;
-    hamb.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
+    function setOpen(open) {
+      nav.classList.toggle('open', open);
+      if (overlay) overlay.classList.toggle('open', open);
       hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+    }
+    hamb.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+    if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
+    if (overlay) overlay.addEventListener('click', function () { setOpen(false); });
     nav.addEventListener('click', function (e) {
       var a = e.target.closest('a');
       if (!a) return;
       if (a.classList.contains('nav-top')) return; // mục cha: để mở menu con
-      nav.classList.remove('open');
-      hamb.setAttribute('aria-expanded', 'false');
+      setOpen(false);
     });
   })();
 
@@ -331,7 +374,9 @@ const khuVuc = [
     function start() {
       var sel = '.center,.head-sec,.pain,.adv,.svc,.step,.pillar,.scarcity,'
         + '.price-wrap,.value-line,.bonus,.emotion,.rev,.bcard,.final,'
-        + '.ba .col,.art h2,.art h3,.art figure,.art blockquote,.cta-box';
+        + '.ba .col,.art h2,.art h3,.art figure,.art blockquote,.cta-box,'
+        + '.card,.stat,.fleet-item,.hero-txt,.hero-btns,.qb-item,'
+        + '.intro-txt,.intro-img,.cta-mid,.faq,.chips';
       var els = document.querySelectorAll(sel);
       // Không hỗ trợ theo dõi cuộn -> bỏ trạng thái ẩn, hiện hết cho chắc.
       if (!('IntersectionObserver' in window) || !els.length) {
