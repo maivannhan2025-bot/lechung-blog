@@ -1,12 +1,10 @@
 ---
-title: "Bai thu nghiem cong dang bai qua API"
-description: "Bai dang thu de kiem tra he thong hoat dong dung, co the xoa sau khi kiem xong."
-ngayDang: 2026-08-02
+title: "Bai thu nghiem cong dang bai qua API (DA SUA)"
+description: "Da sua qua API de kiem tra tinh nang moi."
+ngayDang: 2026-08-03
 thoiGianDoc: 1
 ---
 
-# Bai thu nghiem cong dang bai
+# Da sua thanh cong
 
-Day la bai dang thu qua cong dang bai API (AI tu dang, khong qua nen tang trung gian), de xac nhan he thong hoat dong dung truoc khi dung that.
-
-Co the xoa bai nay sau khi kiem xong.
+Noi dung nay da duoc SUA qua cong dang bai (khong phai tao moi).
