@@ -1,14 +1,20 @@
 ---
 // Trang 404 — Cloudflare Pages sẽ phục vụ trang này KÈM mã HTTP 404
 // cho mọi URL không tồn tại (sửa lỗi "soft-404": trước đây trả trang chủ + mã 200).
+import chung from '../data/chung.json';
 const HOTLINE = '0839 861 499';
 const TEL = '0839861499';
+// Favicon (icon nhỏ ở tab trình duyệt, sửa ở /quan-ly > Liên hệ) — để trống thì giữ y như cũ (favicon.svg + favicon.ico mặc định)
+const FAVICON = ((chung as { favicon?: string }).favicon || '').trim();
+const FAVICON_TYPE: Record<string, string> = { svg: 'image/svg+xml', png: 'image/png', webp: 'image/webp', jpg: 'image/jpeg', jpeg: 'image/jpeg', ico: 'image/x-icon' };
+const FAVICON_MIME = FAVICON_TYPE[FAVICON.split('.').pop()?.toLowerCase() || ''] || 'image/png';
 ---
 <!doctype html>
 <html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{FAVICON ? <link rel="icon" type={FAVICON_MIME} href={FAVICON} /> : <><link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link rel="icon" href="/favicon.ico" /></>}
 <title>Không tìm thấy trang — Vận Tải Lê Chung</title>
 <meta name="robots" content="noindex">
 <style>

@@ -10,7 +10,7 @@ const HOTLINE = chung.hotline;
 const TEL = chung.tel;
 
 // ==== Cấu hình lấy từ /quan-ly (Cài đặt + Liên hệ) — để MỌI ô đều dùng thật ====
-const _c = chung as { gscVerify?: string; bingVerify?: string; companyFull?: string; mst?: string; address?: string; zalo?: string; messenger?: string; fbPixel?: string; fbPixelId?: string; gaId?: string; contactForm?: string; contactFormTitle?: string; contactFormDelay?: string | number };
+const _c = chung as { gscVerify?: string; bingVerify?: string; companyFull?: string; mst?: string; address?: string; zalo?: string; messenger?: string; fbPixel?: string; fbPixelId?: string; gaId?: string; contactForm?: string; contactFormTitle?: string; contactFormDelay?: string | number; favicon?: string };
 // SEO: xác minh Google/Bing (nhận cả thẻ <meta ... content="..."> lẫn dãy mã trần)
 const _gscRaw = _c.gscVerify || '';
 const gscVerify = (_gscRaw.match(/content=["']([^"']+)["']/i)?.[1] || _gscRaw.replace(/<[^>]*>/g, '')).trim();
@@ -28,6 +28,10 @@ const GA_ID = ((_c.gaId || '').match(/\b(G-[A-Z0-9]+|UA-[0-9-]+|GTM-[A-Z0-9]+)\b
 const CONTACT_FORM = _c.contactForm || '';
 const CONTACT_FORM_TITLE = _c.contactFormTitle || 'Nhận tư vấn & báo giá';
 const CONTACT_FORM_DELAY = Number(_c.contactFormDelay) || 6;
+// Favicon (icon nhỏ ở tab trình duyệt, sửa ở /quan-ly > Liên hệ) — để trống thì giữ y như cũ (favicon.svg + favicon.ico mặc định)
+const FAVICON = (_c.favicon || '').trim();
+const FAVICON_TYPE: Record<string, string> = { svg: 'image/svg+xml', png: 'image/png', webp: 'image/webp', jpg: 'image/jpeg', jpeg: 'image/jpeg', ico: 'image/x-icon' };
+const FAVICON_MIME = FAVICON_TYPE[FAVICON.split('.').pop()?.toLowerCase() || ''] || 'image/png';
 // Schema doanh nghiệp
 const _logoAbs = 'https://lechung.vn' + (chung.logo || '/favicon.svg');
 const bizSchema = {
@@ -160,6 +164,7 @@ const ctaCuoi = trangchu.ctaCuoi || {};
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{FAVICON ? <link rel="icon" type={FAVICON_MIME} href={FAVICON} /> : <><link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link rel="icon" href="/favicon.ico" /></>}
 <title>Thuê xe tải chở hàng TPHCM đi toàn quốc — Vận Tải Lê Chung {HOTLINE}</title>
 <meta name="description" content={`Thuê xe tải chở hàng TP.HCM đi toàn quốc — Vận Tải Lê Chung: đội xe hơn 100 chiếc 8-20 tấn, xe cẩu, container. An toàn, đúng hẹn, không phát sinh. Báo giá miễn phí ${HOTLINE}.`}>
 <link rel="canonical" href="https://lechung.vn/">
