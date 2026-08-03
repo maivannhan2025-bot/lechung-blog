@@ -264,6 +264,7 @@ function buildMd(fm, body) {
   out += 'ngayDang: ' + (fm.ngayDang||'') + '\n';
   if (fm.thoiGianDoc) out += 'thoiGianDoc: ' + fm.thoiGianDoc + '\n';
   if (fm.anhDaiDien) out += 'anhDaiDien: ' + JSON.stringify(fm.anhDaiDien) + '\n';
+  if (fm.tuKhoa) out += 'tuKhoa: ' + JSON.stringify(fm.tuKhoa) + '\n';
   out += '---\n\n' + (body||'');
   return out;
 }
@@ -416,7 +417,7 @@ async function renderBlogList() {
 
 async function renderBlogEdit(nameEnc) {
   const isNew = !nameEnc;
-  let fm = { title:'', description:'', ngayDang:new Date().toISOString().slice(0,10), thoiGianDoc:'', anhDaiDien:'' };
+  let fm = { title:'', description:'', ngayDang:new Date().toISOString().slice(0,10), thoiGianDoc:'', anhDaiDien:'', tuKhoa:'' };
   let body = ''; let sha = null; let fileName = '';
   app.innerHTML = topBar('blog') + `<div class="wrap"><div class="center-msg"><span class="spin"></span> Đang mở…</div></div>`;
   if (!isNew) {
@@ -450,7 +451,7 @@ async function renderBlogEdit(nameEnc) {
           </div>
           <input id="f_img" type="hidden" value="${esc(fm.anhDaiDien)}">
         </div>
-        <div class="field"><label>Từ khoá chính (để chấm SEO) <span class="hint">cụm khách hay tìm</span></label><input id="f_kw" placeholder="thuê xe tải chở hàng ..."></div>
+        <div class="field"><label>Từ khoá chính (để chấm SEO) <span class="hint">cụm khách hay tìm</span></label><input id="f_kw" value="${esc(fm.tuKhoa)}" placeholder="thuê xe tải chở hàng ..."></div>
         <div class="field"><label>Nội dung bài viết <span class="hint">(gõ như Word — chữ thường, tự xuống dòng; bấm 🖼 trên thanh để chèn ảnh từ Kho ảnh)</span></label>
           <textarea id="content">${esc(initialHtml)}</textarea>
         </div>
@@ -530,7 +531,7 @@ async function renderBlogEdit(nameEnc) {
     let ngay;
     if(mode==='publish'){ ngay=today; }               // Đăng ngay = hôm nay
     else { ngay=$('f_date').value||today; }            // Lên lịch = dùng ô "Ngày đăng"
-    const nfm={ title, description:$('f_desc').value.trim(), ngayDang:ngay, thoiGianDoc:$('f_read').value.trim(), anhDaiDien:$('f_img').value.trim() };
+    const nfm={ title, description:$('f_desc').value.trim(), ngayDang:ngay, thoiGianDoc:$('f_read').value.trim(), anhDaiDien:$('f_img').value.trim(), tuKhoa:$('f_kw').value.trim() };
     const md=buildMd(nfm, getContent());
     let path;
     if(isNew){ fileName = slugify(title)+'.md'; path='src/content/blog/'+fileName; }
