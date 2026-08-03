@@ -61,6 +61,7 @@ function youtubeEmbed(url){
 }
 const heroVideoUrl = youtubeEmbed(trangchu && trangchu.heroVideo);
 const heroAnh = (trangchu && trangchu.heroAnh) || '/img/doi-xe.webp';
+const heroSlides = (trangchu && trangchu.heroSlides && trangchu.heroSlides.length) ? trangchu.heroSlides : [heroAnh];
 const ogImage = /^https?:\/\//.test(heroAnh) ? heroAnh : ('https://lechung.vn' + heroAnh);
 const heroEyebrow = trangchu.heroEyebrow;
 const heroH1 = trangchu.heroH1;
@@ -74,6 +75,7 @@ const dichVuIntro = trangchu.dichVuIntro;
 const posts = (await getCollection('blog'))
   .filter((p) => p.data.ngayDang.valueOf() <= Date.now())
   .sort((a, b) => b.data.ngayDang.valueOf() - a.data.ngayDang.valueOf());
+const teaserPosts = posts.slice(0, 6);
 const norm = (s) => (s || '').toLowerCase();
 function matchPost(keywords) {
   for (const kw of keywords) {
@@ -98,8 +100,6 @@ function areaHref(a) {
 const uyTin = trangchu.uyTin || [];
 const loiIch = trangchu.loiIch || [];
 
-// Icon cho từng loại xe (cố định theo hạng mục, không phải dữ liệu người dùng nhập)
-const dichVuIcons = ['truck-s','truck-s','truck-m','truck-m','crane','container'];
 const dichVuKeys = [
   ['8 tấn','tải trọng','loại xe'],
   ['10 tấn','tải trọng','loại xe'],
@@ -108,7 +108,7 @@ const dichVuKeys = [
   ['cẩu','bốc xếp','nâng hạ'],
   ['container','đầu kéo','cảng','nguyên chuyến'],
 ];
-const dichVu = (trangchu.dichVu || []).map((d, i) => ({ ...d, key: dichVuKeys[i] || [], icon: dichVuIcons[i] || 'truck-s' }));
+const dichVu = (trangchu.dichVu || []).map((d, i) => ({ ...d, key: dichVuKeys[i] || [] }));
 
 const khuVuc = [
   { ten: 'TP. Hồ Chí Minh', slug: 'van-chuyen-hang-hoa-noi-thanh-tphcm', kw: ['nội thành', 'tphcm', 'hồ chí minh', 'sài gòn'] },
@@ -132,6 +132,7 @@ const secQuyTrinh = trangchu.secQuyTrinh || {};
 const secObjections = trangchu.secObjections || {};
 const secBangGia = trangchu.secBangGia || {};
 const secDanhGia = trangchu.secDanhGia || {};
+const secBlog = trangchu.secBlog || {};
 const ctaCuoi = trangchu.ctaCuoi || {};
 
 // Icon xe dùng lại cho vài chỗ (dòng kẻ tiêu đề mục kiểu Danh Long)
@@ -209,7 +210,9 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
 
   /* HERO — full-bleed ảnh + chữ đè, kiểu Danh Long */
   .hero{position:relative; min-height:560px; display:flex; align-items:flex-end; color:#fff; overflow:hidden}
-  .hero img.bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+  .hero-slides{position:absolute; inset:0}
+  .hero-slides .slide{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity 1.4s ease}
+  .hero-slides .slide.active{opacity:1}
   .hero-video{position:absolute; inset:0}
   .hero-video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
   .hero::before{content:''; position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,10,16,.35),rgba(5,10,16,.55) 55%,rgba(5,10,16,.94)); z-index:1}
@@ -255,9 +258,10 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
   @media(max-width:900px){ .cards{grid-template-columns:repeat(2,1fr)} }
   @media(max-width:600px){ .cards{grid-template-columns:1fr} }
-  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:26px 24px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; transition:transform .3s ease, box-shadow .3s ease}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; transition:transform .3s ease, box-shadow .3s ease}
   .card:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
-  .card-ic{width:52px;height:52px;border-radius:14px;background:linear-gradient(160deg,var(--brand-tint),#ffd8bd);color:var(--brand-dark);display:grid;place-items:center;margin-bottom:16px}
+  .card-img{width:100%; aspect-ratio:16/10; object-fit:cover}
+  .card-body{padding:20px 22px 22px; display:flex; flex-direction:column; flex:1}
   .card h3{margin:0 0 10px; font-size:17px; font-weight:800}
   .card ul{margin:0 0 16px; padding:0; list-style:none; flex:1}
   .card li{position:relative; padding-left:22px; margin-bottom:7px; font-size:14px; color:var(--text-soft)}
@@ -305,13 +309,18 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   .step p{margin:0; color:var(--text-soft); font-size:13.6px; position:relative}
 
   /* đội xe — lưới ảnh đơn giản */
-  .fleet{display:grid; grid-template-columns:repeat(6,1fr); gap:14px}
-  @media(max-width:900px){ .fleet{grid-template-columns:repeat(3,1fr)} }
-  @media(max-width:560px){ .fleet{grid-template-columns:repeat(2,1fr)} }
-  .fleet-item{border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); background:var(--card); transition:transform .3s ease, box-shadow .3s ease}
-  .fleet-item:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
-  .fleet-item img{aspect-ratio:4/3; object-fit:cover}
-  .fleet-item span{display:block; padding:10px 12px; font-size:12.5px; font-weight:800; text-align:center}
+  /* kinh nghiệm / blog — 6 ô 2 hàng */
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  @media(max-width:900px){ .blog-grid{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:600px){ .blog-grid{grid-template-columns:1fr} }
+  .bcard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .3s ease, box-shadow .3s ease}
+  .bcard:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+  .bcard h3{margin:0 0 8px; font-size:16px; font-weight:800; color:var(--ink); line-height:1.35}
+  .bcard p{margin:0 0 14px; color:var(--text-soft); font-size:13.5px; flex:1}
+  .bcard .more{color:var(--brand-dark); font-weight:800; font-size:13.5px}
+  .blog-all{text-align:center; margin-top:26px}
+  .blog-all a{display:inline-flex; align-items:center; gap:8px; color:var(--brand-dark); font-weight:800; text-decoration:none; border:1.5px solid var(--brand); padding:11px 22px; border-radius:11px; transition:background .2s ease, color .2s ease}
+  .blog-all a:hover{background:var(--brand); color:#fff}
 
   /* bảng giá */
   .value-line{text-align:center; max-width:760px; margin:0 auto 28px; font-size:16px; color:var(--text-soft)}
@@ -391,7 +400,7 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
 
   /* ===== HIỆU ỨNG CUỘN-HIỆN (dùng lại đúng cơ chế reveal-on của Header.astro) ===== */
   html.reveal-on :is(
-    .center,.card,.stat,.adv,.step,.fleet-item,.rev,.hero-txt,.hero-btns,.qb-item,
+    .center,.card,.stat,.adv,.step,.bcard,.rev,.hero-txt,.hero-btns,.qb-item,
     .intro-txt,.intro-img,.cta-mid,.price-wrap,.value-line,.faq,.chips,.final
   ){
     opacity:0; transform:translateY(30px);
@@ -411,7 +420,11 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   {heroVideoUrl ? (
     <div class="hero-video"><iframe src={heroVideoUrl} title="Video giới thiệu Vận tải Lê Chung" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
   ) : (
-    <img class="bg" src={heroAnh} data-edit-img="t:heroAnh" alt="Đội hình xe tải chuyên nghiệp của Vận tải Lê Chung" />
+    <div class="hero-slides" id="heroSlides">
+      {heroSlides.map((s, i) => (
+        <img class={`slide${i === 0 ? ' active' : ''}`} src={s} data-edit-img={`t:heroSlides.${i}`} alt="Đội hình xe tải chuyên nghiệp của Vận tải Lê Chung" loading={i === 0 ? 'eager' : 'lazy'} />
+      ))}
+    </div>
   )}
   <div class="wrap hero-in">
     <div class="hero-txt">
@@ -428,6 +441,22 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
     </div>
   </div>
 </div>
+
+{heroSlides.length > 1 && (
+  <script is:inline define:vars={{ total: heroSlides.length }}>
+    (function () {
+      var wrap = document.getElementById('heroSlides');
+      if (!wrap || total < 2) return;
+      var slides = wrap.querySelectorAll('.slide');
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove('active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('active');
+      }, 4500);
+    })();
+  </script>
+)}
 
 <!-- QUICKBAR -->
 <div class="quickbar">
@@ -478,22 +507,14 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
     <div class="cards">
       {dichVu.map((d, i) => (
         <div class="card">
-          <div class="card-ic">
-            {d.icon === 'crane' ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/><path d="M16 11h4l2 4"/></svg>
-            ) : d.icon === 'container' ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="9" rx="1"/><path d="M2 10h20M8 6v9M14 6v9"/><circle cx="7" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
-            ) : d.icon === 'truck-m' ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="16" height="10" rx="1.5"/><path d="M17 10h4l2 3v4h-6z"/><circle cx="7" cy="19" r="1.6"/><circle cx="19" cy="19" r="1.6"/></svg>
-            ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="14" height="10" rx="1.5"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
-            )}
-          </div>
-          <h3 data-edit={`t:dichVu.${i}.ten`}>{d.ten}</h3>
-          <ul>{d.bullets.map((b, j) => (<li data-edit={`t:dichVu.${i}.bullets.${j}`}>{b}</li>))}</ul>
-          <div class="foot">
-            <a class="more" href={`tel:${TEL}`}>Nhận báo giá →</a>
-            <a class="readmore" href={matchPost(d.key)}>Xem thêm ↗</a>
+          <img class="card-img" src={d.img} data-edit-img={`t:dichVu.${i}.img`} alt={d.ten} width="360" height="225" loading="lazy" />
+          <div class="card-body">
+            <h3 data-edit={`t:dichVu.${i}.ten`}>{d.ten}</h3>
+            <ul>{d.bullets.map((b, j) => (<li data-edit={`t:dichVu.${i}.bullets.${j}`}>{b}</li>))}</ul>
+            <div class="foot">
+              <a class="more" href={`tel:${TEL}`}>Nhận báo giá →</a>
+              <a class="readmore" href={matchPost(d.key)}>Xem thêm ↗</a>
+            </div>
           </div>
         </div>
       ))}
@@ -575,24 +596,28 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   </div>
 </section>
 
-<!-- ĐỘI XE -->
-<section id="doi-xe">
+<!-- KINH NGHIỆM / BLOG — 6 bài mới nhất, tự cập nhật -->
+{teaserPosts.length > 0 && (
+<section id="kinh-nghiem">
   <div class="wrap">
     <div class="center">
-      <span class="step-tag">Đội xe</span>
-      <h2 class="sec-title">Đội xe đa dạng của Lê Chung</h2>
+      <span class="step-tag" data-edit="t:secBlog.tag">{secBlog.tag}</span>
+      <h2 class="sec-title" data-edit="t:secBlog.title">{secBlog.title}</h2>
       <div class="tl-line" set:html={ICON_TRUCK_LINE} />
     </div>
-    <div class="fleet">
-      {dichVu.map((d, i) => (
-        <div class="fleet-item">
-          <img src={d.img} data-edit-img={`t:dichVu.${i}.img`} alt={d.ten} loading="lazy" />
-          <span data-edit={`t:dichVu.${i}.ten`}>{d.ten}</span>
-        </div>
+    <div class="blog-grid">
+      {teaserPosts.map((p) => (
+        <a class="bcard" href={`/blog/${p.id}`}>
+          <h3>{p.data.title}</h3>
+          <p>{p.data.description}</p>
+          <span class="more">Đọc tiếp →</span>
+        </a>
       ))}
     </div>
+    <div class="blog-all"><a href="/blog">Xem tất cả bài viết →</a></div>
   </div>
 </section>
+)}
 
 <!-- BẢNG GIÁ -->
 <section id="bang-gia" class="alt">
