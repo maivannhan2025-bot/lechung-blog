@@ -379,7 +379,7 @@ function renderHome() {
       <button onclick="route('visual')"><div class="ic">🎨</div><b>Sửa trang chủ (bấm sửa trực tiếp)</b><span>Mở trang thật ra, bấm vào chữ để sửa, bấm vào ảnh để đổi/kéo-thả ảnh.</span></button>
       <button onclick="route('blogList')"><div class="ic">✍️</div><b>Viết / sửa bài blog</b><span>Viết bài mới, sửa bài cũ, có chấm điểm SEO ngay bên cạnh.</span></button>
       <button onclick="route('media')"><div class="ic">🖼️</div><b>Kho ảnh</b><span>Xem tất cả ảnh, tải ảnh mới lên, chép link ảnh, xoá ảnh không dùng.</span></button>
-      <button onclick="route('contact')"><div class="ic">📞</div><b>Liên hệ</b><span>Số điện thoại, Zalo, Messenger, địa chỉ, mã số thuế, logo.</span></button>
+      <button onclick="route('contact')"><div class="ic">📞</div><b>Liên hệ</b><span>Số điện thoại, Zalo, Messenger, địa chỉ, mã số thuế, logo, favicon.</span></button>
       <button onclick="route('settings')"><div class="ic">⚙️</div><b>Cài đặt</b><span>Mã Pixel, Google Analytics, kết nối AI viết bài, form liên hệ (CRM).</span></button>
       <button onclick="window.open('${CFG.site}','_blank')"><div class="ic">🌐</div><b>Xem web thật</b><span>Mở vantaidanhlong.com để xem kết quả.</span></button>
     </div>
@@ -687,15 +687,17 @@ async function renderContact() {
   ];
   app.innerHTML = topBar('contact') + `<div class="wrap">
     <div class="toolbar"><button class="btn" id="saveC">💾 Lưu</button></div>
-    <h2 class="page">Thông tin liên hệ</h2><p class="sub">Số điện thoại, Zalo, địa chỉ, logo… Sửa xong bấm Lưu — web tự cập nhật sau ~1 phút.</p>
+    <h2 class="page">Thông tin liên hệ</h2><p class="sub">Số điện thoại, Zalo, địa chỉ, logo, favicon… Sửa xong bấm Lưu — web tự cập nhật sau ~1 phút.</p>
     <div class="form">
       ${F.map(([k,l,h])=>`<div class="field"><label>${l}</label>${h?`<div class="hint" style="margin-bottom:6px">${h}</div>`:''}<input id="c_${k}" value="${esc(data[k]||'')}"></div>`).join('')}
       <div class="field"><label>Logo</label><div class="thumb-pick"><img id="c_logoimg" src="${data.logo?esc(CFG.site+data.logo):''}" style="${data.logo?'':'visibility:hidden'}"><button class="btn ghost" id="c_logopick">🖼️ Chọn / tải logo</button></div><input id="c_logo" type="hidden" value="${esc(data.logo||'')}"></div>
+      <div class="field"><label>Favicon (icon nhỏ ở tab trình duyệt)</label><div class="hint" style="margin-bottom:6px">Hình <b>vuông</b>, đơn giản, rõ nét vì hiển thị rất nhỏ trên tab — khuyên dùng <b>512×512px</b> (nhỏ nhất 32×32px), nền trong suốt, định dạng PNG hoặc SVG.</div><div class="thumb-pick"><img id="c_favimg" src="${data.favicon?esc(CFG.site+data.favicon):''}" style="${data.favicon?'':'visibility:hidden'}"><button class="btn ghost" id="c_favpick">🖼️ Chọn / tải favicon</button></div><input id="c_favicon" type="hidden" value="${esc(data.favicon||'')}"></div>
     </div>
   </div>`;
   document.getElementById('c_logopick').onclick=()=>openGallery((p)=>{ document.getElementById('c_logo').value=p; const im=document.getElementById('c_logoimg'); im.src=CFG.site+p; im.style.visibility='visible'; });
+  document.getElementById('c_favpick').onclick=()=>openGallery((p)=>{ document.getElementById('c_favicon').value=p; const im=document.getElementById('c_favimg'); im.src=CFG.site+p; im.style.visibility='visible'; });
   document.getElementById('saveC').onclick=async()=>{
-    const nd=Object.assign({},data); F.forEach(([k])=>nd[k]=document.getElementById('c_'+k).value.trim()); nd.logo=document.getElementById('c_logo').value.trim();
+    const nd=Object.assign({},data); F.forEach(([k])=>nd[k]=document.getElementById('c_'+k).value.trim()); nd.logo=document.getElementById('c_logo').value.trim(); nd.favicon=document.getElementById('c_favicon').value.trim();
     const btn=document.getElementById('saveC'); btn.innerHTML='<span class="spin"></span> Đang lưu…'; btn.disabled=true;
     try{ const resp=await ghPut('src/data/chung.json',()=>({message:'Sửa thông tin liên hệ',content:b64enc(JSON.stringify(nd,null,2)+'\n')})); toast('✅ Đã lưu! Web cập nhật sau ~1 phút.'); btn.innerHTML='💾 Lưu'; btn.disabled=false; sha=resp.content.sha; data=nd; }
     catch(e){ toast('❌ '+esc(e.message)); btn.innerHTML='💾 Lưu'; btn.disabled=false; }
