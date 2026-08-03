@@ -62,19 +62,22 @@ const breadcrumbSchema = {
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
 <meta name="twitter:image" content={anhChiaSe}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style is:global>
   :root{
     --bg:#ffffff; --panel:#f7f9fc; --card:#ffffff; --line:#e6ebf3;
-    --text:#111214; --text-soft:#3a3f45; --muted:#6b7280;
-    --brand:#ff6b35; --brand-dark:#e5541f; --brand-tint:#fff1ea;
-    --navy:#0a2540; --navy-2:#15324d;
+    --text:#0a0b0d; --text-soft:#3a3f45; --muted:#6b7280;
+    --brand:#ff6b35; --brand-dark:#df4d1c; --brand-tint:#fff1ea;
+    --navy:#081019; --navy-2:#0e1f31; --ink:#05070a;
     --good:#12833f; --good-tint:#e9f7ee;
-    --shadow:0 1px 2px rgba(10,37,64,.06),0 8px 30px rgba(10,37,64,.08);
+    --shadow:0 4px 16px rgba(5,8,12,.07), 0 16px 44px rgba(5,8,12,.10);
     --radius:14px;
   }
   /* Nền TRẮNG cho MỌI người — anh Nhận chọn (đã bỏ chế độ tối theo máy). */
   *{box-sizing:border-box}
-  body{margin:0; background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Manrope','Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased}
   .wrap{max-width:1120px; margin:0 auto; padding:0 20px}
   a{color:inherit}
   .tnum{font-variant-numeric:tabular-nums}

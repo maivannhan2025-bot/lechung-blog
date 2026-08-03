@@ -8,6 +8,7 @@ const HOTLINE = chung.hotline;
 const TEL = chung.tel;
 const ZALO = chung.zalo;
 const LOGO = chung.logo;
+const MESSENGER = String((chung as { messenger?: string }).messenger || '').trim();
 // Mã Facebook Pixel (anh Nhận dán ở /admin để chạy quảng cáo). Chỉ lấy chữ số cho an toàn; trống => KHÔNG gắn gì.
 const FB_PIXEL = String(chung.fbPixel || '').replace(/[^0-9]/g, '');
 
@@ -106,6 +107,12 @@ const khuVuc = [
     <span class="lbl">Chat Zalo</span>
     <span class="ic"><span class="zalo-mark">Zalo</span></span>
   </a>
+  {MESSENGER && (
+    <a class="msg" href={MESSENGER} target="_blank" rel="noopener" aria-label="Nhắn Messenger">
+      <span class="lbl">Messenger</span>
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C6.48 2 2 6.15 2 11.27c0 2.91 1.44 5.51 3.7 7.21V22l3.38-1.86c.9.25 1.87.38 2.92.38 5.52 0 10-4.15 10-9.27S17.52 2 12 2Zm1.01 12.48-2.55-2.72-4.98 2.72 5.48-5.82 2.61 2.72 4.9-2.72-5.46 5.82Z"/></svg></span>
+    </a>
+  )}
 </div>
 
 <!-- Popup "khách vừa liên hệ" — nội dung MÔ PHỎNG để tạo niềm tin -->
@@ -115,7 +122,8 @@ const khuVuc = [
 </div>
 
 <style>
-  .site-head{position:sticky; top:0; z-index:60; background:var(--panel); border-bottom:1px solid var(--line)}
+  .site-head{position:sticky; top:0; z-index:60; background:rgba(247,249,252,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); transition:box-shadow .25s ease}
+  .site-head.scrolled{box-shadow:0 6px 24px rgba(5,8,12,.08)}
   .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
   .brand-logo{display:flex; align-items:center; gap:10px; text-decoration:none}
   .brand-logo img{height:44px; width:auto}
@@ -141,8 +149,8 @@ const khuVuc = [
   .submenu a{display:block; text-decoration:none; color:var(--text-soft); font-weight:700; font-size:14px; padding:9px 12px; border-radius:8px; line-height:1.35}
   .submenu a:hover{background:var(--brand-tint); color:var(--brand-dark)}
   .submenu a.all{color:var(--brand-dark); border-top:1px solid var(--line); margin-top:4px; padding-top:11px; border-radius:0 0 8px 8px}
-  .nav-links a.btn{background:var(--brand); color:#fff; padding:9px 15px; border-radius:10px; display:inline-flex; gap:6px; align-items:center; margin-left:6px}
-  .nav-links a.btn:hover{background:var(--brand-dark)}
+  .nav-links a.btn{background:linear-gradient(160deg,var(--brand),var(--brand-dark)); color:#fff; padding:9px 16px; border-radius:10px; display:inline-flex; gap:6px; align-items:center; margin-left:6px; box-shadow:0 6px 16px rgba(223,77,28,.28); transition:transform .2s ease, box-shadow .2s ease}
+  .nav-links a.btn:hover{filter:brightness(1.05); transform:translateY(-1px); box-shadow:0 10px 22px rgba(223,77,28,.36)}
   .hamb{display:none; background:transparent; border:1px solid var(--line); color:var(--text); width:44px; height:42px; border-radius:10px; font-size:22px; line-height:1; cursor:pointer; align-items:center; justify-content:center}
   .hamb:hover{background:var(--brand-tint); color:var(--brand-dark)}
 
@@ -175,6 +183,7 @@ const khuVuc = [
   .fab .ic{position:relative; width:54px; height:54px; border-radius:50%; display:grid; place-items:center; color:#fff; flex:0 0 auto; box-shadow:0 6px 18px rgba(0,0,0,.3); animation:fab-bob 2.4s ease-in-out infinite}
   .fab .call .ic{background:#16a34a; --ring:22,163,74}
   .fab .zalo .ic{background:#0068ff; --ring:0,104,255}
+  .fab .msg .ic{background:#0a7cff; --ring:10,124,255}
   .fab .zalo-mark{font-weight:900; font-size:14px; letter-spacing:-.02em}
   .fab .ic::after{content:''; position:absolute; inset:0; border-radius:50%; animation:fab-ring 1.7s ease-out infinite}
   @keyframes fab-ring{ 0%{box-shadow:0 0 0 0 rgba(var(--ring),.5)} 100%{box-shadow:0 0 0 16px rgba(var(--ring),0)} }
@@ -271,6 +280,15 @@ const khuVuc = [
 </style>
 
 <script>
+  // Cuộn xuống một chút -> header nổi bóng nhẹ cho có chiều sâu
+  (function () {
+    var head = document.querySelector('.site-head');
+    if (!head) return;
+    function onScroll() { head.classList.toggle('scrolled', window.scrollY > 8); }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
   // Menu điện thoại: bấm ☰ để mở/đóng
   (function () {
     var hamb = document.getElementById('hamb');
