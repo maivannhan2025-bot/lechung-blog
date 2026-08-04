@@ -179,6 +179,7 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
     --text:#1a1410; --text-soft:#4a3f37; --muted:#7a6c62;
     --brand:#ff6b35; --brand-dark:#c73d10; --brand-light:#ff9466; --brand-tint:#ffe7d8;
     --navy:#070d14; --navy-2:#0e1c2c; --navy-3:#18293c; --ink:#050a10; --gold:#f0b23e;
+    --sky-1:#1c7fd6; --sky-2:#4fa3e8; --sky-3:#8fcbf2;
     --danger:#d0483a;
     --shadow-sm:0 1px 2px rgba(20,12,6,.05), 0 3px 10px rgba(20,12,6,.05);
     --shadow:0 4px 16px rgba(20,12,6,.07), 0 16px 44px rgba(20,12,6,.10);
@@ -213,7 +214,7 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   @keyframes drive{0%,100%{transform:translateX(-3px)} 50%{transform:translateX(3px)}}
 
   /* QUICKBAR — dải icon dưới hero, kiểu Danh Long */
-  .quickbar{background:var(--navy); color:#fff; position:relative; z-index:2}
+  .quickbar{background:linear-gradient(160deg,var(--sky-1),var(--sky-2)); color:#fff; position:relative; z-index:2}
   .qb-in{display:grid; grid-template-columns:repeat(4,1fr)}
   .qb-item{display:flex; align-items:center; gap:12px; padding:20px 18px; border-left:1px solid rgba(255,255,255,.08)}
   .qb-item:first-child{border-left:0}
@@ -304,7 +305,7 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   .adv p{margin:0; color:var(--text-soft); font-size:14px}
 
   /* cta giữa trang */
-  .cta-mid{background:linear-gradient(155deg,var(--navy),var(--navy-2)); color:#fff; border-radius:var(--radius-lg); padding:44px 40px; display:flex; justify-content:space-between; align-items:center; gap:30px; flex-wrap:wrap; box-shadow:var(--shadow-lg)}
+  .cta-mid{background:linear-gradient(155deg,var(--sky-1),var(--sky-2)); color:#fff; border-radius:var(--radius-lg); padding:44px 40px; display:flex; justify-content:space-between; align-items:center; gap:30px; flex-wrap:wrap; box-shadow:var(--shadow-lg)}
   .cta-mid h2{margin:0 0 8px; font-size:clamp(20px,2.6vw,27px); font-weight:900}
   .cta-mid p{margin:0; color:#c3d0dc; max-width:520px; font-size:15px}
 
@@ -356,7 +357,7 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   @media(max-width:560px){ table.price{min-width:520px; font-size:13px} table.price thead th{padding:12px 10px; font-size:12.5px} table.price tbody td{padding:11px 10px} .swipe-hint{display:block; text-align:center; color:var(--muted); font-size:12.5px; margin:0 0 10px} }
 
   /* khu vực */
-  .area{background:linear-gradient(160deg,var(--navy),var(--ink)); color:#fff}
+  .area{background:linear-gradient(160deg,var(--sky-1),var(--sky-2)); color:#fff}
   .area .chips{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:20px}
   .area .chips a{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:10px 18px; border-radius:999px; font-weight:700; font-size:14.5px; color:#fff; text-decoration:none; transition:background .2s ease, border-color .2s ease, transform .2s ease}
   .area .chips a:hover{background:var(--brand); border-color:var(--brand); transform:translateY(-2px)}
@@ -391,7 +392,7 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   .final .btn-call:hover{background:var(--ink); color:#fff}
 
   /* footer 4 cột kèm bản đồ */
-  .site-foot{background:linear-gradient(180deg,var(--navy),var(--ink)); color:#a7b3bd; padding:56px 0 0; font-size:14px}
+  .site-foot{background:linear-gradient(180deg,var(--sky-1),var(--navy-2)); color:#dbe9f7; padding:56px 0 0; font-size:14px}
   .ft-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr 1.1fr; gap:32px; padding-bottom:44px}
   @media(max-width:920px){ .ft-grid{grid-template-columns:1fr 1fr} }
   @media(max-width:560px){ .ft-grid{grid-template-columns:1fr} }
