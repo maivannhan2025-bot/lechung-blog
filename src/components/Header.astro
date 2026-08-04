@@ -130,7 +130,12 @@ const khuVuc = [
 </div>
 
 <style>
-  .site-head{position:sticky; top:0; z-index:60; background:rgba(247,249,252,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); transition:box-shadow .25s ease}
+  /* position:sticky bị hỏng vì html/body có overflow-x:hidden/clip (chặn cuộn ngang cho hiệu ứng
+     cuộn-hiện) — overflow khác visible trên tổ tiên làm sticky mất tác dụng. Dùng position:fixed
+     thay thế (không bị ảnh hưởng bởi overflow của tổ tiên) + chừa khoảng trống bằng padding-top. */
+  html{ scroll-padding-top:var(--header-h,64px); }
+  body{ padding-top:var(--header-h,64px); }
+  .site-head{position:fixed; top:0; left:0; right:0; z-index:60; background:rgba(247,249,252,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); transition:box-shadow .25s ease}
   .site-head.scrolled{box-shadow:0 6px 24px rgba(5,8,12,.08)}
   .site-head .bar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
   .brand-logo{display:flex; align-items:center; gap:10px; text-decoration:none}
@@ -312,6 +317,19 @@ const khuVuc = [
   }
   /* Anh Nhận chọn: LUÔN chạy hiệu ứng cho mọi người (không tắt theo cài đặt giảm-chuyển-động của máy). */
 </style>
+
+<script>
+  // Header giờ position:fixed (xem lý do ở CSS .site-head) -> đo chiều cao thật, gán biến --header-h
+  // để body chừa đúng khoảng trống, không bị banner/nội dung chui lên dưới thanh menu.
+  (function () {
+    var head = document.querySelector('.site-head');
+    if (!head) return;
+    function setH() { document.documentElement.style.setProperty('--header-h', head.offsetHeight + 'px'); }
+    setH();
+    window.addEventListener('resize', setH);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setH);
+  })();
+</script>
 
 <script>
   // Cuộn xuống một chút -> header nổi bóng nhẹ cho có chiều sâu; cuộn sâu hơn -> hiện nút về đầu trang
