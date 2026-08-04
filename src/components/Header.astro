@@ -28,8 +28,6 @@ function areaHref(a) {
   const id = findId(a.kw);
   return id ? '/blog/' + id : '/#khu-vuc';
 }
-const menuPosts = posts.slice(0, 4);
-
 const dichVuTen = ['Xe Tải Chở Hàng 8 Tấn', 'Xe Tải Chở Hàng 10 Tấn', 'Xe Tải Chở Hàng 15 Tấn', 'Xe Tải 20 Tấn', 'Xe Cẩu Hàng', 'Xe Container / Đầu Kéo'];
 const khuVuc = [
   { ten: 'TP. Hồ Chí Minh', slug: 'van-chuyen-hang-hoa-noi-thanh-tphcm', kw: ['nội thành', 'tphcm', 'hồ chí minh', 'sài gòn'] },
@@ -66,7 +64,6 @@ const khuVuc = [
           </div>
         </div>
 
-        <a href="/#kinh-nghiem">Kinh nghiệm</a>
         <a href="/#quy-trinh">Quy trình</a>
 
         <div class="nav-item">
@@ -85,13 +82,7 @@ const khuVuc = [
           </div>
         </div>
 
-        <div class="nav-item">
-          <a href="/blog" class="nav-top">Blog <span class="caret">▾</span></a>
-          <div class="submenu">
-            {menuPosts.map((p) => (<a href={`/blog/${p.id}`}>{p.data.title}</a>))}
-            <a href="/blog" class="all">Tất cả bài viết →</a>
-          </div>
-        </div>
+        <a href="/#kinh-nghiem">Kinh nghiệm</a>
 
         <a class="btn" href={`tel:${TEL}`}>📞 {HOTLINE}</a>
       </nav>
