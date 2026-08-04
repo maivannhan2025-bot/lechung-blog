@@ -1,17 +1,15 @@
 {
   "heroAnh": "/anh/trangchu-anh.webp",
-  "introImgs": [
-    "/anh/trangchu-anh.webp"
-  ],
-  "introVideo": "",
+  "introImgs": [],
+  "introVideo": "https://youtu.be/b3sDOYd42pA?si=3wEV1s4FK_luw0KB",
   "heroSlides": [
     "/anh/trangchu-anh.webp",
     "/anh/thue-xe-container-15-tan-tp-hcm-va-cac-tinh-lan-can.jpg",
     "/anh/xe-tai-cho-hang-lien-tinh-2-tan-di-khap-ca-nuoc.jpg"
   ],
   "heroEyebrow": "VẬN TẢI LÊ CHUNG · HƠN 100 ĐẦU XE TẠI TP.HCM",
-  "heroH1": "DỊCH VỤ XE TẢI VẬN CHUYỂN HÀNG HÓA TPHCM",
-  "heroLead": "Đội xe hơn 100 chiếc tải trọng 8 – 20 tấn, xe cẩu và container/đầu kéo. Nhận chở nguyên chuyến và ghép hàng từ TP.HCM đi 63 tỉnh thành cho cá nhân và doanh nghiệp.",
+  "heroH1": "DỊCH VỤ VẬN CHUYỂN HÀNG HÓA LÊ CHUNG",
+  "heroLead": "CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG",
   "heroTicks": [
     "Báo giá trọn gói rõ ràng ngay trong ngày",
     "Có hợp đồng và hóa đơn VAT đầy đủ",
@@ -193,7 +191,7 @@
   "secUyTin": {
     "tag": "Vì sao tin Lê Chung",
     "title": "Một đơn vị vận tải có pháp nhân, có trách nhiệm",
-    "intro": "CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — Hơn 10 năm trong nghề, Lê Chung làm vận tải bằng xe của mình và cam kết bằng giấy tờ rõ ràng — không phải nhà xe trôi nổi."
+    "intro": "Hơn 10 năm trong nghề, Lê Chung làm vận tải bằng xe của mình và cam kết bằng giấy tờ rõ ràng — không phải nhà xe trôi nổi."
   },
   "uyTin": [
     {
