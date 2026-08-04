@@ -1,5 +1,9 @@
 {
   "heroAnh": "/anh/trangchu-anh.webp",
+  "introImgs": [
+    "/anh/trangchu-anh.webp"
+  ],
+  "introVideo": "",
   "heroSlides": [
     "/anh/trangchu-anh.webp",
     "/anh/thue-xe-container-15-tan-tp-hcm-va-cac-tinh-lan-can.jpg",

@@ -46,23 +46,24 @@ const bizSchema = {
   ...(MST ? { vatID: MST } : {}),
 };
 
-// Ảnh/video đầu trang — anh Nhận tự đổi ở /quan-ly (mục "Sửa trang chủ"). Có link YouTube => hiện VIDEO; trống => hiện ẢNH.
-function youtubeEmbed(url){
-  if(!url) return '';
-  const u = String(url).trim();
-  let m;
-  const id =
-    (m = u.match(/[?&]v=([A-Za-z0-9_-]{11})/)) ? m[1] :
-    (m = u.match(/youtu\.be\/([A-Za-z0-9_-]{11})/)) ? m[1] :
-    (m = u.match(/\/embed\/([A-Za-z0-9_-]{11})/)) ? m[1] :
-    (m = u.match(/\/shorts\/([A-Za-z0-9_-]{11})/)) ? m[1] :
-    (m = u.match(/^([A-Za-z0-9_-]{11})$/)) ? m[1] : '';
-  return id ? 'https://www.youtube-nocookie.com/embed/' + id : '';
-}
-const heroVideoUrl = youtubeEmbed(trangchu && trangchu.heroVideo);
 const heroAnh = (trangchu && trangchu.heroAnh) || '/img/doi-xe.webp';
 const heroSlides = (trangchu && trangchu.heroSlides && trangchu.heroSlides.length) ? trangchu.heroSlides : [heroAnh];
 const ogImage = /^https?:\/\//.test(heroAnh) ? heroAnh : ('https://lechung.vn' + heroAnh);
+
+// Ảnh/video mục Giới thiệu — nút "✏️ Đổi ảnh & video" ở /quan-ly đọc/ghi đúng 2 ô introImgs + introVideo
+// (cùng chuẩn dữ liệu khuôn quản lý dùng chung, giống bên Danh Long). Có video => hiện VIDEO; nhiều ảnh => tự trình chiếu.
+const introImgs = Array.isArray(trangchu.introImgs) ? trangchu.introImgs.filter(Boolean) : [];
+const introVideo = ((trangchu as { introVideo?: string }).introVideo || '').trim();
+const introList = introImgs.length ? introImgs : (heroAnh ? [heroAnh] : []);
+function ytId(u){ const m = String(u).match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/|v\/))([\w-]{11})/); return m ? m[1] : ''; }
+function videoEmbed(u){
+  u = String(u || '').trim(); if (!u) return '';
+  const id = ytId(u);
+  const S = 'width:100%;height:100%;border:0;display:block';
+  if (id) return `<iframe src="https://www.youtube.com/embed/${id}?rel=0&playsinline=1&enablejsapi=1" title="Video giới thiệu Vận tải Lê Chung" style="${S}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>`;
+  if (/\.(mp4|webm|ogg)(\?|$)/i.test(u)) return `<video src="${u}" style="${S};object-fit:cover;background:#000" playsinline controls preload="metadata"></video>`;
+  return `<iframe src="${u}" title="Video giới thiệu Vận tải Lê Chung" style="${S}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+}
 const heroEyebrow = trangchu.heroEyebrow;
 const heroH1 = trangchu.heroH1;
 const heroLead = trangchu.heroLead;
@@ -248,11 +249,17 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   .commit li::before{content:'✓'; position:absolute; left:0; top:1px; width:20px;height:20px; background:var(--brand); color:#fff; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:900}
   .intro-btns{display:flex; gap:12px; flex-wrap:wrap}
   .btn-dark{background:linear-gradient(160deg,var(--navy-3),var(--navy)); color:#fff; box-shadow:0 12px 26px rgba(7,13,20,.32)}
-  /* khung ảnh/video: LUÔN đúng tỉ lệ 16:9 để gắn video YouTube gọn gàng như Danh Long, đổi ảnh vẫn vừa khung */
-  .intro-media{position:relative}
-  .intro-slides,.intro-video{position:relative; width:100%; aspect-ratio:16/9; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); background:var(--navy); object-fit:cover; display:block}
-  .intro-video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
-  @media(max-width:520px){ .intro-slides,.intro-video{aspect-ratio:4/3} }
+  /* khung ảnh/video: LUÔN đúng tỉ lệ 16:9 để gắn video YouTube gọn gàng như Danh Long, đổi ảnh vẫn vừa khung.
+     Nút "✏️ Đổi ảnh & video" ở /quan-ly bám vào .intro-img (data-edit-media) rồi thay nội dung .intro-media */
+  .intro-img{position:relative}
+  .intro-media{position:relative; width:100%; aspect-ratio:16/9; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); background:var(--navy)}
+  .intro-media > img,.intro-video,.intro-slides,.intro-media .ph{position:absolute; inset:0; width:100%; height:100%}
+  .intro-media > img{object-fit:cover; display:block}
+  .intro-video :global(iframe),.intro-video :global(video){width:100%; height:100%; border:0; display:block}
+  .intro-slides .islide{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .7s ease}
+  .intro-slides .islide.active{opacity:1}
+  .intro-media .ph{display:grid; place-items:center; color:rgba(255,255,255,.35)}
+  @media(max-width:520px){ .intro-media{aspect-ratio:4/3} }
   .intro-badge{position:absolute; left:-16px; bottom:-18px; background:var(--navy); color:#fff; border-radius:14px; padding:14px 18px; box-shadow:var(--shadow-lg); display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.08)}
   .intro-badge svg{color:var(--brand-light); flex:0 0 auto}
   .intro-badge span{font-size:12.5px; font-weight:800; line-height:1.25}
@@ -505,12 +512,20 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
         <a class="btn-line" href={`tel:${TEL}`}>📞 {HOTLINE}</a>
       </div>
     </div>
-    <div class="intro-media">
-      {heroVideoUrl ? (
-        <div class="intro-video"><iframe src={heroVideoUrl} title="Video giới thiệu Vận tải Lê Chung" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      ) : (
-        <img class="intro-slides" src={heroAnh} data-edit-img="t:heroAnh" alt="Đội xe Vận Tải Lê Chung" />
-      )}
+    <div class="intro-img" data-edit-media="t:intro">
+      <div class={`intro-media${introVideo ? ' has-video' : ''}`}>
+        {introVideo ? (
+          <div class="intro-video" set:html={videoEmbed(introVideo)} />
+        ) : introList.length > 1 ? (
+          <div class="intro-slides">
+            {introList.map((im, i) => (<img src={im} alt="Đội xe Vận Tải Lê Chung" class={`islide${i === 0 ? ' active' : ''}`} data-islide={i} loading={i === 0 ? 'eager' : 'lazy'} />))}
+          </div>
+        ) : introList.length === 1 ? (
+          <img src={introList[0]} alt="Đội xe Vận Tải Lê Chung" data-edit-img="t:introImg" />
+        ) : (
+          <div class="ph" data-edit-img="t:introImg" />
+        )}
+      </div>
       <div class="intro-badge">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5z"/></svg>
         <span>Uy tín<br>Đúng hẹn</span>
@@ -518,6 +533,21 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
     </div>
   </div>
 </section>
+
+{introList.length > 1 && !introVideo && (
+  <script is:inline>
+    (function () {
+      var slides = Array.from(document.querySelectorAll('.intro-slides .islide'));
+      if (slides.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove('active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('active');
+      }, 4000);
+    })();
+  </script>
+)}
 
 <!-- DỊCH VỤ -->
 <section id="dich-vu" class="alt">
