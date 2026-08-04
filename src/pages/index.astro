@@ -221,10 +221,27 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   @media(max-width:900px){ .qb-in{grid-template-columns:repeat(2,1fr)} .qb-item:nth-child(3){border-left:0} }
   @media(max-width:560px){ .qb-in{grid-template-columns:1fr} .qb-item{border-left:0 !important;border-top:1px solid rgba(255,255,255,.08)} .qb-item:first-child{border-top:0} }
 
-  /* HERO + GIỚI THIỆU — GOM 1 khối 2 cột: chữ trái, ảnh/video phải (kiểu Danh Long) */
+  /* HERO — đúng kiểu Danh Long: ảnh gọn trong khung trang (không tràn viền), KHÔNG chữ đè lên ảnh;
+     chữ + 2 nút nằm ở thanh riêng ngay dưới ảnh, cùng 1 section */
+  .hero{background:var(--card)}
+  .hero-slides{position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:var(--radius-lg)}
+  .hero-slides .slide{position:absolute; inset:0; opacity:0; transition:opacity 1.4s ease}
+  .hero-slides .slide.active{opacity:1}
+  .hero-slides .slide img{width:100%; height:100%; object-fit:cover; display:block}
+  .hero-video{position:relative; width:100%; aspect-ratio:16/9; border-radius:var(--radius-lg); overflow:hidden}
+  .hero-video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  @media(max-width:520px){ .hero-slides,.hero-video{aspect-ratio:4/3} }
+  .hero-cta{padding:28px 0 8px}
+  .hero-cta-in{display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap}
+  .hero-cta-txt h1{font-size:clamp(24px,3.6vw,36px); font-weight:900; letter-spacing:-.02em; margin:0 0 8px; line-height:1.22; color:var(--ink); text-wrap:balance}
+  .hero-cta-txt p{margin:0; color:var(--text-soft); font-size:15px; max-width:620px}
+  .hero-btns{display:flex; gap:12px; flex-wrap:wrap; flex:0 0 auto}
+  @media(max-width:760px){ .hero-cta-in{flex-direction:column; align-items:flex-start} }
+
+  /* GIỚI THIỆU — mục RIÊNG (không gộp với banner), 2 cột: chữ trái, ảnh/video phải */
   .intro-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center}
   @media(max-width:880px){ .intro-grid{grid-template-columns:1fr; gap:34px} }
-  .intro-txt h1{font-size:clamp(26px,4.2vw,42px); font-weight:900; letter-spacing:-.02em; margin:0 0 14px; line-height:1.16; text-wrap:balance}
+  .intro-txt h2{font-size:clamp(24px,3.2vw,32px); font-weight:900; letter-spacing:-.02em; margin:0 0 14px; text-wrap:balance}
   .intro-txt p{color:var(--text-soft); font-size:15.5px; margin:0 0 12px}
   .commit{list-style:none; margin:18px 0 24px; padding:0; display:grid; gap:10px}
   .commit li{position:relative; padding-left:30px; font-weight:700; font-size:14.5px}
@@ -233,10 +250,7 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
   .btn-dark{background:linear-gradient(160deg,var(--navy-3),var(--navy)); color:#fff; box-shadow:0 12px 26px rgba(7,13,20,.32)}
   /* khung ảnh/video: LUÔN đúng tỉ lệ 16:9 để gắn video YouTube gọn gàng như Danh Long, đổi ảnh vẫn vừa khung */
   .intro-media{position:relative}
-  .intro-slides,.intro-video{position:relative; width:100%; aspect-ratio:16/9; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); background:var(--navy)}
-  .intro-slides .slide{position:absolute; inset:0; opacity:0; transition:opacity 1.4s ease}
-  .intro-slides .slide.active{opacity:1}
-  .intro-slides .slide img{width:100%; height:100%; object-fit:cover; display:block}
+  .intro-slides,.intro-video{position:relative; width:100%; aspect-ratio:16/9; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); background:var(--navy); object-fit:cover; display:block}
   .intro-video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
   @media(max-width:520px){ .intro-slides,.intro-video{aspect-ratio:4/3} }
   .intro-badge{position:absolute; left:-16px; bottom:-18px; background:var(--navy); color:#fff; border-radius:14px; padding:14px 18px; box-shadow:var(--shadow-lg); display:flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.08)}
@@ -407,37 +421,26 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
 
 <Header />
 
-<!-- HERO + GIỚI THIỆU kiểu Danh Long: GOM 1 khối — chữ trái, ảnh/video phải đúng tỉ lệ 16:9 -->
-<section id="gioi-thieu" class="hero-intro">
-  <div class="wrap intro-grid">
-    <div class="intro-txt">
-      <span class="step-tag" data-edit="t:heroEyebrow">{heroEyebrow}</span>
-      <h1 data-edit="t:heroH1">{heroH1}</h1>
-      <p class="lead" data-edit="t:heroLead">{heroLead}</p>
-      <p data-edit="t:secUyTin.intro"><b>{COMPANY_FULL}</b> — {secUyTin.intro}</p>
-      <ul class="commit">
-        {uyTin.map((u, i) => (<li data-edit={`t:uyTin.${i}.t`}>{u.t}</li>))}
-      </ul>
-      <div class="intro-btns">
-        <a class="btn-call btn-dark" href={`https://zalo.me/${(_c.zalo || TEL).replace(/\s/g,'')}`} target="_blank" rel="noopener">💬 Tư vấn miễn phí</a>
-        <a class="btn-line" href={`tel:${TEL}`}>📞 {HOTLINE}</a>
-      </div>
-    </div>
-    <div class="intro-media">
-      {heroVideoUrl ? (
-        <div class="intro-video"><iframe src={heroVideoUrl} title="Video giới thiệu Vận tải Lê Chung" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      ) : (
-        <div class="intro-slides" id="heroSlides">
-          {heroSlides.map((s, i) => (
-            <div class={`slide${i === 0 ? ' active' : ''}`} data-slide={i}>
-              <img src={s} data-edit-img={`t:heroSlides.${i}`} alt="Đội hình xe tải chuyên nghiệp của Vận tải Lê Chung" loading={i === 0 ? 'eager' : 'lazy'} />
-            </div>
-          ))}
+<!-- HERO đúng kiểu Danh Long: ảnh gọn trong khung trang, KHÔNG chữ đè lên ảnh; chữ + nút ở thanh riêng ngay dưới -->
+<section id="top" class="hero">
+  <div class="wrap">
+    <div class="hero-slides" id="heroSlides">
+      {heroSlides.map((s, i) => (
+        <div class={`slide${i === 0 ? ' active' : ''}`} data-slide={i}>
+          <img src={s} data-edit-img={`t:heroSlides.${i}`} alt="Đội hình xe tải chuyên nghiệp của Vận tải Lê Chung" loading={i === 0 ? 'eager' : 'lazy'} />
         </div>
-      )}
-      <div class="intro-badge">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5z"/></svg>
-        <span>Uy tín<br>Đúng hẹn</span>
+      ))}
+    </div>
+  </div>
+  <div class="hero-cta">
+    <div class="wrap hero-cta-in">
+      <div class="hero-cta-txt">
+        <h1 data-edit="t:heroH1">{heroH1}</h1>
+        <p data-edit="t:heroLead">{heroLead}</p>
+      </div>
+      <div class="hero-btns">
+        <a class="btn-call" href={`tel:${TEL}`}>📞 {HOTLINE}</a>
+        <a class="btn-line" href={`https://zalo.me/${(_c.zalo || TEL).replace(/\s/g,'')}`} target="_blank" rel="noopener">💬 Chat Zalo</a>
       </div>
     </div>
   </div>
@@ -470,6 +473,35 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
     ))}
   </div>
 </div>
+
+<!-- GIỚI THIỆU — mục RIÊNG, đúng kiểu Danh Long: chữ trái, ảnh/video phải khung 16:9 bo góc -->
+<section id="gioi-thieu">
+  <div class="wrap intro-grid">
+    <div class="intro-txt">
+      <span class="step-tag" data-edit="t:secUyTin.tag">{secUyTin.tag}</span>
+      <h2 data-edit="t:secUyTin.title">{secUyTin.title}</h2>
+      <p data-edit="t:secUyTin.intro"><b>{COMPANY_FULL}</b> — {secUyTin.intro}</p>
+      <ul class="commit">
+        {uyTin.map((u, i) => (<li data-edit={`t:uyTin.${i}.t`}>{u.t}</li>))}
+      </ul>
+      <div class="intro-btns">
+        <a class="btn-call btn-dark" href={`https://zalo.me/${(_c.zalo || TEL).replace(/\s/g,'')}`} target="_blank" rel="noopener">💬 Tư vấn miễn phí</a>
+        <a class="btn-line" href={`tel:${TEL}`}>📞 {HOTLINE}</a>
+      </div>
+    </div>
+    <div class="intro-media">
+      {heroVideoUrl ? (
+        <div class="intro-video"><iframe src={heroVideoUrl} title="Video giới thiệu Vận tải Lê Chung" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      ) : (
+        <img class="intro-slides" src={heroAnh} data-edit-img="t:heroAnh" alt="Đội xe Vận Tải Lê Chung" />
+      )}
+      <div class="intro-badge">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.9 8 11 4.6-2.1 8-6 8-11V5z"/></svg>
+        <span>Uy tín<br>Đúng hẹn</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- DỊCH VỤ -->
 <section id="dich-vu" class="alt">
