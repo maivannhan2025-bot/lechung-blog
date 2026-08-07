@@ -1,7 +1,9 @@
 {
   "heroAnh": "/anh/trangchu-anh.webp",
-  "introImgs": [],
-  "introVideo": "https://youtu.be/b3sDOYd42pA?si=3wEV1s4FK_luw0KB",
+  "introImgs": [
+    "/anh/van-chuyen-hang-hoa-bang-xe-tai-nho-2-5-tan.jpg"
+  ],
+  "introVideo": "",
   "heroSlides": [
     "/anh/trangchu-anh.webp",
     "/anh/c4ee92a6-4c04-4f5a-bd14-d06af824ab47.png",
@@ -191,7 +193,7 @@
   "secUyTin": {
     "tag": "Vì sao tin Lê Chung",
     "title": "Một đơn vị vận tải có pháp nhân, có trách nhiệm",
-    "intro": "CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — Hơn 10 năm trong nghề, Lê Chung làm vận tải bằng xe của mình và cam kết bằng giấy tờ rõ ràng — không phải nhà xe trôi nổi."
+    "intro": "CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG — Hơn 10 năm trong nghề, Lê Chung làm vận tải bằng xe của mình và cam kết bằng giấy tờ rõ ràng — không phải nhà xe trôi nổi."
   },
   "uyTin": [
     {
