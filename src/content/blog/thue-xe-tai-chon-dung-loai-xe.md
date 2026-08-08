@@ -3,11 +3,14 @@ title: "Thuê xe tải chở hàng: chọn đúng loại xe, khỏi phát sinh c
 description: "Chọn xe quá nhỏ phải chạy hai chuyến, chọn xe quá lớn trả cước thừa. Cách chọn đúng tải trọng và loại thùng xe cho từng loại hàng — để trả đúng tiền, đi một chuyến là xong."
 ngayDang: 2026-07-22
 thoiGianDoc: 6
+anhDaiDien: "/anh/blog/lechung-xe-02.jpg"
 ---
 
 Nhiều người thuê xe tải xong mới thấy tiếc: chọn xe nhỏ quá, hàng không hết, phải chạy thêm chuyến; hoặc chọn xe to quá, thùng trống một nửa mà vẫn trả cước cả xe. Chọn đúng loại xe ngay từ đầu giúp anh/chị **trả đúng tiền, đi một chuyến là xong**. Bài này chỉ cách chọn nhanh mà không cần rành về xe.
 
 ## Trước tiên: ước lượng hàng của mình
+
+![Thuê xe tải chở hàng: chọn đúng loại xe, khỏi phát sinh chi phí](/anh/blog/lechung-xe-02.jpg)
 
 Chỉ cần trả lời ba câu, là biết cần xe cỡ nào:
 
