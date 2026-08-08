@@ -3,6 +3,7 @@ title: "Xe tải chở hàng đi Mỹ Tho (Tiền Giang) — hàng chợ, thực
 description: "Xe tải chở hàng đi Mỹ Tho (Tiền Giang) cho hàng chợ, nông sản, thực phẩm. Vận Tải Lê Chung xe 8-20 tấn, canh giờ chợ đầu mối. Báo giá: 0839 861 499."
 ngayDang: 2026-08-10
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---
 
 Nhiều anh chị có hàng chợ, trái cây, thực phẩm cần đưa xuống Mỹ Tho mỗi ngày nhưng ngại nhất là kiếm được xe đúng giờ, đúng loại mà cước rõ ràng. Bên em, Công ty TNHH DV Vận Tải Lê Chung, chuyên nhận xe tải chở hàng đi Mỹ Tho (Tiền Giang) cho cả hàng chợ, nông sản và thực phẩm. Tuyến này bên em chạy quen nên anh/chị gọi là bên em tính ngay được nên đi xe mấy tấn, mấy giờ giao tới nơi.

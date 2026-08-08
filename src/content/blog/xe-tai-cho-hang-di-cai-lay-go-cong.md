@@ -3,6 +3,7 @@ title: "Xe tải chở hàng đi Cai Lậy - Gò Công (Tiền Giang) — nông 
 description: "Xe tải chở hàng đi Cai Lậy - Gò Công (Tiền Giang): chở nông sản, thủy sản, hàng tiêu dùng theo QL1, QL50. Lê Chung báo giá rõ, gọi 0839 861 499."
 ngayDang: 2026-08-10
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---
 
 Anh chị đang cần **xe tải chở hàng đi Cai Lậy - Gò Công (Tiền Giang)** để đưa nông sản, thủy sản hay hàng tiêu dùng về hai vùng này? Bên em là CÔNG TY TNHH DV VẬN TẢI LÊ CHUNG, chuyên chạy tuyến Sài Gòn - Tiền Giang và các huyện trong tỉnh mỗi ngày. Bài này em nói thật, ngắn gọn, để anh chị hình dung được nên chọn xe nào, hay vướng chỗ nào, rồi cần gì cứ gọi 0839 861 499 (gọi hoặc Zalo đều được).

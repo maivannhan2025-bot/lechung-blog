@@ -3,6 +3,7 @@ title: "Xe tải thùng 8 tấn thùng dài chở hàng đi tỉnh miền Nam"
 description: "Xe tải thùng 8 tấn thùng dài 7m, 9m5 của Lê Chung chở hàng dài, hàng công nghiệp cồng kềnh đi tỉnh miền Nam. Đội xe hơn 100 chiếc, báo giá miễn phí: gọi 0839 861 499."
 ngayDang: 2026-08-31
 thoiGianDoc: 6
+anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---
 
 Anh chị đang tìm **xe tải thùng 8 tấn thùng dài chở hàng đi tỉnh miền Nam** mà băn khoăn hàng dài, hàng cồng kềnh liệu xe có chở gọn không? Bên em — Công ty TNHH DV Vận Tải Lê Chung — có sẵn dòng xe 8 tấn thùng dài 7m và 9m5, chuyên cho hàng dài, hàng công nghiệp đi các tỉnh phía Nam. Anh chị đọc qua bài này để hình dung nên chọn xe thế nào cho đúng, tránh phát sinh dọc đường.

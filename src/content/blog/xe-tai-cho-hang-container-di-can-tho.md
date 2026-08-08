@@ -3,6 +3,7 @@ title: "Xe container đi Cần Thơ — đầu kéo, hàng khối lớn"
 description: "Xe container đi Cần Thơ, đầu kéo sơ mi rơ moóc chở hàng khối lớn, nguyên container qua cầu Cần Thơ vào cảng. Lê Chung báo giá rõ, gọi 0839 861 499."
 ngayDang: 2026-08-20
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---
 
 Anh chị đang cần **xe container đi Cần Thơ** để kéo một lô hàng khối lớn, hàng nguyên container từ Sài Gòn hay các khu công nghiệp lân cận xuống miền Tây? Bên em là Công ty TNHH DV Vận Tải Lê Chung, chuyên chạy đầu kéo, sơ mi rơ moóc chở hàng khối lớn đi Cần Thơ và vào cảng Cần Thơ. Bài này em nói thật, gọn, để anh chị hình dung đường đi, loại xe và mấy chỗ dễ phát sinh trước khi chốt.

@@ -3,6 +3,7 @@ title: "Xe tải chở hàng đi KCN Trà Nóc (Cần Thơ) — container, hàng
 description: "Xe tải chở hàng đi KCN Trà Nóc (Cần Thơ): container, hàng xuất, đi cảng cùng Lê Chung. Đội xe hơn 100 chiếc, xe 8-20 tấn, hoá đơn VAT. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-08-20
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---
 
 Anh chị đang cần xe tải chở hàng đi KCN Trà Nóc (Cần Thơ), nhất là hàng container đi cảng và hàng xuất, thì bài này viết cho đúng việc của anh chị. Bên em là CÔNG TY TNHH DV VẬN TẢI LÊ CHUNG, chuyên chở hàng đi các khu công nghiệp miền Tây, trong đó tuyến về Trà Nóc là tuyến bên em chạy quen. Em nói thẳng những chỗ cần lưu ý để anh chị đỡ mất công, và để chuyến hàng của mình chạy trơn.

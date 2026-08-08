@@ -3,6 +3,7 @@ title: "Xe tải chở hàng đi TP Bạc Liêu - Giá Rai — hàng công ty, t
 description: "Xe tải chở hàng đi TP Bạc Liêu - Giá Rai: hàng công ty, thủy sản, tiêu dùng, đội xe hơn 100 chiếc, đủ tải, có GPS và hóa đơn VAT. Gọi báo giá 0839 861 499."
 ngayDang: 2026-08-23
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---
 
 Anh chị đang cần **xe tải chở hàng đi TP Bạc Liêu - Giá Rai**, dù là hàng công ty, hàng thủy sản hay hàng tiêu dùng thì bên em Lê Chung đều nhận. Công ty TNHH DV Vận Tải Lê Chung chạy tuyến Sài Gòn - miền Tây đều đặn, có xe đủ tải, đi thẳng theo QL1 xuống tận trung tâm thành phố và vùng tôm Giá Rai. Anh chị cần báo giá hay hỏi xe, cứ gọi ngay 0839 861 499, bên em tư vấn thật lòng.

@@ -3,6 +3,7 @@ title: "Chở nông sản, trái cây miền Tây lên Sài Gòn — hàng hai c
 description: "Chở nông sản, trái cây miền Tây lên Sài Gòn hàng hai chiều cùng Lê Chung: gom trái cây, thủy sản về chợ đầu mối sớm, gộp chuyến tiết kiệm. Gọi 0839 861 499."
 ngayDang: 2026-08-27
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---
 
 Nếu anh/chị đang cần **chở nông sản, trái cây miền Tây lên Sài Gòn** mà lại có sẵn hàng muốn đưa xuống miền Tây, thì đi hai chiều là cách tính hợp lý nhất. Thay vì xe chạy xuống có hàng, chạy về rỗng bụng, bên em gom luôn cả hai đầu: chở hàng của anh/chị xuống, rồi ăn nông sản, trái cây, thủy sản gom ngược về Sài Gòn. Lê Chung làm tuyến miền Tây quen mặt, xin chia sẻ với anh/chị mấy điều thật lòng để chuyến hàng nhẹ đầu hơn.

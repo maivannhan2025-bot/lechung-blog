@@ -3,6 +3,7 @@ title: "Xe tải chở hàng đi Phú Mỹ — cảng Cái Mép - Thị Vải, c
 description: "Lê Chung nhận xe tải chở hàng đi Phú Mỹ, cảng Cái Mép - Thị Vải, KCN Phú Mỹ 1-2-3: xe thùng, container, đầu kéo cho hàng nặng. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-02
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---
 
 Anh chị đang cần **xe tải chở hàng đi Phú Mỹ**, ra cảng Cái Mép - Thị Vải hay vào các khu công nghiệp Phú Mỹ 1, 2, 3 thì gọi bên em nhé. Lê Chung nhận chở đủ loại: từ vài kiện lẻ cho tới hàng nặng nguyên container đi cảng. Phú Mỹ là vùng cảng biển và công nghiệp nặng, xe cộ phải chọn đúng thì hàng mới thông, nên anh chị đọc qua bài này rồi mình bàn cho khớp.

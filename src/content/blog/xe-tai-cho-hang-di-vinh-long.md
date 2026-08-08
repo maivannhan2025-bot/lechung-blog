@@ -3,6 +3,7 @@ title: "Xe tải chở hàng TP.HCM đi Vĩnh Long — nông sản, gạch gốm
 description: "Xe tải chở hàng TP.HCM đi Vĩnh Long: chở nông sản, gạch gốm qua QL1, cầu Mỹ Thuận. Lê Chung đội xe hơn 100 chiếc, báo giá miễn phí 0839 861 499."
 ngayDang: 2026-08-12
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---
 
 Nếu anh/chị đang cần **xe tải chở hàng TP.HCM đi Vĩnh Long** cho một chuyến nông sản, một xe gạch gốm, hay hàng tạp hoá về mấy cù lao, thì Lê Chung xin nói ngắn gọn cho dễ hình dung. Bên em là **CÔNG TY TNHH DV VẬN TẢI LÊ CHUNG**, chạy tuyến Sài Gòn đi Vĩnh Long thường xuyên, thuộc đường thuộc bến. Anh/chị cứ gọi **0839 861 499** (gọi hoặc Zalo đều được) là bên em tư vấn loại xe và báo giá miễn phí ngay.

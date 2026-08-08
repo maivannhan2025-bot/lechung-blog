@@ -3,6 +3,7 @@ title: "Xe tải chở hàng đi TP Cà Mau — thủy sản, hàng tiêu dùng"
 description: "Xe tải chở hàng đi TP Cà Mau: thủy sản, hàng tiêu dùng, vật liệu theo QL1. Đội xe hơn 100 chiếc, GPS, hoá đơn VAT. Báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-24
 thoiGianDoc: 7
+anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---
 
 Cà Mau nằm ở cuối bản đồ nước mình, chở hàng xuống tới đây gần như là chạy hết chiều dài Quốc lộ 1 về phía Nam. Nếu anh/chị đang cần **xe tải chở hàng đi TP Cà Mau** — vài thùng hàng tiêu dùng cho đại lý, một lô vật liệu xây dựng, hay gom thủy sản đông lạnh chiều về — thì bên em, Lê Chung, xin nói thật lòng vài điều để anh/chị tính đường cho gọn. Có gì chưa rõ, anh/chị gọi ngay 0839 861 499, lúc nào cũng có người nghe máy.
