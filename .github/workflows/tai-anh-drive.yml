@@ -1,0 +1,41 @@
+name: Tai anh tu Google Drive
+
+on:
+  workflow_dispatch:
+
+jobs:
+  tai-anh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tai anh theo danh sach
+        run: |
+          mkdir -p public/anh
+          while IFS='|' read -r id ten || [ -n "$id" ]; do
+            id=$(echo "$id" | tr -d '[:space:]')
+            ten=$(echo "$ten" | tr -d '[:space:]')
+            [ -z "$id" ] && continue
+            [ -z "$ten" ] && continue
+            case "$id" in \#*) continue;; esac
+            if [ -f "public/anh/$ten" ]; then
+              echo "Bo qua (da co): $ten"
+              continue
+            fi
+            echo "Tai: $ten"
+            curl -sL --max-time 60 "https://drive.google.com/uc?export=download&id=$id" -o "public/anh/$ten"
+            if [ ! -s "public/anh/$ten" ]; then
+              echo "LOI: khong tai duoc $ten"
+              rm -f "public/anh/$ten"
+            fi
+          done < danh-sach-anh.txt
+
+      - name: Commit va push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/anh
+          git diff --staged --quiet || git commit -m "Tai anh xe that tu Google Drive"
+          git push
