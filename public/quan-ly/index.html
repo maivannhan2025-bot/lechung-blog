@@ -390,7 +390,7 @@ function renderHome() {
 async function renderBlogList() {
   app.innerHTML = topBar('blog') + `<div class="wrap">
     <div class="toolbar"><button class="btn yellow" onclick="route('blogEdit')">➕ Viết bài mới</button></div>
-    <h2 class="page">Các bài viết</h2><p class="sub">Bấm một bài để sửa.</p>
+    <h2 class="page">Các bài viết</h2><p class="sub" id="blCount">Bấm một bài để sửa.</p>
     <div id="bl" class="list"><div class="center-msg"><span class="spin"></span> Đang tải…</div></div>
   </div>`;
   try {
@@ -401,11 +401,21 @@ async function renderBlogList() {
       try { const c = await (await gh('src/content/blog/' + f.name + '?ref=' + CFG.branch)).json(); const { fm } = parseMd(b64dec(c.content)); return { name:f.name, sha:c.sha, fm }; }
       catch { return { name:f.name, sha:f.sha, fm:{} }; }
     }));
+    // Moi nhat truoc: sap xep theo ngayDang giam dan (bai chua co ngay roi xuong cuoi)
+    items.sort((a, b) => (b.fm.ngayDang || '').localeCompare(a.fm.ngayDang || ''));
+    const today = new Date().toISOString().slice(0, 10);
+    const soLenLich = items.filter(it => it.fm.ngayDang && it.fm.ngayDang > today).length;
+    document.getElementById('blCount').innerHTML = `Bấm một bài để sửa. <b>Tổng ${items.length} bài</b>`
+      + (soLenLich ? ` — <span style="color:var(--ok);font-weight:800">${soLenLich} bài đang chờ lên lịch</span>` : '');
     document.getElementById('bl').innerHTML = items.map(it => {
       const img = it.fm.anhDaiDien ? CFG.site + it.fm.anhDaiDien : '';
+      const isScheduled = it.fm.ngayDang && it.fm.ngayDang > today;
+      const dateLabel = !it.fm.ngayDang ? '' : isScheduled
+        ? `<span style="color:var(--ok);font-weight:800">📅 Lên lịch ${esc(it.fm.ngayDang)}</span>`
+        : `<span>Ngày đăng ${esc(it.fm.ngayDang)}</span>`;
       return `<div class="list-item">
         ${img ? `<img src="${esc(img)}" onerror="this.style.visibility='hidden'">` : `<img src="" style="visibility:hidden">`}
-        <div><div class="t">${esc(it.fm.title || it.name)}</div><div class="d">${esc(it.fm.ngayDang||'')} — ${esc((it.fm.description||'').slice(0,70))}</div></div>
+        <div><div class="t">${esc(it.fm.title || it.name)}</div><div class="d">${dateLabel}${dateLabel ? ' — ' : ''}${esc((it.fm.description||'').slice(0,70))}</div></div>
         <div class="go" style="display:flex;gap:8px;flex-shrink:0">
           <button class="btn ghost" onclick="previewFromList('${encodeURIComponent(it.name)}')">👁️ Xem trước</button>
           <button class="btn ghost" onclick="route('blogEdit','${encodeURIComponent(it.name)}')">Sửa →</button>
