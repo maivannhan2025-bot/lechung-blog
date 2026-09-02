@@ -2,6 +2,7 @@
 // Layout cho từng bài viết blog Lê Chung — giữ nguyên thương hiệu lechung.vn
 import Header from '../components/Header.astro';
 import chung from '../data/chung.json';
+import DoLuong from '../components/DoLuong.astro';
 const { frontmatter } = Astro.props;
 const { title, description, ngayDang, thoiGianDoc, anhDaiDien } = frontmatter;
 // Ảnh đại diện đầu bài: ưu tiên ảnh anh Nhận đặt (anhDaiDien ở /admin), chưa có thì dùng ảnh đội xe.
@@ -119,6 +120,8 @@ const breadcrumbSchema = {
   .site-foot b{color:var(--text-soft)}
   .site-foot a{color:var(--text-soft)}
 </style>
+{/* Facebook Pixel + Google Analytics — gan 1 lan o /quan-ly > Cai dat, moi trang deu co */}
+<DoLuong />
 </head>
 <body>
 

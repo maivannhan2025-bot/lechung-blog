@@ -1,0 +1,22 @@
+---
+/* ĐO LƯỜNG DÙNG CHUNG — Facebook Pixel + Google Analytics.
+   NGUYÊN TẮC (anh Mai Văn Nhận chốt 2026-09-02): gắn mã 1 lần ở /quan-ly > Cài đặt thì
+   TẤT CẢ các trang của web đều phải có Pixel — không riêng trang chủ.
+   Vì web Lê Chung dựng kiểu mỗi trang tự chứa <head> riêng (không dùng chung 1 Layout),
+   nên khối này được nhúng vào <head> của TỪNG trang. Thêm trang mới → nhớ nhúng vào đây.
+   Đang dùng ở: pages/index.astro · pages/404.astro · pages/blog/index.astro · layouts/BaiViet.astro
+   Không nhập mã ở /quan-ly thì khối này không in ra gì cả. */
+import chung from '../data/chung.json';
+
+const _c = chung as { fbPixel?: string; fbPixelId?: string; gaId?: string };
+// Nhận cả 2 tên ô: fbPixelId (khuôn quản lý hiện nay) và fbPixel (tên cũ của web này).
+const FB_PIXEL = (_c.fbPixelId || _c.fbPixel || '').trim();
+// Chỉ lấy đúng dạng mã hợp lệ, phòng khi dán nhầm cả đoạn mã Google đưa.
+const GA_ID = ((_c.gaId || '').match(/\b(G-[A-Z0-9]+|UA-[0-9-]+|GTM-[A-Z0-9]+)\b/i)?.[0] || '').trim();
+---
+{/* Facebook Pixel (chỉ chạy khi có mã ở /quan-ly > Cài đặt) */}
+{FB_PIXEL && (<script is:inline set:html={`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${FB_PIXEL}');fbq('track','PageView');`} />)}
+{FB_PIXEL && (<noscript set:html={`<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${FB_PIXEL}&ev=PageView&noscript=1"/>`} />)}
+{/* Google Analytics 4 (chỉ chạy khi có mã G-XXXX hợp lệ) */}
+{GA_ID && <script is:inline src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />}
+{GA_ID && (<script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`} />)}

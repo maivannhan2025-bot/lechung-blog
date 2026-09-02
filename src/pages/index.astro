@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
 import trangchu from '../data/trangchu.json';
 import chung from '../data/chung.json';
+import DoLuong from '../components/DoLuong.astro';
 
 const HOTLINE = chung.hotline;
 const TEL = chung.tel;
@@ -22,8 +23,6 @@ const MST = _c.mst || '0314664033';
 const ADDRESS = _c.address || '77 Đường số 2A, Phường Bình Tân, TP. Hồ Chí Minh';
 const mapEmbed = 'https://www.google.com/maps?q=' + encodeURIComponent(ADDRESS) + '&output=embed';
 // Quảng cáo / đo lường / form (sửa ở /quan-ly > Cài đặt)
-const FB_PIXEL = (_c.fbPixelId || _c.fbPixel || '').trim();
-const GA_ID = ((_c.gaId || '').match(/\b(G-[A-Z0-9]+|UA-[0-9-]+|GTM-[A-Z0-9]+)\b/i)?.[0] || '').trim();
 const CONTACT_FORM = _c.contactForm || '';
 const CONTACT_FORM_TITLE = _c.contactFormTitle || 'Nhận tư vấn & báo giá';
 const CONTACT_FORM_DELAY = Number(_c.contactFormDelay) || 6;
@@ -167,12 +166,8 @@ const ICON_TRUCK_LINE = '<svg width="20" height="20" viewBox="0 0 24 24" fill="c
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json" is:inline set:html={JSON.stringify(bizSchema)} />
-{/* Facebook Pixel (chỉ chạy khi có mã ở /quan-ly > Cài đặt) */}
-{FB_PIXEL && (<script is:inline set:html={`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${FB_PIXEL}');fbq('track','PageView');`} />)}
-{FB_PIXEL && (<noscript set:html={`<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${FB_PIXEL}&ev=PageView&noscript=1"/>`} />)}
-{/* Google Analytics 4 (chỉ chạy khi có mã G-XXXX hợp lệ) */}
-{GA_ID && <script is:inline src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />}
-{GA_ID && (<script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`} />)}
+{/* Facebook Pixel + Google Analytics — dùng chung 1 khối cho MỌI trang (xem components/DoLuong.astro) */}
+<DoLuong />
 <style is:global>
   :root{
     --bg:#fffaf6; --panel:#fff3ea; --panel-2:#ffe7d8; --card:#ffffff; --line:#f0ddd0;

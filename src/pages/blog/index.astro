@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Header from '../../components/Header.astro';
 import chung from '../../data/chung.json';
+import DoLuong from '../../components/DoLuong.astro';
 
 const now = Date.now();
 const baiViet = (await getCollection('blog'))
@@ -88,6 +89,8 @@ const FAVICON_MIME = FAVICON_TYPE[FAVICON.split('.').pop()?.toLowerCase() || '']
   .site-foot a{color:var(--text-soft)}
   .empty{text-align:center; color:var(--muted); padding:40px 0}
 </style>
+{/* Facebook Pixel + Google Analytics — gan 1 lan o /quan-ly > Cai dat, moi trang deu co */}
+<DoLuong />
 </head>
 <body>
 

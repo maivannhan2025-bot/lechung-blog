@@ -2,6 +2,7 @@
 // Trang 404 — Cloudflare Pages sẽ phục vụ trang này KÈM mã HTTP 404
 // cho mọi URL không tồn tại (sửa lỗi "soft-404": trước đây trả trang chủ + mã 200).
 import chung from '../data/chung.json';
+import DoLuong from '../components/DoLuong.astro';
 const HOTLINE = '0839 861 499';
 const TEL = '0839861499';
 // Favicon (icon nhỏ ở tab trình duyệt, sửa ở /quan-ly > Liên hệ) — để trống thì giữ y như cũ (favicon.svg + favicon.ico mặc định)
@@ -35,6 +36,8 @@ const FAVICON_MIME = FAVICON_TYPE[FAVICON.split('.').pop()?.toLowerCase() || '']
   .tel{margin-top:22px;font-size:14px;color:var(--muted)}
   .tel a{color:var(--brand);font-weight:700;text-decoration:none}
 </style>
+{/* Facebook Pixel + Google Analytics — gan 1 lan o /quan-ly > Cai dat, moi trang deu co */}
+<DoLuong />
 </head>
 <body>
   <div class="box">
