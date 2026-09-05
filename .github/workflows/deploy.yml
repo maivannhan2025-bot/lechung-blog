@@ -25,6 +25,10 @@ jobs:
 
       - run: npm run build
 
+      # Chup lai sitemap DANG live TRUOC khi deploy, de lat nua biet bai nao vua moi len.
+      - name: Ghi nhớ sitemap đang live (để biết bài nào mới)
+        run: node .github/bao-index.mjs ghi-nho
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
@@ -32,21 +36,8 @@ jobs:
           accountId: 7f1f6ca5a97b720a663eb8338957a03a
           command: pages deploy dist --project-name=lechung-web --branch=main
 
-      # Báo cho Bing/Yandex... biết web vừa có URL mới/đổi, để họ mò lại sớm hơn
-      # (IndexNow — không phục vụ Google, Google dùng sitemap + Request Indexing riêng).
-      # Không có gì bí mật trong KEY này (nó vốn phải public qua file .txt) nên để thẳng trong workflow.
-      - name: Báo IndexNow (Bing/Yandex)
-        run: |
-          node -e "
-            const fs = require('fs');
-            const KEY = 'c344eb47d7931a24d5f5365fa3f72f2ad1f97f14';
-            const HOST = 'lechung.vn';
-            const xml = fs.readFileSync('dist/sitemap.xml', 'utf8');
-            const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
-            fetch('https://api.indexnow.org/indexnow', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json; charset=utf-8' },
-              body: JSON.stringify({ host: HOST, key: KEY, keyLocation: 'https://' + HOST + '/' + KEY + '.txt', urlList: urls }),
-            }).then(r => console.log('IndexNow trả về status:', r.status, '- số URL đã gửi:', urls.length))
-              .catch(e => console.log('IndexNow lỗi (bỏ qua, không chặn deploy):', e.message));
-          "
+      # Bao cho Bing/Yandex/Naver/Seznam biet BAI VUA LEN CONG KHAI (IndexNow).
+      # Chi bao URL moi hoac doi ngay — khong bao lai ca sitemap. Google KHONG dung
+      # IndexNow: Google di theo sitemap + Search Console.
+      - name: Báo index bài vừa lên công khai
+        run: node .github/bao-index.mjs bao
