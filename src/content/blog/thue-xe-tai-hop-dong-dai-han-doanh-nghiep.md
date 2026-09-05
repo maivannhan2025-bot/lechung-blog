@@ -2,6 +2,7 @@
 title: "Thuê xe tải chở hàng theo hợp đồng dài hạn cho doanh nghiệp phía Nam"
 description: "Thuê xe tải chở hàng theo hợp đồng dài hạn cho doanh nghiệp phía Nam: cam kết xe, giá ổn định, ưu tiên điều xe. Lê Chung báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-09-07
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

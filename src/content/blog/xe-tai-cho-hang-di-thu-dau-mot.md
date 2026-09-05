@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Thủ Dầu Một (Bình Dương) — hàng kho xưởng, đúng giờ"
 description: "Thuê xe tải chở hàng TP.HCM đi Thủ Dầu Một: hàng kho xưởng, khu công nghiệp, vật liệu, hàng gỗ. Xe 1-20 tấn, xe cẩu, giao trong ngày. Gọi 0839 861 499."
 ngayDang: 2026-07-24
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

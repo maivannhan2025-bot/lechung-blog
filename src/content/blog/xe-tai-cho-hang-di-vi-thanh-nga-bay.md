@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Vị Thanh - Ngã Bảy (Hậu Giang) — hàng tiêu dùng, vật liệu"
 description: "Xe tải chở hàng đi Vị Thanh - Ngã Bảy (Hậu Giang): hàng tiêu dùng, nông sản, vật liệu, đủ loại xe 8-20 tấn. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-21
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

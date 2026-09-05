@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Ninh Kiều - Cái Răng (Cần Thơ) — hàng công ty, hàng chợ"
 description: "Xe tải chở hàng đi Ninh Kiều - Cái Răng (Cần Thơ): hàng công ty, hàng chợ, hàng tiêu dùng. Lê Chung đội xe hơn 100 chiếc, báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-19
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

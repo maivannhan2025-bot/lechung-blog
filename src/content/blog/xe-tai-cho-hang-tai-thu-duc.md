@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại TP. Thủ Đức - đi cảng, đi tỉnh nhanh gọn"
 description: "Cần xe tải chở hàng tại TP. Thủ Đức: đội xe hơn 100 chiếc, chạy container ra cảng, gom hàng khu công nghiệp, đi tỉnh. Gọi Lê Chung 0839 861 499 nhận báo giá."
 ngayDang: 2026-07-18
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-08.jpg"
 ---

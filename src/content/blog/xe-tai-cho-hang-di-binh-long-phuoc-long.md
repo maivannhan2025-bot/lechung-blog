@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Bình Long - Phước Long (Bình Phước) — hàng nông sản, đúng chuyến"
 description: "Thuê xe tải chở hàng đi Bình Long - Phước Long (Bình Phước): hàng nông sản cao su, điều, vật liệu, đường đồi dốc, đúng chuyến. Báo giá miễn phí gọi 0839 861 499."
 ngayDang: 2026-08-07
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-19.jpg"
 ---

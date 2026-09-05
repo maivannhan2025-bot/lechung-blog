@@ -2,6 +2,7 @@
 title: "Bảng giá cước vận chuyển tham khảo TP.HCM đi các tỉnh miền Nam"
 description: "Bảng giá cước vận chuyển tham khảo TP.HCM đi các tỉnh miền Nam: cách tính cước theo tải trọng, quãng đường, loại hàng. Gọi Lê Chung 0839 861 499 nhận báo giá."
 ngayDang: 2026-09-04
+ngayCapNhat: 2026-07-28T04:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/709f2237-0b1b-4378-8a40-5fb93be7d3d3.png"
 ---

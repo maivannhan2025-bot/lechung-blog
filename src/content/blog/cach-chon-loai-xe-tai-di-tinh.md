@@ -2,6 +2,7 @@
 title: "Cách chọn loại xe tải chở hàng đi tỉnh cho đúng"
 description: "Cách chọn loại xe tải chở hàng đi tỉnh cho đúng theo khối lượng, loại hàng, cầu đường — tránh thừa tải hoặc thiếu tải. Tư vấn miễn phí, gọi Lê Chung 0839 861 499."
 ngayDang: 2026-09-05
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi TP Bà Rịa — hàng công ty, vật liệu"
 description: "Cần xe tải chở hàng đi TP Bà Rịa — hàng công ty, vật liệu xây dựng, hàng tiêu dùng? Lê Chung có đội xe 8-20 tấn, đi QL51, QL55. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-02
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-19.jpg"
 ---

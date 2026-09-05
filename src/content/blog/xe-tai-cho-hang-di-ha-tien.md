@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Hà Tiên (Kiên Giang) — biên giới, du lịch"
 description: "Xe tải chở hàng đi Hà Tiên (Kiên Giang): thuê xe 8-20 tấn, container chở hàng du lịch, biên mậu, tiêu dùng lên cửa khẩu. Báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-18
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

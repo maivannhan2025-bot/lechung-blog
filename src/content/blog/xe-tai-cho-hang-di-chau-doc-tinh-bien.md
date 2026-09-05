@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Châu Đốc - Tịnh Biên (An Giang) — hàng chợ, biên giới"
 description: "Thuê xe tải chở hàng đi Châu Đốc - Tịnh Biên (An Giang): hàng chợ, đặc sản, hàng biên mậu vùng cửa khẩu. Lê Chung báo giá miễn phí, gọi ngay 0839 861 499."
 ngayDang: 2026-08-16
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

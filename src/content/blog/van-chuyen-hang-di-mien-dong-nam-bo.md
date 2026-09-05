@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng đi miền Đông Nam Bộ: tuyến ngắn, giao trong ngày, chọn đúng xe"
 description: "Thuê xe tải chở hàng TP.HCM đi Bình Dương, Đồng Nai, Bà Rịa - Vũng Tàu, Tây Ninh, Bình Phước. Hàng khu công nghiệp, đi cảng Cái Mép, giao trong ngày."
 ngayDang: 2026-07-23
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

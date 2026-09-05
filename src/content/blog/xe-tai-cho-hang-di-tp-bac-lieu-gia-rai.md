@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi TP Bạc Liêu - Giá Rai — hàng công ty, thủy sản"
 description: "Xe tải chở hàng đi TP Bạc Liêu - Giá Rai: hàng công ty, thủy sản, tiêu dùng, đội xe hơn 100 chiếc, đủ tải, có GPS và hóa đơn VAT. Gọi báo giá 0839 861 499."
 ngayDang: 2026-08-23
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

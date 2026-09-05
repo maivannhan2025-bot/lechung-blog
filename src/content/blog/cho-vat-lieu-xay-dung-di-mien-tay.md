@@ -2,6 +2,7 @@
 title: "Xe tải chở vật liệu xây dựng đi các tỉnh miền Tây — hàng nặng, cầu đường"
 description: "Xe tải chở vật liệu xây dựng đi các tỉnh miền Tây: sắt thép, xi măng, gạch cát, hàng nặng qua nhiều cầu yếu. Lê Chung chọn xe hợp tải trọng cầu. Gọi 0839 861 499."
 ngayDang: 2026-08-27
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-19.jpg"
 ---

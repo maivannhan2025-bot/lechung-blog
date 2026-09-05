@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Bình Chánh TP.HCM, đi kho và đi tỉnh đều êm"
 description: "Xe tải chở hàng tại Bình Chánh TP.HCM: đội xe hơn 100 chiếc của Lê Chung vào kho, đi khu công nghiệp và đi miền Tây. Báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-07-21
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-18.jpg"
 ---

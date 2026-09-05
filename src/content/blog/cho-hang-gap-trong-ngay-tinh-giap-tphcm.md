@@ -2,6 +2,7 @@
 title: "Chở hàng gấp trong ngày đi các tỉnh giáp TP.HCM"
 description: "Chở hàng gấp trong ngày đi Long An, Bình Dương, Đồng Nai và các tỉnh giáp TP.HCM. Lê Chung có xe tới nhanh, giao và về trong ngày. Gọi báo giá 0839 861 499."
 ngayDang: 2026-09-08
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---

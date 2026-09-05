@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Bến Cát (Bình Dương) — khu công nghiệp, hàng sản xuất"
 description: "Xe tải chở hàng đi Bến Cát: KCN Mỹ Phước 1-2-3, VSIP 2, hàng sản xuất, gỗ, gốm, hàng xuất. Đội xe 8-20 tấn, container. Báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-07-26
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---

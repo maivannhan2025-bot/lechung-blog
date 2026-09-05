@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi TP Sóc Trăng - Vĩnh Châu — hải sản, nông sản"
 description: "Xe tải chở hàng đi TP Sóc Trăng - Vĩnh Châu: hải sản, nông sản, hành tím, thiết bị điện gió. Bao xe hoặc ghép hàng, có VAT. Gọi Lê Chung 0839 861 499 báo giá."
 ngayDang: 2026-08-22
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-19.jpg"
 ---

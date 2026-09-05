@@ -2,6 +2,7 @@
 title: "Ghép hàng lẻ TP.HCM đi miền Tây — tiết kiệm cho lô nhỏ"
 description: "Ghép hàng lẻ TP.HCM đi miền Tây, gom lô nhỏ chung một xe giúp tiết kiệm cho hàng ít. Cách gửi, đóng gói, thời gian gom chuyến. Báo giá gọi 0839 861 499."
 ngayDang: 2026-08-26
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

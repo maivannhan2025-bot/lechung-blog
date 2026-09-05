@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Cao Lãnh (Đồng Tháp) — hàng nông sản, thực phẩm"
 description: "Xe tải chở hàng đi Cao Lãnh (Đồng Tháp) - Lê Chung nhận chở nông sản, thực phẩm, gạo, đội xe hơn 100 chiếc, có hoá đơn VAT. Gọi báo giá 0839 861 499."
 ngayDang: 2026-08-14
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Bình Thạnh TP.HCM - chuyển căn hộ nhanh gọn"
 description: "Cần xe tải chở hàng tại Bình Thạnh, chuyển căn hộ chung cư, nội thất qua đường đông hay kẹt? Lê Chung có đội xe hơn 100 chiếc, báo giá miễn phí. Gọi 0839 861 499."
 ngayDang: 2026-07-17
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-16.jpg"
 ---

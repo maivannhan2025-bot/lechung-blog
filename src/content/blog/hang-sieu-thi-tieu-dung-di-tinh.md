@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng siêu thị, hàng tiêu dùng đi tỉnh"
 description: "Vận chuyển hàng siêu thị, hàng tiêu dùng đi tỉnh: giao đại lý, cửa hàng, siêu thị đúng lịch, nhiều điểm, đủ chứng từ VAT. Gọi Lê Chung 0839 861 499 nhận báo giá."
 ngayDang: 2026-09-02
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

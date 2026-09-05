@@ -2,6 +2,7 @@
 title: "Chở hàng hai chiều TP.HCM - miền Nam — gộp chuyến tiết kiệm"
 description: "Chở hàng hai chiều TP.HCM - miền Nam, gộp chuyến đi và về để giá tốt hơn chạy một chiều. Lê Chung, đội xe 8-20 tấn. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-09-04
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Thuê xe tải chở hàng: chọn đúng loại xe, khỏi phát sinh chi phí"
 description: "Chọn xe quá nhỏ phải chạy hai chuyến, chọn xe quá lớn trả cước thừa. Cách chọn đúng tải trọng và loại thùng xe cho từng loại hàng — để trả đúng tiền, đi một chuyến là xong."
 ngayDang: 2026-07-22
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 6
 anhDaiDien: "/anh/blog/lechung-xe-02.jpg"
 ---

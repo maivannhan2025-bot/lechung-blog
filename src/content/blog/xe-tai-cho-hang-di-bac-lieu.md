@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Bạc Liêu — tôm, thủy sản, hàng tiêu dùng"
 description: "Xe tải chở hàng TP.HCM đi Bạc Liêu: tôm, thủy sản, hàng tiêu dùng, thiết bị điện gió. Lê Chung đội xe hơn 100 chiếc, báo giá rõ ràng. Gọi ngay 0839 861 499."
 ngayDang: 2026-08-23
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

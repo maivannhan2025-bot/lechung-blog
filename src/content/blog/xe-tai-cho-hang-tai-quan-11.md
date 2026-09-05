@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 11 TP.HCM - luồn hẻm, giao nhanh"
 description: "Cần xe tải chở hàng tại Quận 11 gần Chợ Lớn, chợ Thiếc, nhiều hẻm nhỏ? Lê Chung có đội xe hơn 100 chiếc, luồn hẻm gọn, giao nhanh. Gọi 0839 861 499 nhận báo giá."
 ngayDang: 2026-07-20
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-08.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Biên Hòa (Đồng Nai) — hàng công ty, khu công nghiệp"
 description: "Xe tải chở hàng đi Biên Hòa (Đồng Nai): Lê Chung chở hàng công ty, KCN Biên Hòa 1-2, Amata, Loteco. Xe 8-20 tấn, có VAT, gọi 0839 861 499 báo giá."
 ngayDang: 2026-07-28
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-19.jpg"
 ---

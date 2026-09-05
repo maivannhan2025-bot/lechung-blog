@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng may mặc, giày da đi các tỉnh phía Nam"
 description: "Vận chuyển hàng may mặc, giày da đi các tỉnh phía Nam: giữ hàng khô sạch, đúng lịch giao xưởng, chứng từ đủ. Gọi Lê Chung 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-09-01
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-19.jpg"
 ---

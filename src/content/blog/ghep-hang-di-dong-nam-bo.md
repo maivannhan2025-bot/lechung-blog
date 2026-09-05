@@ -2,6 +2,7 @@
 title: "Ghép hàng TP.HCM đi Đông Nam Bộ — Bình Dương, Đồng Nai, Vũng Tàu"
 description: "Ghép hàng TP.HCM đi Đông Nam Bộ — Bình Dương, Đồng Nai, Vũng Tàu: gom lô nhỏ chung xe, tiết kiệm, giao nhanh vì gần. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-08-28
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi TP Bến Tre - Mỏ Cày — nông sản, vật liệu"
 description: "Xe tải chở hàng đi TP Bến Tre - Mỏ Cày: chở dừa, nông sản, vật liệu, xe 8-20 tấn, có hóa đơn VAT. Gọi Lê Chung 0839 861 499 để nhận báo giá miễn phí."
 ngayDang: 2026-08-11
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

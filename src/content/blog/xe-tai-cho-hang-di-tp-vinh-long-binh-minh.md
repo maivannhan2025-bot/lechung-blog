@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi TP Vĩnh Long - Bình Minh — hàng chợ, vật liệu"
 description: "Xe tải chở hàng đi TP Vĩnh Long - Bình Minh: chở hàng chợ, nông sản, vật liệu, đội xe hơn 100 chiếc 8-20 tấn. Báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-12
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-19.jpg"
 ---

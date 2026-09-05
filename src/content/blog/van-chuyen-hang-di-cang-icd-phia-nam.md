@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng đi cảng biển, cảng ICD khu vực phía Nam"
 description: "Lê Chung vận chuyển hàng đi cảng biển, cảng ICD khu vực phía Nam: Cát Lái, Cái Mép, đầu kéo kéo rút container, đúng lịch tàu. Báo giá miễn phí gọi 0839 861 499."
 ngayDang: 2026-09-10
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

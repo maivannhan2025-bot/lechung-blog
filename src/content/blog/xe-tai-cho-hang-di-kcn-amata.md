@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi KCN Amata (Biên Hòa) — container, hàng khối lớn"
 description: "Xe tải chở hàng đi KCN Amata Biên Hòa: container, hàng khối lớn, hàng điện tử, cơ khí. Lê Chung đội xe hơn 100 chiếc, đúng giờ giao kho. Báo giá gọi 0839 861 499."
 ngayDang: 2026-07-31
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---

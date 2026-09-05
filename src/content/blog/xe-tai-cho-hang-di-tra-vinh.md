@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Trà Vinh — thủy sản, nông sản"
 description: "Xe tải chở hàng TP.HCM đi Trà Vinh: chở thủy sản, nông sản, thiết bị điện gió theo QL53, QL60. Đội xe 8-20 tấn, báo giá rõ. Gọi 0839 861 499."
 ngayDang: 2026-08-13
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

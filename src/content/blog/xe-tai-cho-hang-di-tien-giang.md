@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Tiền Giang — trái cây, nông sản"
 description: "Xe tải chở hàng TP.HCM đi Tiền Giang: trái cây, nông sản, gạo. Lê Chung đội xe hơn 100 chiếc, đi cao tốc Trung Lương nhanh, giao đúng giờ. Báo giá miễn phí 0839 861 499."
 ngayDang: 2026-08-09
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

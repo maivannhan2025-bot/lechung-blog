@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 1 TP.HCM: hợp giờ cấm tải, luồn hẻm, đúng hẹn"
 description: "Thuê xe tải chở hàng tại Quận 1: chọn xe hợp giờ cấm tải nội đô, luồn được hẻm nhỏ, chuyển văn phòng, cửa hàng, nhà hàng. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-07-14
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---

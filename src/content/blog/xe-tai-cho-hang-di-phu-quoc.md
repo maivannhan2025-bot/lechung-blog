@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Phú Quốc (qua phà) — hàng ra đảo, thực phẩm"
 description: "Xe tải chở hàng đi Phú Quốc qua phà từ Rạch Giá, Hà Tiên: chở thực phẩm, vật liệu, hàng du lịch ra đảo. Lê Chung canh lịch phà, đóng gói kỹ. Gọi 0839 861 499."
 ngayDang: 2026-08-18
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

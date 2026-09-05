@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi KCN VSIP Bình Dương — hàng xuất nhập, container"
 description: "Xe tải chở hàng đi KCN VSIP Bình Dương: đầu kéo container, hàng xuất nhập, đội xe hơn 100 chiếc, đúng giờ làm hàng, quen thủ tục ra vào KCN. Gọi ngay 0839 861 499."
 ngayDang: 2026-07-27
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

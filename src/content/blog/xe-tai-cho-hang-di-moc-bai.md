@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi cửa khẩu Mộc Bài — hàng biên mậu, xuất nhập"
 description: "Thuê xe tải chở hàng đi cửa khẩu Mộc Bài (Tây Ninh, giáp Campuchia): hàng biên mậu, xuất nhập, khu kinh tế cửa khẩu, thủ tục, QL22. Gọi Lê Chung 0839 861 499 nhận báo giá."
 ngayDang: 2026-08-05
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---

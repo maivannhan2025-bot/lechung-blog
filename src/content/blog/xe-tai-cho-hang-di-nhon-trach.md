@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Nhơn Trạch (Đồng Nai) — khu công nghiệp, hàng xuất khẩu"
 description: "Thuê xe tải chở hàng đi Nhơn Trạch (Đồng Nai): KCN Nhơn Trạch 1-6, hàng xuất khẩu, dệt may, cơ khí, qua phà Cát Lái hoặc đường 25B. Lê Chung báo giá miễn phí 0839 861 499."
 ngayDang: 2026-07-29
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

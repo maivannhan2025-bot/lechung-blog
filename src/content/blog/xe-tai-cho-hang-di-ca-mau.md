@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Cà Mau — cuối bản đồ, đúng hẹn"
 description: "Xe tải chở hàng TP.HCM đi Cà Mau cùng Lê Chung: đội xe hơn 100 chiếc, có GPS, hoá đơn VAT, giao đúng hẹn tận cực Nam. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-24
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---

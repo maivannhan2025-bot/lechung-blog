@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng có hóa đơn VAT đi các tỉnh miền Nam"
 description: "Vận chuyển hàng có hóa đơn VAT đi các tỉnh miền Nam: Lê Chung xuất hóa đơn GTGT hợp lệ, chứng từ giao nhận đủ, chi phí rõ ràng. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-09-09
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---

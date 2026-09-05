@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Đồng Xoài (Bình Phước) — hàng tiêu dùng, vật liệu"
 description: "Thuê xe tải chở hàng đi Đồng Xoài (Bình Phước): hàng tiêu dùng, vật liệu, nông sản, xe 8-20 tấn theo QL14. Lê Chung báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-06
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

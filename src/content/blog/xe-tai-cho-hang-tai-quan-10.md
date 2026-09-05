@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 10 TP.HCM - Chọn đúng xe, đi đúng giờ"
 description: "Xe tải chở hàng tại Quận 10 TP.HCM: chở hàng điện tử, vật liệu, hàng cửa hàng khu 3 Tháng 2, chợ Nhật Tảo. Đội xe Lê Chung hơn 100 chiếc. Gọi 0839 861 499."
 ngayDang: 2026-07-23
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-18.jpg"
 ---

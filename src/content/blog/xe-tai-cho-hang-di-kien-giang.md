@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Kiên Giang — thủy sản, hàng tiêu dùng"
 description: "Xe tải chở hàng TP.HCM đi Kiên Giang: chở thủy sản, hàng tiêu dùng đi Rạch Giá, Hà Tiên, Phú Quốc theo QL80, QL61. Báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-17
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 8 TP.HCM — chọn đúng cầu đường, giao nhanh"
 description: "Xe tải chở hàng tại Quận 8 TP.HCM: chọn xe hợp cầu yếu, đường nhỏ ven kênh rạch, giáp Quận 6 và Bình Chánh. Gọi Lê Chung 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-07-18
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

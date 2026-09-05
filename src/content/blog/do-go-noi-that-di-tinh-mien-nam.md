@@ -2,6 +2,7 @@
 title: "Vận chuyển đồ gỗ, nội thất đi các tỉnh miền Nam"
 description: "Vận chuyển đồ gỗ, nội thất đi các tỉnh miền Nam an toàn, không trầy xước cùng Lê Chung: đội xe hơn 100 chiếc, chằng buộc kỹ, có VAT. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-09-02
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

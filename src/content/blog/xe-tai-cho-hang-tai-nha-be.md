@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Nhà Bè TP.HCM — đầu kéo, container đi cảng"
 description: "Cần xe tải chở hàng tại Nhà Bè đi cảng Hiệp Phước, khu công nghiệp? Lê Chung có đầu kéo, container, xe thùng 5-20 tấn, báo giá rõ. Gọi ngay 0839 861 499."
 ngayDang: 2026-07-22
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-14.jpg"
 ---

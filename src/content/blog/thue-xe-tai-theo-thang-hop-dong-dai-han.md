@@ -2,6 +2,7 @@
 title: "Thuê xe tải theo tháng: khi nào nên ký hợp đồng dài hạn"
 description: "Thuê xe tải theo tháng có lợi hơn thuê chuyến không? Bốn dấu hiệu nên chuyển, cách tự tính trước khi ký và bảy điều cần ghi rõ trong hợp đồng."
 ngayDang: 2026-09-06
+ngayCapNhat: 2026-09-05T07:16:00+07:00
 thoiGianDoc: 9
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 tuKhoa: "thuê xe tải theo tháng"

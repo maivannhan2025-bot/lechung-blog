@@ -2,6 +2,7 @@
 title: "Thuê xe tải nguyên chuyến TP.HCM đi các tỉnh miền Nam"
 description: "Thuê xe tải nguyên chuyến TP.HCM đi các tỉnh miền Nam: bao nguyên xe đi thẳng, không ghép, hàng nguyên vẹn đúng giờ. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-28
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

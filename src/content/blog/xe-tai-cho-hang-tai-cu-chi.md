@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Củ Chi TP.HCM - xe 8-20 tấn, báo giá nhanh"
 description: "Cần xe tải chở hàng tại Củ Chi? Lê Chung có đội xe hơn 100 chiếc, xe 8-20 tấn chở nông sản, vật liệu, hàng khu công nghiệp, đi tỉnh. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-07-22
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-02.jpg"
 ---

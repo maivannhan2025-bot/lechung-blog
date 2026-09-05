@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Trảng Bom (Đồng Nai) — hàng sản xuất, gỗ"
 description: "Xe tải chở hàng đi Trảng Bom (Đồng Nai) cho hàng sản xuất, hàng gỗ vào KCN Hố Nai, Bàu Xéo, Sông Mây. Lê Chung báo giá rõ, gọi 0839 861 499."
 ngayDang: 2026-07-30
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---

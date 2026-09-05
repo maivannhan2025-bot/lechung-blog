@@ -2,6 +2,7 @@
 title: "Xe tải 15 - 20 tấn chở hàng khối lớn đi các tỉnh phía Nam"
 description: "Xe tải 15 - 20 tấn chở hàng khối lớn đi các tỉnh phía Nam: gom một chuyến, nhẹ chi phí mỗi kiện, có GPS, hoá đơn VAT. Báo giá miễn phí: gọi Lê Chung 0839 861 499."
 ngayDang: 2026-08-31
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

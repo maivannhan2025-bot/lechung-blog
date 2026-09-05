@@ -2,6 +2,7 @@
 title: "Chuyển nhà, chuyển văn phòng từ TP.HCM đi các tỉnh phía Nam"
 description: "Chuyển nhà, chuyển văn phòng từ TP.HCM đi các tỉnh phía Nam trọn gói: đóng gói, tháo lắp, giữ đồ cẩn thận, có bảo hiểm. Gọi Lê Chung 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-09-10
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

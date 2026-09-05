@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Long An, Bình Dương, Đồng Nai giáp ranh TP.HCM — giao siêu nhanh"
 description: "Xe tải chở hàng đi Long An, Bình Dương, Đồng Nai giáp ranh TP.HCM, giao siêu nhanh, đi về trong ngày, chi phí nhẹ. Lê Chung báo giá miễn phí 0839 861 499."
 ngayDang: 2026-08-07
+ngayCapNhat: 2026-08-08T00:32:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/xe-tai-mui-bat-di-long-an-24-7.jpg"
 ---

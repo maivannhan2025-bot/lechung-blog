@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Năm Căn - Sông Đốc (Cà Mau) — hải sản, hàng đông lạnh"
 description: "Xe tải chở hàng đi Năm Căn - Sông Đốc (Cà Mau): hải sản, hàng đông lạnh, xe giữ nhiệt, canh con nước. Lê Chung nhận báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-25
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---

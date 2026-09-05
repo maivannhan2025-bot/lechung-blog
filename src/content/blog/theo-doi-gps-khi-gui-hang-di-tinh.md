@@ -2,6 +2,7 @@
 title: "Theo dõi hành trình xe bằng định vị GPS khi gửi hàng đi tỉnh"
 description: "Theo dõi hành trình xe bằng định vị GPS khi gửi hàng đi tỉnh: xe Lê Chung gắn GPS 24/7, biết hàng đang ở đâu, canh người nhận, minh bạch. Báo giá 0839 861 499."
 ngayDang: 2026-09-09
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---

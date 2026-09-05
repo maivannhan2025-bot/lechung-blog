@@ -2,6 +2,7 @@
 title: "Xe container đi cảng Cái Mép - Thị Vải — đầu kéo, đúng lịch tàu"
 description: "Xe container đi cảng Cái Mép - Thị Vải: Lê Chung có đầu kéo, sơ mi rơ moóc, canh đúng lịch tàu, thủ tục cảng nhanh gọn. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-03
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Xe cẩu hàng đi khu công nghiệp Đông Nam Bộ — máy móc, thiết bị nặng"
 description: "Xe cẩu hàng đi khu công nghiệp Đông Nam Bộ: chở, bốc hạ máy móc thiết bị nặng vào KCN Bình Dương, Đồng Nai an toàn, đội cẩu có chứng chỉ. Báo giá 0839 861 499."
 ngayDang: 2026-08-29
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

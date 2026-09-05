@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Hậu Giang — nông sản, hàng công ty"
 description: "Xe tải chở hàng TP.HCM đi Hậu Giang: nông sản (lúa, mía, cá), hàng công ty vào KCN Sông Hậu, Tân Phú Thạnh. Lê Chung đội xe hơn 100 chiếc, gọi 0839 861 499."
 ngayDang: 2026-08-21
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

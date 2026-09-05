@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Thuận An (Bình Dương) — hàng công ty, khu dân cư"
 description: "Xe tải chở hàng đi Thuận An (Bình Dương): hàng công ty vào VSIP 1, Việt Hương, hàng tiêu dùng, chuyển nhà. Lê Chung báo giá rõ, gọi 0839 861 499."
 ngayDang: 2026-07-25
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

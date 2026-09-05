@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng hóa nội thành TP.HCM và vùng ven — có xe sau 30 phút, giao trong ngày"
 description: "Thuê xe tải chở hàng nội thành TP.HCM và vùng ven: có mặt sau 30 phút, né giờ cấm tải, xe nhỏ vào hẻm tới 8-20 tấn, hỗ trợ bốc xếp. Gọi Lê Chung 0839 861 499."
 ngayDang: 2026-07-23
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 6
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---

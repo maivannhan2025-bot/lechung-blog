@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Chơn Thành (Bình Phước) — khu công nghiệp, hàng gỗ - điều"
 description: "Xe tải chở hàng đi Chơn Thành (Bình Phước): Lê Chung nhận chở hàng gỗ, điều, hàng KCN Chơn Thành - Becamex, xe 8-20 tấn, báo giá miễn phí gọi 0839 861 499."
 ngayDang: 2026-08-07
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---

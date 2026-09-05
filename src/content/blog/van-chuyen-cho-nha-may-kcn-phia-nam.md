@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng cho nhà máy, khu công nghiệp phía Nam — đúng lịch sản xuất"
 description: "Vận chuyển hàng cho nhà máy, khu công nghiệp phía Nam đúng lịch sản xuất: điều xe theo ca, kịp nguyên liệu và thành phẩm. Gọi Lê Chung 0839 861 499 để nhận báo giá miễn phí."
 ngayDang: 2026-09-07
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

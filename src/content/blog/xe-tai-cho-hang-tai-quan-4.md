@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 4 TP.HCM, đi đường hẹp gọn nhanh"
 description: "Xe tải chở hàng tại Quận 4 TP.HCM: xe nhỏ luồn đường hẹp một chiều, qua cầu Khánh Hội, Ông Lãnh gọn nhẹ. Đội xe hơn 100 chiếc, gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-07-19
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-02.jpg"
 ---

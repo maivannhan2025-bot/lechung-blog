@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Sa Đéc (Đồng Tháp) — hoa kiểng, hàng tiêu dùng"
 description: "Xe tải chở hàng đi Sa Đéc (Đồng Tháp) cùng Lê Chung: chở hoa kiểng, bột, thực phẩm, hàng tiêu dùng theo QL80, xe 8-20 tấn. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-08-15
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---

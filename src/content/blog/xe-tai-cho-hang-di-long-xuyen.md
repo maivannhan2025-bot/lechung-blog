@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Long Xuyên (An Giang) — hàng công ty, nông sản"
 description: "Xe tải chở hàng đi Long Xuyên (An Giang): Lê Chung nhận chở hàng công ty, gạo, thủy sản, hàng tiêu dùng, đội xe 8-20 tấn. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-16
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

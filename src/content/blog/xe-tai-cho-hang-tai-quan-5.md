@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 5 TP.HCM — luồn hẻm Chợ Lớn, giao sỉ nhanh"
 description: "Xe tải chở hàng tại Quận 5 chuyên vải Soái Kình Lâm, thuốc bắc, hàng sỉ Chợ Lớn. Đội xe hơn 100 chiếc, luồn hẻm nhỏ, báo giá rõ. Gọi Lê Chung 0839 861 499."
 ngayDang: 2026-07-23
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

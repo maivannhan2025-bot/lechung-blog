@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Tân An (Long An) — hàng công ty, nông sản"
 description: "Xe tải chở hàng đi Tân An (Long An): hàng công ty, nông sản thanh long, gạo, tiêu dùng. Lê Chung đội xe 8-20 tấn, báo giá miễn phí, gọi ngay 0839 861 499."
 ngayDang: 2026-08-08
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

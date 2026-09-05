@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Trảng Bàng (Tây Ninh) — khu công nghiệp, hàng sản xuất"
 description: "Xe tải chở hàng đi Trảng Bàng (Tây Ninh): Lê Chung chở hàng KCN, dệt may, sản xuất, đội xe hơn 100 chiếc, xuất hoá đơn VAT. Báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-04
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

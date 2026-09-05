@@ -2,6 +2,7 @@
 title: "Dịch vụ bốc xếp kèm vận chuyển đi tỉnh — trọn gói tận nơi"
 description: "Dịch vụ bốc xếp kèm vận chuyển đi tỉnh trọn gói tận nơi của Lê Chung: đội bốc xếp, xe nâng, xe cẩu đi kèm, đỡ anh chị tự kiếm người. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-09-08
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

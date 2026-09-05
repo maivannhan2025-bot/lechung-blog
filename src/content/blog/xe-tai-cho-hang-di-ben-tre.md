@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Bến Tre — dừa, nông sản, hàng tiêu dùng"
 description: "Xe tải chở hàng TP.HCM đi Bến Tre: dừa, nông sản, hàng tiêu dùng. Lê Chung đội xe hơn 100 chiếc, canh cầu Rạch Miễu, báo giá miễn phí 0839 861 499."
 ngayDang: 2026-08-11
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

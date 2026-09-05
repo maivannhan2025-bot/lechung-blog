@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi các khu công nghiệp phía Nam (VSIP, Amata, Long Thành...)"
 description: "Xe tải chở hàng đi khu công nghiệp phía Nam: VSIP, Amata, Long Thành, Sóng Thần, Phú Mỹ. Lê Chung quen thủ tục ra vào KCN. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-08-30
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---

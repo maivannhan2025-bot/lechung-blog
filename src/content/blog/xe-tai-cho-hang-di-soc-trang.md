@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Sóc Trăng — thủy sản, gạo"
 description: "Xe tải chở hàng TP.HCM đi Sóc Trăng chuyên thủy sản, gạo, hành tím Vĩnh Châu. Lê Chung đội xe hơn 100 chiếc, GPS, hoá đơn VAT. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-08-22
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---

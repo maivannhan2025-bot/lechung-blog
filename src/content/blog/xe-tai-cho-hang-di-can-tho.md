@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Cần Thơ — trung tâm miền Tây, đủ loại xe"
 description: "Xe tải chở hàng TP.HCM đi Cần Thơ — trung tâm miền Tây, đủ loại xe 8-20 tấn, container, hàng công ty. Lê Chung báo giá miễn phí, gọi ngay 0839 861 499."
 ngayDang: 2026-08-19
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---

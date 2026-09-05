@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi KCN Đức Hòa - Bến Lức (Long An) — hàng sản xuất"
 description: "Xe tải chở hàng đi KCN Đức Hòa - Bến Lức (Long An), chuyên hàng sản xuất giao nhanh. Lê Chung đội xe hơn 100 chiếc, có VAT. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-09
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---

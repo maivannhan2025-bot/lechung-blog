@@ -2,6 +2,7 @@
 title: "Xe container đi Cần Thơ — đầu kéo, hàng khối lớn"
 description: "Xe container đi Cần Thơ, đầu kéo sơ mi rơ moóc chở hàng khối lớn, nguyên container qua cầu Cần Thơ vào cảng. Lê Chung báo giá rõ, gọi 0839 861 499."
 ngayDang: 2026-08-20
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---

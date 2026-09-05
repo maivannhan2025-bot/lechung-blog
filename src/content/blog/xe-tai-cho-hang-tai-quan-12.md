@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 12 - đủ cỡ, đi tỉnh miền Đông nhanh"
 description: "Cần xe tải chở hàng tại Quận 12? Lê Chung có đội xe hơn 100 chiếc, đủ cỡ chở vật liệu, đồ gỗ, hàng kho xưởng. Gọi ngay 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-07-15
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-16.jpg"
 ---

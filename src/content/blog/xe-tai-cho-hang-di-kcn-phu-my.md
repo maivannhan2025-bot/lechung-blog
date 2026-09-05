@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi KCN Phú Mỹ — hàng nặng, hàng xuất"
 description: "Xe tải chở hàng đi KCN Phú Mỹ: hàng nặng, hàng xuất, đi cảng nước sâu. Lê Chung có xe tải trọng lớn, xe cẩu, container. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-03
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-03.jpg"
 ---

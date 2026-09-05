@@ -2,6 +2,7 @@
 title: "Chuyển kho xưởng đi Bình Dương - Đồng Nai — trọn gói, đúng tiến độ"
 description: "Chuyển kho xưởng đi Bình Dương - Đồng Nai trọn gói: tháo lắp, đóng gói, nhiều tải trọng xe, đúng tiến độ, không gián đoạn sản xuất. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-30
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-09.jpg"
 ---

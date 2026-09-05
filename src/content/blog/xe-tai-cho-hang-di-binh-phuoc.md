@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Bình Phước — đường dài, hàng nông sản"
 description: "Xe tải chở hàng TP.HCM đi Bình Phước, tuyến QL13 - QL14, chuyên nông sản cao su điều tiêu, gỗ, hàng KCN Chơn Thành. Báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-06
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

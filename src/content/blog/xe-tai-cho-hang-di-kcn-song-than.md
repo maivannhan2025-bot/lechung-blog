@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi KCN Sóng Thần — bốc xếp, đúng lịch kho"
 description: "Cần xe tải chở hàng đi KCN Sóng Thần (Dĩ An) đúng lịch kho, xe hợp xe nâng, bốc xếp gọn? Lê Chung chạy tuyến này mỗi ngày. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-07-27
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

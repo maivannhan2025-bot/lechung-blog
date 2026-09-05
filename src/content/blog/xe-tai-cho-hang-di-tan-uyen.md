@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Tân Uyên (Bình Dương) — hàng gỗ, vật liệu"
 description: "Xe tải chở hàng đi Tân Uyên (Bình Dương) chuyên hàng gỗ, vật liệu: đội xe hơn 100 chiếc, vào KCN Nam Tân Uyên, VSIP 2A. Gọi Lê Chung 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-07-26
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---

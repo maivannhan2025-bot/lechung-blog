@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Đồng Nai — 8-20 tấn, đi tỉnh trong ngày"
 description: "Thuê xe tải chở hàng TP.HCM đi Đồng Nai 8-20 tấn, đi trong ngày. Lê Chung nhận hàng công nghiệp, container qua QL1, QL51, cao tốc Long Thành. Gọi 0839 861 499."
 ngayDang: 2026-07-28
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---

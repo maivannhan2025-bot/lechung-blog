@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng đi Miền Trung: chọn xe đúng cho tuyến Nha Trang, Quy Nhơn, Đà Nẵng, Huế"
 description: "Thuê xe tải chở hàng TP.HCM đi Miền Trung — Nha Trang, Quy Nhơn, Đà Nẵng, Huế. Chọn xe 15-20 tấn hay container, đóng gói và tránh phát sinh dọc Quốc lộ 1."
 ngayDang: 2026-07-23
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 6
 anhDaiDien: "/anh/blog/lechung-xe-14.jpg"
 ---

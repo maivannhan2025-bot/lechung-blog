@@ -2,6 +2,7 @@
 title: "Biên bản giao nhận hàng hóa: cách kiểm hàng khi nhận để hư hỏng còn đòi được"
 description: "Cách kiểm hàng khi nhận và ghi biên bản giao nhận hàng hóa cho đúng, để lỡ mất hàng hay hư hàng thì Quý khách còn cơ sở đòi. Hướng dẫn 7 bước làm được ngay."
 ngayDang: 2026-08-13
+ngayCapNhat: 2026-08-13T11:44:00+07:00
 thoiGianDoc: 9
 anhDaiDien: "/anh/xe-tai-thung-18-20-tan-cho-hang-di-tinh.jpg"
 ---

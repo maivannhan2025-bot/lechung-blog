@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng đông lạnh, thực phẩm đi các tỉnh miền Nam"
 description: "Vận chuyển hàng đông lạnh, thực phẩm đi các tỉnh miền Nam: xe giữ nhiệt, canh giờ giao, an toàn vệ sinh. Lê Chung báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-09-01
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---

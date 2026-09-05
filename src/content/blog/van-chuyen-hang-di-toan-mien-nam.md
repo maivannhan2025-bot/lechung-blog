@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng đi toàn miền Nam — một đầu mối, đội xe hơn 100 chiếc"
 description: "Vận chuyển hàng đi toàn miền Nam chỉ một đầu mối: Lê Chung có đội xe hơn 100 chiếc phủ Đông Nam Bộ và Tây Nam Bộ, đúng giờ, hoá đơn VAT. Gọi 0839 861 499."
 ngayDang: 2026-09-11
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-19.jpg"
 ---

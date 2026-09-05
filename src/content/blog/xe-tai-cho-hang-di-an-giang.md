@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi An Giang — gạo, thủy sản, hàng biên mậu"
 description: "Xe tải chở hàng TP.HCM đi An Giang: gạo, thủy sản, hàng biên mậu. Lê Chung đội xe hơn 100 chiếc 8-20 tấn, GPS 24/7, hoá đơn VAT. Báo giá gọi 0839 861 499."
 ngayDang: 2026-08-15
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Long Thành (Đồng Nai) — gần sân bay, hàng logistics"
 description: "Xe tải chở hàng đi Long Thành (Đồng Nai): gần sân bay Long Thành, KCN Long Thành, An Phước, hàng logistics, vật liệu. Lê Chung báo giá miễn phí 0839 861 499."
 ngayDang: 2026-07-29
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

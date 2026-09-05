@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Long An — sát Sài Gòn, giao trong ngày"
 description: "Xe tải chở hàng TP.HCM đi Long An, giao trong ngày qua QL1 và cao tốc Trung Lương. Lê Chung có xe 8-20 tấn, container, bốc xếp, hoá đơn VAT. Gọi 0839 861 499."
 ngayDang: 2026-08-08
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

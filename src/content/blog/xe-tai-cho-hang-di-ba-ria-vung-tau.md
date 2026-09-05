@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Bà Rịa - Vũng Tàu — đi cảng, đi tỉnh"
 description: "Xe tải chở hàng TP.HCM đi Bà Rịa - Vũng Tàu, đi cảng Cái Mép, KCN Phú Mỹ. Lê Chung có xe 8-20 tấn, container, GPS, VAT. Gọi 0839 861 499 báo giá."
 ngayDang: 2026-08-01
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

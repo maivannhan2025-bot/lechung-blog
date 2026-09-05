@@ -2,6 +2,7 @@
 title: "Xe cẩu chở hàng nặng, cồng kềnh — bốc xếp tận nơi"
 description: "Xe cẩu chở hàng nặng, cồng kềnh, bốc xếp tận nơi an toàn cho doanh nghiệp sản xuất tại TP.HCM đi toàn quốc. Gọi 0839 861 499 nhận tư vấn, báo giá miễn phí."
 ngayDang: 2026-09-13
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

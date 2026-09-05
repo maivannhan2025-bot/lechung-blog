@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Gò Vấp TP.HCM, luồn hẻm giao đúng giờ"
 description: "Cần xe tải chở hàng tại Gò Vấp? Lê Chung có đội xe hơn 100 chiếc, luồn hẻm, tránh kẹt Quang Trung - Nguyễn Oanh, báo giá rõ trước khi đi. Gọi 0839 861 499."
 ngayDang: 2026-07-17
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

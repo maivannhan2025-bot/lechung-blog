@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 7 TP.HCM: nguyên chuyến, ghép hàng, đi cảng đi tỉnh"
 description: "Thuê xe tải chở hàng tại Quận 7: hàng công ty, kho, khu chế xuất, chung cư Phú Mỹ Hưng. Xe 1-20 tấn, container, đi cảng đi tỉnh. Gọi 0839 861 499."
 ngayDang: 2026-07-14
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-14.jpg"
 ---

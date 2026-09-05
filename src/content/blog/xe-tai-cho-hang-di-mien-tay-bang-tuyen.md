@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi miền Tây — bảng tuyến, thời gian giao"
 description: "Xe tải chở hàng TP.HCM đi miền Tây: bảng tuyến 13 tỉnh, thời gian giao dự kiến, đặc thù cầu đường con nước. Báo giá miễn phí gọi Lê Chung 0839 861 499."
 ngayDang: 2026-08-25
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 ---

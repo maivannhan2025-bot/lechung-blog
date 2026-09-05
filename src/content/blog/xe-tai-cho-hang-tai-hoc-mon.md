@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Hóc Môn TP.HCM - đội xe hơn 100 chiếc, giao nhanh"
 description: "Cần xe tải chở hàng tại Hóc Môn TP.HCM? Lê Chung có đội xe hơn 100 chiếc, xe 1–20 tấn, cẩu, container, chở nông sản, hàng kho tận nơi. Gọi 0839 861 499."
 ngayDang: 2026-07-21
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

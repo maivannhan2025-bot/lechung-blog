@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Bình Dương — nguyên chuyến, ghép hàng, giao trong ngày"
 description: "Thuê xe tải chở hàng TP.HCM đi Bình Dương: xe 1-20 tấn, container, xe cẩu, đi khu công nghiệp và kho xưởng. Giao nhanh, có hóa đơn VAT. Gọi 0839 861 499."
 ngayDang: 2026-07-24
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

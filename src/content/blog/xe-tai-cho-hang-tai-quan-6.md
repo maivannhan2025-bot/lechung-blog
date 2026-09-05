@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Quận 6 TP.HCM - gom hàng sỉ Chợ Lớn gọn"
 description: "Cần xe tải chở hàng tại Quận 6, khu Chợ Lớn? Lê Chung có đội xe hơn 100 chiếc chở hàng sỉ, hàng khô, đi tỉnh, hỗ trợ bốc xếp. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-07-19
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

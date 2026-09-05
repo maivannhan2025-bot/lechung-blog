@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Bình Tân: gọi là có xe, đi tỉnh nhanh"
 description: "Cần xe tải chở hàng tại Bình Tân? Lê Chung có trụ sở ngay Phường Bình Tân, đội xe hơn 100 chiếc từ 1 đến 20 tấn, đi khu công nghiệp, cảng, đi tỉnh. Gọi 0839 861 499."
 ngayDang: 2026-07-15
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-08.jpg"
 ---

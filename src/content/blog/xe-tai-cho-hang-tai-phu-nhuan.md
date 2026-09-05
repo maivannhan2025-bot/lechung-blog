@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng tại Phú Nhuận, giao nhanh khu văn phòng"
 description: "Cần xe tải chở hàng tại Phú Nhuận? Lê Chung có đội xe hơn 100 chiếc, xuất hoá đơn VAT, canh giờ đường một chiều. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-07-20
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

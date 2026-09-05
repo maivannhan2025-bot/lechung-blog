@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Vũng Tàu — hàng du lịch, thiết bị, thực phẩm"
 description: "Xe tải chở hàng đi Vũng Tàu: hàng du lịch, thiết bị, thực phẩm, hàng nhà hàng khách sạn. Lê Chung đội xe hơn 100 chiếc, đi QL51 nhanh gọn. Gọi 0839 861 499."
 ngayDang: 2026-08-01
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

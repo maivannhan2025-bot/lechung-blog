@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng TP.HCM đi Đồng Tháp — lúa gạo, nông sản"
 description: "Xe tải chở hàng TP.HCM đi Đồng Tháp: chở lúa gạo, nông sản, cá tra, sen, hoa. Lê Chung đội xe hơn 100 chiếc, báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-08-14
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---

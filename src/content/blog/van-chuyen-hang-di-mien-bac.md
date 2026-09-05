@@ -4,6 +4,7 @@ description: "Gửi hàng TP.HCM ra Hà Nội, Hải Phòng, Bắc Ninh chặng 
   chọn xe 15-20 tấn hay container, đóng gói đường dài và tránh phát sinh dọc
   đường."
 ngayDang: 2026-07-23
+ngayCapNhat: 2026-07-24T02:01:00+07:00
 thoiGianDoc: 6
 anhDaiDien: /anh/e3f2102f-cdbf-4a37-bae1-74405c70f13f.png
 ---

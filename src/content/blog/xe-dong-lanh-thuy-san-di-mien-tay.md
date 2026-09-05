@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng đông lạnh, thủy sản đi miền Tây — giữ nhiệt, đúng giờ chợ"
 description: "Vận chuyển hàng đông lạnh, thủy sản đi miền Tây: xe giữ nhiệt, đóng gói chống rỉ nước, canh giờ chợ và con nước. Gọi Lê Chung 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-26
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-15.jpg"
 ---

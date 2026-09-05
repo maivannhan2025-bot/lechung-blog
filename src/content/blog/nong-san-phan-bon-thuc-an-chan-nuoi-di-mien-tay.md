@@ -2,6 +2,7 @@
 title: "Vận chuyển nông sản, phân bón, thức ăn chăn nuôi đi miền Tây"
 description: "Vận chuyển nông sản, phân bón, thức ăn chăn nuôi đi miền Tây: xe 8-20 tấn, chằng chắc, kê pallet chống ẩm, hàng hai chiều. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-09-03
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

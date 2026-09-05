@@ -2,6 +2,7 @@
 title: "Vận chuyển hàng đi miền Tây: chọn đúng xe theo cầu đường, giao trong ngày"
 description: "Thuê xe tải TP.HCM đi miền Tây: Long An, Tiền Giang, Cần Thơ, An Giang, Kiên Giang, Cà Mau. Chọn xe hợp tải trọng cầu, giao trong ngày đến 1 ngày."
 ngayDang: 2026-07-23
+ngayCapNhat: 2026-08-08T08:42:00+07:00
 thoiGianDoc: 6
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 ---

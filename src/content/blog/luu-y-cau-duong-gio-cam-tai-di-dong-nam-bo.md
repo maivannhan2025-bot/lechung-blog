@@ -2,6 +2,7 @@
 title: "Gửi hàng đi Đông Nam Bộ cần lưu ý gì về cầu đường, giờ cấm tải"
 description: "Gửi hàng đi Đông Nam Bộ cần lưu ý gì về cầu đường, giờ cấm tải QL13, QL1, QL51 và KCN? Lê Chung mách cách canh giờ, chọn tuyến. Báo giá miễn phí: 0839 861 499."
 ngayDang: 2026-09-06
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 ---

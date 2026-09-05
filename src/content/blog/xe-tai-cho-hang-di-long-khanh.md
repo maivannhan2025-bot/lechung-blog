@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Long Khánh (Đồng Nai) — nông sản, hàng tiêu dùng"
 description: "Xe tải chở hàng đi Long Khánh (Đồng Nai): chở hàng tiêu dùng cho đại lý, nông sản trái cây tiêu điều chiều về. Lê Chung báo giá miễn phí, gọi 0839 861 499."
 ngayDang: 2026-07-30
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-07.jpg"
 ---

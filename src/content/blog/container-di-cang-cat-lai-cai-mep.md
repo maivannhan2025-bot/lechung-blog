@@ -2,6 +2,7 @@
 title: "Vận chuyển container TP.HCM đi cảng Cát Lái, Cái Mép"
 description: "Vận chuyển container TP.HCM đi cảng Cát Lái, Cái Mép: đầu kéo, sơ mi rơ moóc, kéo rút cont đúng lịch tàu, đúng thủ tục cảng. Gọi 0839 861 499 nhận báo giá miễn phí."
 ngayDang: 2026-08-29
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---

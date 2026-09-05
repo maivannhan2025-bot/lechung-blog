@@ -2,6 +2,7 @@
 title: "Xe tải chở hàng đi Dĩ An (Bình Dương) — sát Sài Gòn, có mặt nhanh"
 description: "Xe tải chở hàng đi Dĩ An (Bình Dương) sát Sài Gòn, có mặt nhanh: Lê Chung đội xe hơn 100 chiếc 8-20 tấn, GPS 24/7, hoá đơn VAT. Gọi 0839 861 499 báo giá miễn phí."
 ngayDang: 2026-07-25
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---

@@ -2,6 +2,7 @@
 title: "Chở hàng dự án, thiết bị công trình đi các tỉnh Đông Nam Bộ"
 description: "Chở hàng dự án, thiết bị công trình đi các tỉnh Đông Nam Bộ: xe cẩu, xe tải trọng lớn, xin phép lưu thông khi cần. Báo giá miễn phí, gọi Lê Chung 0839 861 499."
 ngayDang: 2026-09-03
+ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 7
 anhDaiDien: "/anh/blog/lechung-xe-05.jpg"
 ---
