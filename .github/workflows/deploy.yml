@@ -4,9 +4,13 @@ name: Build & Deploy web Lê Chung
 # máy này tự build lại web Astro rồi đăng lên Cloudflare Pages
 # (project lechung-web, trong tài khoản Cloudflare của Lê Chung).
 on:
-  # CHỈ chạy khi bấm tay — lịch tự động và trigger push bị gỡ có chủ ý.
-  # Xem KHOI-PHUC/DOC-TRUOC.md. Script dong-bo-lechung.sh cắt lại sau mỗi lần đồng bộ.
+  # Repo NAY la nguon chinh cua lechung.vn tu 05/09/2026 — Cong dang bai ghi thang vao day.
+  push:
+    branches: [main]
   workflow_dispatch: {}
+  # Dung lai moi ngay 08:00 gio VN de bai hen ngay tu hien ra
+  schedule:
+    - cron: '0 1 * * *'
 
 jobs:
   deploy:
