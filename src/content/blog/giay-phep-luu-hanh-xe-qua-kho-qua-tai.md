@@ -2,7 +2,6 @@
 title: "Xe quá khổ quá tải: giấy phép lưu hành xe xin ở đâu 2026"
 description: "Mốc nào bị coi là xe quá khổ quá tải, hồ sơ giấy phép lưu hành xe gồm gì và từ 01/7/2026 nộp ở đâu. Bên em nói rõ để anh chị khỏi bị giữ xe."
 ngayDang: 2026-09-07
-ngayCapNhat: 2026-09-05T09:26:00+07:00
 thoiGianDoc: 11
 anhDaiDien: "/anh/blog/lechung-xe-11.jpg"
 tuKhoa: "giấy phép lưu hành xe quá khổ quá tải"

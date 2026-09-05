@@ -2,7 +2,6 @@
 title: "Xe tải chở hàng Bắc Nam bằng container, đầu kéo"
 description: "Xe tải chở hàng Bắc Nam bằng container, đầu kéo cho doanh nghiệp sản xuất cần vận chuyển khối lượng lớn, an toàn, đúng tiến độ. Gọi 0839 861 499 nhận báo giá."
 ngayDang: 2026-09-12
-ngayCapNhat: 2026-08-08T07:59:00+07:00
 thoiGianDoc: 8
 anhDaiDien: "/anh/blog/lechung-xe-01.jpg"
 ---

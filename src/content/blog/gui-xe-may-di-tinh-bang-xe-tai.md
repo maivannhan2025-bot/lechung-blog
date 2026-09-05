@@ -2,7 +2,6 @@
 title: "Gửi xe máy đi tỉnh bằng xe tải: thủ tục và cách chằng xe"
 description: "Gửi xe máy đi tỉnh bằng xe tải cần giấy tờ gì, xả xăng ra sao, chằng xe thế nào cho khỏi trầy. Hướng dẫn từng bước và lỗi hay gặp khi giao nhận."
 ngayDang: 2026-09-08
-ngayCapNhat: 2026-09-05T18:56:00+07:00
 thoiGianDoc: 11
 anhDaiDien: "/anh/blog/lechung-xe-04.jpg"
 tuKhoa: "gửi xe máy đi tỉnh"

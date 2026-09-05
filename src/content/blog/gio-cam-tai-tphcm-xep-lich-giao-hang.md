@@ -2,7 +2,6 @@
 title: "Giờ cấm tải TP.HCM: xếp lịch giao hàng sao cho khỏi trễ"
 description: "Giờ cấm tải TP.HCM chia hai nhóm xe, hai khung giờ khác nhau. Cách đọc đúng nhóm xe của anh/chị và ba cách xếp lịch giao hàng cho khỏi trễ."
 ngayDang: 2026-09-06
-ngayCapNhat: 2026-09-05T07:15:00+07:00
 thoiGianDoc: 11
 anhDaiDien: "/anh/blog/lechung-xe-13.jpg"
 tuKhoa: "giờ cấm tải TPHCM"

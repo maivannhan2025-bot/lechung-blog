@@ -2,7 +2,6 @@
 title: "Chọn nhà xe chở hàng thế nào để không bị bỏ chuyến"
 description: "Cách chọn nhà xe chở hàng có xe thật: 4 câu hỏi trước khi chốt, cách tra mã số thuế và ba loại giấy tờ ràng buộc để không bị bỏ chuyến giữa chừng."
 ngayDang: 2026-09-07
-ngayCapNhat: 2026-09-05T09:26:00+07:00
 thoiGianDoc: 10
 anhDaiDien: "/anh/blog/lechung-xe-17.jpg"
 tuKhoa: "chọn nhà xe chở hàng"
