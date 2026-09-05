@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaiViet from '../../layouts/BaiViet.astro';
+import { duongDanBai, lucSuaGanNhat } from '../../lib/ngay';
 
 export async function getStaticPaths() {
   const now = Date.now();
@@ -13,7 +14,9 @@ export async function getStaticPaths() {
 
 const { bai } = Astro.props;
 const { Content } = await render(bai);
+// Lúc sửa gần nhất: ưu tiên ngayCapNhat ghi trong bài, chưa có thì lấy từ lịch sử Git.
+const ngaySua = bai.data.ngayCapNhat ?? lucSuaGanNhat(duongDanBai(bai));
 ---
-<BaiViet frontmatter={bai.data}>
+<BaiViet frontmatter={bai.data} ngaySua={ngaySua}>
   <Content />
 </BaiViet>

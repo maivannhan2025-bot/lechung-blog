@@ -3,7 +3,8 @@
 import Header from '../components/Header.astro';
 import chung from '../data/chung.json';
 import DoLuong from '../components/DoLuong.astro';
-const { frontmatter } = Astro.props;
+import { ngayGioVN, ngayVN, isoVN, coGio } from '../lib/ngay';
+const { frontmatter, ngaySua } = Astro.props;
 const { title, description, ngayDang, thoiGianDoc, anhDaiDien } = frontmatter;
 // Ảnh đại diện đầu bài: ưu tiên ảnh anh Nhận đặt (anhDaiDien ở /admin), chưa có thì dùng ảnh đội xe.
 const ANH_DAI_DIEN = anhDaiDien || '/img/doi-xe.webp';
@@ -15,7 +16,17 @@ const slug = Astro.url.pathname.split('/').filter(Boolean).pop() || '';
 const postUrl = siteUrl.href.replace(/\/$/, '') + '/blog/' + slug + '/';
 const anhChiaSe = new URL(ANH_DAI_DIEN, siteUrl).href;           // ảnh khi gửi link (phải là đường dẫn đầy đủ)
 const logoUrl = new URL(chung.logo || '/favicon.svg', siteUrl).href;
-const ngayISO = ngayDang ? new Date(ngayDang).toISOString() : undefined;
+// Ngày giờ ĐĂNG và ngày giờ SỬA GẦN NHẤT — luôn in theo giờ Việt Nam, không theo giờ máy dựng web.
+const dNgayDang = ngayDang ? new Date(ngayDang) : undefined;
+const dNgaySua = ngaySua ? new Date(ngaySua) : undefined;
+const ngayISO = dNgayDang ? isoVN(dNgayDang) : undefined;
+const chuNgayDang = dNgayDang ? (coGio(dNgayDang) ? ngayGioVN(dNgayDang) : ngayVN(dNgayDang)) : '';
+// Chỉ tính là "có sửa" khi bài được sửa SAU khi đã đăng (chênh trên 1 phút).
+// Bài viết sẵn từ lâu rồi mới hẹn ngày đăng thì giờ sửa NẰM TRƯỚC giờ đăng — không được
+// khai ra, vì dateModified sớm hơn datePublished là dữ liệu vô lý với Google.
+const coSua = !!(dNgaySua && dNgayDang && dNgaySua.valueOf() - dNgayDang.valueOf() > 60000);
+const ngaySuaISO = coSua && dNgaySua ? isoVN(dNgaySua) : undefined;
+const chuNgaySua = coSua && dNgaySua ? ngayGioVN(dNgaySua) : '';
 const congTy = (chung as { companyFull?: string }).companyFull || 'CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG';
 // Favicon (icon nhỏ ở tab trình duyệt, sửa ở /quan-ly > Liên hệ) — để trống thì giữ y như cũ (favicon.svg + favicon.ico mặc định)
 const FAVICON = ((chung as { favicon?: string }).favicon || '').trim();
@@ -28,7 +39,7 @@ const articleSchema = {
   headline: title,
   description,
   image: anhChiaSe,
-  ...(ngayISO ? { datePublished: ngayISO, dateModified: ngayISO } : {}),
+  ...(ngayISO ? { datePublished: ngayISO, dateModified: ngaySuaISO || ngayISO } : {}),
   author: { '@type': 'Organization', name: congTy },
   publisher: { '@type': 'Organization', name: congTy, logo: { '@type': 'ImageObject', url: logoUrl } },
   mainEntityOfPage: postUrl,
@@ -59,6 +70,7 @@ const breadcrumbSchema = {
 <meta property="og:image" content={anhChiaSe}>
 <meta property="og:site_name" content="Vận Tải Lê Chung">
 {ngayISO && <meta property="article:published_time" content={ngayISO} />}
+{ngaySuaISO && <meta property="article:modified_time" content={ngaySuaISO} />}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content={title}>
 <meta name="twitter:description" content={description}>
@@ -131,7 +143,11 @@ const breadcrumbSchema = {
 <article class="art">
   <div class="crumb"><a href="/blog">← Blog</a></div>
   <h1>{title}</h1>
-  <div class="meta">Blog Lê Chung · Kinh nghiệm thuê xe &amp; chở hàng{thoiGianDoc ? ` · Đọc khoảng ${thoiGianDoc} phút` : ''}</div>
+  <div class="meta">
+    {chuNgayDang && <>Đăng <time datetime={ngayISO}>{chuNgayDang}</time> · </>}
+    {coSua && <>Cập nhật <time datetime={ngaySuaISO}>{chuNgaySua}</time> · </>}
+    Blog Lê Chung · Kinh nghiệm thuê xe &amp; chở hàng{thoiGianDoc ? ` · Đọc khoảng ${thoiGianDoc} phút` : ''}
+  </div>
 
   <img class="bai-anh" src={ANH_DAI_DIEN} alt={title} width="760" height="428" loading="eager" />
 

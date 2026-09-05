@@ -10,13 +10,18 @@ on:
   workflow_dispatch: {}
   # Dung lai moi ngay 08:00 gio VN de bai hen ngay tu hien ra
   schedule:
-    - cron: '0 1 * * *'
+    # Dựng 2 tiếng/lần (bằng timhangxetai.com) để bài hẹn GIỜ tự hiện đúng giờ,
+    # thay vì phải chờ tới 08:00 sáng hôm sau.
+    - cron: '0 */2 * * *'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # fetch-depth: 0 = lấy đủ lịch sử, để web đọc được "lúc sửa gần nhất" của từng bài từ Git.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
