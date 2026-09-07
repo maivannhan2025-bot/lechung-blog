@@ -87,3 +87,11 @@ Ba khoản nên hỏi cho rõ trước khi xe lăn bánh:
 Miền Đông tuy gần nhưng chọn sai xe hoặc canh sai giờ vẫn lỡ chuyến như thường. Cách chắc ăn nhất là gọi trước, tả hàng, để bên em tư vấn loại xe và canh giờ giúp.
 
 Anh/chị có hàng đi **Đồng Nai, Bình Dương, Bà Rịa - Vũng Tàu, Tây Ninh, Bình Phước** hay đi cảng Cái Mép - Thị Vải, cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo). Tả hàng một câu, bên em tư vấn đúng loại xe và báo giá rõ ràng cho tuyến của mình.
+
+## Bài viết liên quan
+
+- [Vận chuyển hàng đi miền Tây: chọn đúng xe theo cầu đường, giao trong ngày](/blog/van-chuyen-hang-di-mien-tay/)
+- [Vận chuyển hàng đi Miền Trung: chọn xe đúng cho tuyến Nha Trang, Quy Nhơn, Đà Nẵng, Huế](/blog/van-chuyen-hang-di-mien-trung/)
+- [Vận chuyển hàng đông lạnh, thực phẩm đi các tỉnh miền Nam](/blog/hang-dong-lanh-thuc-pham-di-tinh-mien-nam/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

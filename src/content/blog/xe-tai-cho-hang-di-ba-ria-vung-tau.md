@@ -93,3 +93,4 @@ Hàng của anh chị cần đi Bà Rịa - Vũng Tàu, dù là đi cảng, đi 
 - [Xe tải chở hàng tại Quận 12](/blog/xe-tai-cho-hang-tai-quan-12)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

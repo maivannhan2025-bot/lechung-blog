@@ -74,3 +74,5 @@ Chở hàng ở Bình Chánh, quan trọng nhất là chọn đúng cỡ xe cho 
 - [Xe tải chở hàng tại Hóc Môn](/blog/xe-tai-cho-hang-tai-hoc-mon)
 - [Vận chuyển hàng đi miền Tây](/blog/van-chuyen-hang-di-mien-tay)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

@@ -159,3 +159,11 @@ Mã số thuế: 0314664033
 Hotline và Zalo: 0839 861 499
 
 Anh chị thấy bài này dùng được thì gửi cho người quen đang chuẩn bị chuyển xe. Hoặc lưu số bên em lại, khi nào cần thì có sẵn.
+
+## Bài viết liên quan
+
+- [Cách chọn loại xe tải chở hàng đi tỉnh cho đúng](/blog/cach-chon-loai-xe-tai-di-tinh/)
+- [Xe tải chở hàng tại Bình Chánh TP.HCM, đi kho và đi tỉnh đều êm](/blog/xe-tai-cho-hang-tai-binh-chanh/)
+- [Xe tải chở hàng tại TP. Thủ Đức - đi cảng, đi tỉnh nhanh gọn](/blog/xe-tai-cho-hang-tai-thu-duc/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

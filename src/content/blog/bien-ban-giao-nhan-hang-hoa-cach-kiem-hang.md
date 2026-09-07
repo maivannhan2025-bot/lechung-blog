@@ -192,3 +192,11 @@ anhDaiDien: "/anh/xe-tai-thung-18-20-tan-cho-hang-di-tinh.jpg"
 <p>Năm việc đó không tốn đồng nào. Nhưng khi có chuyện thì đó là thứ duy nhất giúp Quý khách nói chuyện được.</p>
 
 <p>Quý khách đang cần nhà xe chở hàng cẩn thận và có giấy tờ rõ ràng, gọi Vận tải Lê Chung <strong>0839 861 499</strong>. Chúng tôi nhận chở hàng nội thành TP.HCM và đi các tỉnh, hàng nguyên chuyến và hàng ghép.</p>
+
+<h2>Bài viết liên quan</h2>
+<ul>
+<li><a href="/blog/xe-tai-cho-hang-tai-hoc-mon/">Xe tải chở hàng tại Hóc Môn TP.HCM - đội xe hơn 100 chiếc, giao nhanh</a></li>
+<li><a href="/blog/cach-chon-loai-xe-tai-di-tinh/">Cách chọn loại xe tải chở hàng đi tỉnh cho đúng</a></li>
+<li><a href="/blog/cho-hang-di-long-an-binh-duong-dong-nai-giap-ranh/">Xe tải chở hàng đi Long An, Bình Dương, Đồng Nai giáp ranh TP.HCM — giao siêu nhanh</a></li>
+</ul>
+<p><em>Quy định nhắc trong bài tra tại <a href="https://chinhphu.vn" target="_blank" rel="noopener nofollow">Cổng Thông tin điện tử Chính phủ</a>.</em></p>

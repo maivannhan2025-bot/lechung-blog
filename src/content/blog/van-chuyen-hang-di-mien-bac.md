@@ -73,3 +73,11 @@ Hàng nằm trên đường mấy ngày, điều làm chủ hàng sốt ruột n
 Anh/chị chỉ cần tả hàng — chở gì, khoảng bao nhiêu, đi từ đâu tới đâu ngoài Bắc, có cần bốc xếp không — bên em tư vấn đúng loại xe và **báo giá rõ ràng cho tuyến này** trước khi đi.
 
 Gọi hoặc Zalo **0839 861 499** (Lê Chung — 77 Đường số 2A, Phường Bình Tân, TP. Hồ Chí Minh) để được tư vấn loại xe và báo giá cho chuyến hàng đi Miền Bắc của mình.
+
+## Bài viết liên quan
+
+- [Thuê xe tải nguyên chuyến TP.HCM đi các tỉnh miền Nam](/blog/thue-xe-tai-nguyen-chuyen-di-tinh-mien-nam/)
+- [Vận chuyển hàng đi miền Đông Nam Bộ: tuyến ngắn, giao trong ngày, chọn đúng xe](/blog/van-chuyen-hang-di-mien-dong-nam-bo/)
+- [Vận chuyển hàng đi miền Tây: chọn đúng xe theo cầu đường, giao trong ngày](/blog/van-chuyen-hang-di-mien-tay/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

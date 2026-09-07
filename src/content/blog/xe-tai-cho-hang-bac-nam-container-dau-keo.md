@@ -86,3 +86,5 @@ Vận chuyển hàng khối lượng lớn tuyến Bắc - Trung - Nam không c�
 - [Xe container đi cảng Cái Mép - Thị Vải](/blog/xe-tai-cho-hang-container-cai-mep-thi-vai)
 - [Vận chuyển hàng đi Miền Bắc](/blog/van-chuyen-hang-di-mien-bac)
 - [Xe tải 15 - 20 tấn chở hàng khối lớn đi các tỉnh](/blog/xe-tai-15-20-tan-hang-khoi-lon-di-tinh)
+
+*Quy định nhắc trong bài tra tại [Cục Đăng kiểm Việt Nam](https://www.vr.org.vn).*

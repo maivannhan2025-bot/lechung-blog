@@ -72,3 +72,5 @@ Chở hàng ở Quận 8, quan trọng nhất là chọn đúng cỡ xe hợp c�
 - [Xe tải chở hàng tại Quận 6](/blog/xe-tai-cho-hang-tai-quan-6)
 - [Vận chuyển hàng đi miền Tây](/blog/van-chuyen-hang-di-mien-tay)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

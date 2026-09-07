@@ -68,3 +68,5 @@ Chở hàng đi Thủ Dầu Một, quan trọng là chọn đúng xe và canh gi
 - [Vận chuyển hàng đi miền Đông Nam Bộ](/blog/van-chuyen-hang-di-mien-dong-nam-bo)
 - [Xe tải chở hàng tại Quận 12](/blog/xe-tai-cho-hang-tai-quan-12)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cục Đăng kiểm Việt Nam](https://www.vr.org.vn).*

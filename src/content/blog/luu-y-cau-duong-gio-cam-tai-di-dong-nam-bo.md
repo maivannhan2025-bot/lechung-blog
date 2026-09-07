@@ -100,3 +100,4 @@ Tóm lại, gửi hàng đi Đông Nam Bộ chỉ cần canh đúng giờ cầu 
 - [Cách chọn đúng loại xe tải chở hàng](/blog/thue-xe-tai-chon-dung-loai-xe)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cục Cảnh sát giao thông](https://csgt.vn).*

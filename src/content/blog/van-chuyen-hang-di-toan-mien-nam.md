@@ -99,3 +99,4 @@ Anh chị đang cần gửi hàng đi bất kỳ tỉnh nào phía Nam thì cứ
 - [Cách chọn đúng loại xe tải chở hàng](/blog/thue-xe-tai-chon-dung-loai-xe)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cục Đăng kiểm Việt Nam](https://www.vr.org.vn).*

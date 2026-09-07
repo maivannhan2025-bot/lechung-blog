@@ -87,3 +87,4 @@ Anh/chị gọi 0839 861 499, cho biết loại hàng, số món và điểm đi
 - [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

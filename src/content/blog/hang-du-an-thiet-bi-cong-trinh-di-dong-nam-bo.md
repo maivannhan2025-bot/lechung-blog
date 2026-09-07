@@ -95,3 +95,4 @@ Anh/chị đang có lô hàng dự án hay thiết bị công trình cần đi B
 - [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

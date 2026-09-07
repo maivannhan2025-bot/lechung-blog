@@ -81,3 +81,4 @@ Anh/chị đang cần **thuê xe tải chở hàng đi KCN Amata Biên Hòa**, t
 - [Xe tải chở hàng tại Quận 12](/blog/xe-tai-cho-hang-tai-quan-12)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

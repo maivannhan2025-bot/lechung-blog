@@ -74,3 +74,5 @@ Chở hàng ở Quận 4, quan trọng nhất là chọn đúng cỡ xe cho đư
 - [Xe tải chở hàng tại Quận 8](/blog/xe-tai-cho-hang-tai-quan-8)
 - [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

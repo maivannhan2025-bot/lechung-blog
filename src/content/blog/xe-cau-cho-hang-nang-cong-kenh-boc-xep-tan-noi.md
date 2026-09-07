@@ -61,3 +61,4 @@ ngayCapNhat: 2026-09-05T19:21:00+07:00
 <li><a href="../blog/xe-tai-15-20-tan-hang-khoi-lon-di-tinh">Xe tải 15 - 20 tấn chở h&agrave;ng khối lớn đi c&aacute;c tỉnh</a></li>
 <li><a href="../blog/dich-vu-boc-xep-kem-van-chuyen-di-tinh">Dịch vụ bốc xếp k&egrave;m vận chuyển đi tỉnh</a></li>
 </ul>
+<p><em>Quy định nhắc trong bài tra tại <a href="https://chinhphu.vn" target="_blank" rel="noopener nofollow">Cổng Thông tin điện tử Chính phủ</a>.</em></p>

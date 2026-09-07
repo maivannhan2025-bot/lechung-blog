@@ -136,3 +136,11 @@ Chuẩn bị sẵn ba thứ cho nhanh: số chuyến trung bình mỗi tháng, c
 CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG. Hơn 10 năm làm vận tải bằng xe của chính mình, hơn 100 đầu xe, định vị GPS 24/7, hợp đồng và hoá đơn VAT rõ ràng.
 
 Bài này có ích thì anh/chị chuyển cho bộ phận mua hàng hoặc kế toán bên mình, hoặc lưu số 0839 861 499 lại để khi cần có sẵn.
+
+## Bài viết liên quan
+
+- [Thuê xe tải chở hàng theo hợp đồng dài hạn cho doanh nghiệp phía Nam](/blog/thue-xe-tai-hop-dong-dai-han-doanh-nghiep/)
+- [Xe tải chở hàng đi Long An, Bình Dương, Đồng Nai giáp ranh TP.HCM — giao siêu nhanh](/blog/cho-hang-di-long-an-binh-duong-dong-nai-giap-ranh/)
+- [Thuê xe tải chở hàng: chọn đúng loại xe, khỏi phát sinh chi phí](/blog/thue-xe-tai-chon-dung-loai-xe/)
+
+*Quy định nhắc trong bài tra tại [Tổng cục Thuế](https://www.gdt.gov.vn).*

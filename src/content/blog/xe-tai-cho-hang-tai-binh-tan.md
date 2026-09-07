@@ -79,3 +79,5 @@ Chở hàng ở Bình Tân, quan trọng nhất là chọn đúng cỡ xe, canh 
 - [Xe tải chở hàng tại Tân Phú](/blog/xe-tai-cho-hang-tai-tan-phu)
 - [Vận chuyển hàng đi miền Tây](/blog/van-chuyen-hang-di-mien-tay)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

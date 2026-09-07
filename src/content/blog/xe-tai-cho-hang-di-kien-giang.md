@@ -89,3 +89,4 @@ Tuyến TP.HCM đi Kiên Giang, từ Rạch Giá, Hà Tiên tới tận Phú Qu�
 - [Xe tải chở hàng tại Bình Chánh](/blog/xe-tai-cho-hang-tai-binh-chanh)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

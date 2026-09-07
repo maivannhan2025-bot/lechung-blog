@@ -70,3 +70,5 @@ Chở hàng ở Quận 12 không khó, quan trọng là chọn đúng cỡ xe, c
 - [Xe tải chở hàng tại Hóc Môn](/blog/xe-tai-cho-hang-tai-hoc-mon)
 - [Vận chuyển hàng đi miền Đông Nam Bộ](/blog/van-chuyen-hang-di-mien-dong-nam-bo)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

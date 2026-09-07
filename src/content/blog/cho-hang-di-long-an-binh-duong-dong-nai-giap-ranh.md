@@ -60,3 +60,4 @@ anhDaiDien: "/anh/xe-tai-mui-bat-di-long-an-24-7.jpg"
 <li><a href="../blog/thue-xe-tai-chon-dung-loai-xe">C&aacute;ch chọn đ&uacute;ng loại xe tải chở h&agrave;ng</a></li>
 <li><a href="../#bang-gia">Xem bảng gi&aacute; cước tham khảo TP.HCM đi tỉnh</a></li>
 </ul>
+<p><em>Quy định nhắc trong bài tra tại <a href="https://chinhphu.vn" target="_blank" rel="noopener nofollow">Cổng Thông tin điện tử Chính phủ</a>.</em></p>

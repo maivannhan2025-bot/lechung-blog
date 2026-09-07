@@ -77,3 +77,11 @@ Anh/chị không cần tự tính tải trọng hay đoán loại xe. Cách gọ
 Đó là cách **Lê Chung** làm với tuyến Miền Trung. Đội xe hơn 100 chiếc gồm xe thùng 8–20 tấn, xe cẩu và container / đầu kéo, chạy TP.HCM đi Nha Trang, Quy Nhơn, Đà Nẵng, Huế và các tỉnh Quảng cả hai chiều, có định vị GPS 24/7, bảo hiểm hàng hoá và hoá đơn VAT.
 
 Gọi hoặc nhắn Zalo **0839 861 499** để được tư vấn đúng loại xe và nhận báo giá cho tuyến hàng của mình. Anh/chị chỉ cần tả hàng, còn lại để bên em lo.
+
+## Bài viết liên quan
+
+- [Vận chuyển hàng đi miền Đông Nam Bộ: tuyến ngắn, giao trong ngày, chọn đúng xe](/blog/van-chuyen-hang-di-mien-dong-nam-bo/)
+- [Vận chuyển hàng đi miền Tây: chọn đúng xe theo cầu đường, giao trong ngày](/blog/van-chuyen-hang-di-mien-tay/)
+- [Xe tải chở vật liệu xây dựng đi các tỉnh miền Tây — hàng nặng, cầu đường](/blog/cho-vat-lieu-xay-dung-di-mien-tay/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

@@ -133,3 +133,11 @@ Bên em xem xong sẽ nói rõ ba việc: lô này có thuộc diện quá khổ
 Hotline gọi và Zalo: **0839 861 499**
 
 Anh chị lưu số lại phòng khi cần gấp. Có người quen đang chuẩn bị chở máy móc hay kết cấu thép thì gửi bài này cho họ đọc, đỡ được một lần xe nằm trạm là đáng rồi.
+
+## Bài viết liên quan
+
+- [Xe tải chở hàng đi Thủ Dầu Một (Bình Dương) — hàng kho xưởng, đúng giờ](/blog/xe-tai-cho-hang-di-thu-dau-mot/)
+- [Xe tải chở hàng đi Gò Dầu (Tây Ninh) — hàng công ty, vật liệu](/blog/xe-tai-cho-hang-di-go-dau/)
+- [Xe tải chở hàng đi KCN Long Thành — đúng giờ giao kho](/blog/xe-tai-cho-hang-di-kcn-long-thanh/)
+
+*Quy định nhắc trong bài tra tại [Cục Đăng kiểm Việt Nam](https://www.vr.org.vn).*

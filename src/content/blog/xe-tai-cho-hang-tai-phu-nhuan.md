@@ -75,3 +75,5 @@ Chở hàng ở Phú Nhuận, quan trọng nhất là chọn đúng cỡ xe và 
 - [Xe tải chở hàng tại Tân Bình](/blog/xe-tai-cho-hang-tai-tan-binh)
 - [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

@@ -70,3 +70,5 @@ Chở hàng đi Bình Dương không khó, quan trọng là chọn đúng cỡ x
 - [Xe tải chở hàng tại Quận 12](/blog/xe-tai-cho-hang-tai-quan-12)
 - [Xe tải chở hàng tại TP. Thủ Đức](/blog/xe-tai-cho-hang-tai-thu-duc)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

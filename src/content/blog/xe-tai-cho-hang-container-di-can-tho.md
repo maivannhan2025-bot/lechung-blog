@@ -103,3 +103,4 @@ Hàng khối lớn, hàng nguyên container đi Cần Thơ hay vào cảng Cần
 - [Xe tải chở hàng tại Bình Chánh](/blog/xe-tai-cho-hang-tai-binh-chanh)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cục Đăng kiểm Việt Nam](https://www.vr.org.vn).*

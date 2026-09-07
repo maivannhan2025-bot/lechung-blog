@@ -77,3 +77,11 @@ Mỗi địa chỉ trong thành phố một khác — có nơi hẻm sâu, có n
 **Công ty TNHH Dịch Vụ Vận Tải Lê Chung** — 77 Đường số 2A, Phường Bình Tân, TP. Hồ Chí Minh.
 
 **Hotline/Zalo: 0839 861 499** — gọi ngay để được tư vấn loại xe và báo giá cho tuyến của bạn.
+
+## Bài viết liên quan
+
+- [Vận chuyển hàng đi miền Tây: chọn đúng xe theo cầu đường, giao trong ngày](/blog/van-chuyen-hang-di-mien-tay/)
+- [Vận chuyển hàng đi Miền Bắc: gửi xe tải TP.HCM ra Hà Nội, Hải Phòng, Bắc Ninh](/blog/van-chuyen-hang-di-mien-bac/)
+- [Vận chuyển hàng đi miền Đông Nam Bộ: tuyến ngắn, giao trong ngày, chọn đúng xe](/blog/van-chuyen-hang-di-mien-dong-nam-bo/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

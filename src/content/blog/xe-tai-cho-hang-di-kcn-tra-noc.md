@@ -91,3 +91,4 @@ Tóm lại, hàng đi KCN Trà Nóc, nhất là hàng container đi cảng và h
 - [Xe tải chở hàng tại Bình Chánh](/blog/xe-tai-cho-hang-tai-binh-chanh)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

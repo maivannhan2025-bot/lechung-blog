@@ -129,3 +129,11 @@ Anh chị gọi cho bên em, nói loại hàng, khối lượng, điểm đi đi
 Hotline gọi và Zalo: **0839 861 499**
 
 Anh chị lưu số này lại, hôm nào bị nhà xe khác báo bận thì còn chỗ gọi. Có bạn bè đang làm kho, làm xưởng, hay bị bỏ chuyến thì gửi bài này cho họ đọc.
+
+## Bài viết liên quan
+
+- [Vận chuyển hàng đi Miền Trung: chọn xe đúng cho tuyến Nha Trang, Quy Nhơn, Đà Nẵng, Huế](/blog/van-chuyen-hang-di-mien-trung/)
+- [Vận chuyển hàng đi miền Đông Nam Bộ: tuyến ngắn, giao trong ngày, chọn đúng xe](/blog/van-chuyen-hang-di-mien-dong-nam-bo/)
+- [Vận chuyển hàng đi miền Tây: chọn đúng xe theo cầu đường, giao trong ngày](/blog/van-chuyen-hang-di-mien-tay/)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

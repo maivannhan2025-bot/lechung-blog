@@ -78,3 +78,5 @@ Chở hàng ở Quận 7, quan trọng là chọn đúng xe cho hợp hàng — 
 - [Xe tải chở hàng tại Quận 4](/blog/xe-tai-cho-hang-tai-quan-4)
 - [Vận chuyển hàng đi miền Tây](/blog/van-chuyen-hang-di-mien-tay)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

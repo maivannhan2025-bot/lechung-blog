@@ -81,3 +81,5 @@ Chở hàng ở Củ Chi, quan trọng nhất là chọn đúng cỡ xe và tín
 - [Xe tải chở hàng tại Bình Chánh](/blog/xe-tai-cho-hang-tai-binh-chanh)
 - [Vận chuyển hàng đi miền Đông Nam Bộ](/blog/van-chuyen-hang-di-mien-dong-nam-bo)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*

@@ -80,3 +80,4 @@ Tóm lại, nếu anh chị cần vận chuyển hàng có hóa đơn VAT đi c�
 - [Cách chọn đúng loại xe tải chở hàng](/blog/thue-xe-tai-chon-dung-loai-xe)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Tổng cục Thuế](https://www.gdt.gov.vn).*

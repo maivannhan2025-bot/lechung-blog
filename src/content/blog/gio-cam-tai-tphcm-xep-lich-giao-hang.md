@@ -151,3 +151,11 @@ Nói với bên em ba điều: hàng gì, lấy ở đâu giao ở đâu, và b�
 CÔNG TY TNHH DỊCH VỤ VẬN TẢI LÊ CHUNG. Hơn 10 năm làm vận tải bằng xe của chính mình, hơn 100 đầu xe, hợp đồng và hoá đơn VAT rõ ràng.
 
 Bài này có ích thì anh/chị gửi cho người đang xếp lịch kho giúp bên em, hoặc lưu lại số 0839 861 499 phòng khi cần gấp một chiếc xe lúc nửa đêm.
+
+## Bài viết liên quan
+
+- [Xe tải chở hàng tại Quận 1 TP.HCM: hợp giờ cấm tải, luồn hẻm, đúng hẹn](/blog/xe-tai-cho-hang-tai-quan-1/)
+- [Gửi hàng đi Đông Nam Bộ cần lưu ý gì về cầu đường, giờ cấm tải](/blog/luu-y-cau-duong-gio-cam-tai-di-dong-nam-bo/)
+- [Xe tải chở hàng đi KCN Long Thành — đúng giờ giao kho](/blog/xe-tai-cho-hang-di-kcn-long-thanh/)
+
+*Quy định nhắc trong bài tra tại [Cục Cảnh sát giao thông](https://csgt.vn).*

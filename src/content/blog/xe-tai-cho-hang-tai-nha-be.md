@@ -77,3 +77,5 @@ Chở hàng ở Nhà Bè, quan trọng nhất là chọn đúng cỡ xe cho hàn
 - [Xe tải chở hàng tại TP. Thủ Đức](/blog/xe-tai-cho-hang-tai-thu-duc)
 - [Vận chuyển hàng đi miền Tây](/blog/van-chuyen-hang-di-mien-tay)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cục Đăng kiểm Việt Nam](https://www.vr.org.vn).*

@@ -82,3 +82,5 @@ Chở hàng ở Quận 1, quan trọng nhất là chọn đúng cỡ xe cho hợ
 - [Xe tải chở hàng tại Quận 5](/blog/xe-tai-cho-hang-tai-quan-5)
 - [Vận chuyển hàng hoá nội thành TP.HCM](/blog/van-chuyen-hang-hoa-noi-thanh-tphcm)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
+
+*Quy định nhắc trong bài tra tại [Cục Cảnh sát giao thông](https://csgt.vn).*

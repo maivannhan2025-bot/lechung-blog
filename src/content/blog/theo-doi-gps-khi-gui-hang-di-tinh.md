@@ -94,3 +94,4 @@ Gửi hàng đi tỉnh mà biết chắc xe của mình đang đi đúng đườ
 - [Cách chọn đúng loại xe tải chở hàng](/blog/thue-xe-tai-chon-dung-loai-xe)
 - [Xem bảng giá cước tham khảo TP.HCM đi tỉnh](/#bang-gia)
 
+*Quy định nhắc trong bài tra tại [Cổng Thông tin điện tử Chính phủ](https://chinhphu.vn).*
