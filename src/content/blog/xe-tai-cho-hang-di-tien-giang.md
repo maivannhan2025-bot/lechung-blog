@@ -72,6 +72,8 @@ Hàng nhiều, cần đi gọn một chuyến thì thuê nguyên xe cho chủ đ
 
 Anh/chị cần chở hàng, thuê xe tải đi Tiền Giang hay bất kỳ tuyến nào từ TP.HCM đi tỉnh, cứ gọi hoặc nhắn Zalo cho Lê Chung theo số 0839 861 499. Bên em nghe hàng, nghe tuyến rồi báo giá miễn phí, rõ ràng ngay cho anh/chị. Công ty TNHH DV Vận Tải Lê Chung mong được chở hàng cùng anh/chị.
 
+Chiều ngược lại, anh/chị có hàng ở Tiền Giang cần đưa lên Sài Gòn thì đọc thêm bài [chở hàng từ Tiền Giang về TP.HCM](/blog/xe-tai-cho-hang-tien-giang-di-tphcm/): hàng gì hay đi, giao chợ hay kho nào, canh giờ cấm tải ra sao.
+
 ## Bài liên quan
 
 - [Vận chuyển hàng đi miền Tây](/blog/van-chuyen-hang-di-mien-tay)

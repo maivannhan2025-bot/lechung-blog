@@ -64,6 +64,8 @@ Gọi 0839 861 499 (gọi hoặc Zalo), tả loại hàng, khối lượng và �
 
 Chở hàng đi Bình Dương không khó, quan trọng là chọn đúng cỡ xe và canh giờ cho khéo. Anh/chị cứ gọi **Lê Chung 0839 861 499** (gọi hoặc Zalo), tả hàng và điểm giao, bên em tư vấn loại xe phù hợp và báo giá rõ ràng cho chuyến của mình.
 
+Nếu anh/chị cần chở hàng theo hướng ngược lại, từ Bình Dương về thành phố, bên em có viết riêng bài [đưa hàng Bình Dương về TP.HCM](/blog/xe-tai-cho-hang-binh-duong-di-tphcm/).
+
 ## Bài liên quan
 
 - [Vận chuyển hàng đi miền Đông Nam Bộ](/blog/van-chuyen-hang-di-mien-dong-nam-bo)
