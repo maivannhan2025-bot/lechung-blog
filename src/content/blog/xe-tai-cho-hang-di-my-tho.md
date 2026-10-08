@@ -81,6 +81,8 @@ Anh/chị gọi 0839 861 499 để nhận báo giá miễn phí. Đọc bên em 
 
 Anh/chị đang có hàng chợ, nông sản hay thực phẩm cần đưa xuống Mỹ Tho, cứ gọi hoặc nhắn Zalo cho bên em qua số 0839 861 499. Vận Tải Lê Chung nhận xe đủ cỡ, có mặt sau khoảng 30 phút nội thành, canh đúng giờ chợ, báo giá rõ ràng để anh/chị yên tâm giao hàng.
 
+Nếu anh/chị cần chở hàng theo hướng ngược lại, từ Mỹ Tho về thành phố, bên em có viết riêng bài [đưa hàng Mỹ Tho về TP.HCM](/blog/xe-tai-cho-hang-my-tho-di-tphcm/).
+
 ## Bài liên quan
 
 - [Vận chuyển hàng đi miền Tây](/blog/van-chuyen-hang-di-mien-tay)
